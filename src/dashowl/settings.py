@@ -25,7 +25,7 @@ SECRET_KEY = '@txi-tew@r4au_hexu=6)l2@9l&6zh2!&lkhgn=rgt8i=jhtk1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
