@@ -22,7 +22,10 @@
     }],
     "browser_action": 
     {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": {
+            "32": "images/dashowl_colorido_80_56.png"
+          }
     },
     "manifest_version": 2
   }
