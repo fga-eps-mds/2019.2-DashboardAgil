@@ -1,0 +1,28 @@
+{
+    "name": "DashOwl",
+    "version": "0.1",
+    "description": "DashOwl extension",
+    "permissions": ["declarativeContent", "storage", "http://127.0.0.1:8000/*"],
+    "background": 
+    {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+    "content_scripts": 
+    [{
+        "matches": 
+        [
+            "http://github.com/*",
+            "https://github.com/*",
+            "http://*.github.com/*",
+            "https://*.github.com/*",
+            "http://127.0.0.1:8000/*"
+        ],
+        "js": ["scripts/oauth.js"]
+    }],
+    "browser_action": 
+    {
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2
+  }
