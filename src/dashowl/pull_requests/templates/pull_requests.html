@@ -1,0 +1,29 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>DashOwl - Issues abertas</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static './css/openIssues.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Issues fechadas</a></h1>
+        </div>
+
+            <div>
+                {% for i in pulls %}
+                <div>
+                    <h4>{{ i }}</h4>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div>
+                <h4>{{ total }}</h4>
+            </div>
+
+    </body>
+</html>
