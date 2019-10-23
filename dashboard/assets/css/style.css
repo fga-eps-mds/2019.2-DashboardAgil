@@ -1278,7 +1278,7 @@ body.open .navbar .navbar-brand.hidden {
     min-height: 50px;
     margin: 0;
     padding: 0 15px;
-    background: #ffffff;
+    background: #fff;
     border-bottom: 0; }
     .right-panel .page-header h1 {
       font-size: 18px;
@@ -1294,7 +1294,7 @@ body.open .navbar .navbar-brand.hidden {
       content: "/\00a0"; }
 
 .right-panel header.header {
-  background: #fff;
+  background: #272c33;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   clear: both;
   display: inline-block;
@@ -1329,7 +1329,7 @@ header.fixed-top {
 .search-trigger {
   background: transparent;
   border: none;
-  color: #272c33;
+  color: #fff;
   cursor: pointer;
   font-size: 16px;
   height: 41px;
