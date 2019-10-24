@@ -1,7 +1,7 @@
 from github import Github
 
 #  username and password
-g = Github("KalebeLopes", "sepolebelaK1,2,3,")
+g = Github("KalebeLopes", "")
 
 #   ISSUES ABERTAS 
 
