@@ -1,7 +1,7 @@
 from github import Github
 
 #  username and password
-g = Github("KalebeLopes", "Kalebe1230,123")
+g = Github("KalebeLopes", "sepolebelaK1,2,3,")
 
 #   ISSUES ABERTAS 
 
@@ -22,6 +22,6 @@ for issue in open_issues:
 #   ISSUES FECHADAS 
 
 repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil-Wiki")
-open_issues = repo.get_issues(creator='github.KalebeLopes.KalebeLopes')
+open_issues = repo.get_issues(creator='Matheus-AM')
 for issue in open_issues:
     print(issue)
