@@ -1,6 +1,6 @@
 from github import Github
 
-#  username and password
+#  LOGIN E SENHA
 g = Github("KalebeLopes", "")
 
 #   ISSUES ABERTAS 
