@@ -4,3 +4,4 @@ from django.shortcuts import render
 def commits(request):
     teste = "deu certo"
     return render(request, 'commits.html', {'commit':teste})
+    
