@@ -16,7 +16,8 @@
             <div>
                 {% for i in pulls %}
                 <div>
-                    <h4>{{ i }}</h4>
+                    <h4>{{ i.title }}</h4>
+                    <h4>{{ i.user }}</h4>
                 </div>
                 {% endfor %}
             </div>
@@ -24,6 +25,7 @@
             <div>
                 <h4>{{ total }}</h4>
             </div>
+
 
     </body>
 </html>

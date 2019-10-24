@@ -17,7 +17,5 @@ def openPullRuequests (request):
     pulls_closed = repo.get_pulls(state = "closed")
     total = pulls_open.totalCount
     total+=pulls_closed.totalCount
-    # pulls = repo.get_issues(state = 'closed')
-
 
     return render(request, 'pull_requests.html', {'pulls': pulls_open, 'total': total})
