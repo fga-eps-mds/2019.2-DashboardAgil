@@ -18,9 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-<<<<<<< HEAD
     path('', include('dashowl.homepage.urls')),
-=======
     path('pullrequests', include('dashowl.pull_requests.urls')),
->>>>>>> devel
 ]
