@@ -1,3 +1,7 @@
 src/db.sqlite3
+<<<<<<< HEAD
 .vscode/
 pycache/
+=======
+src/dashowl/__pycache__
+>>>>>>> devel
