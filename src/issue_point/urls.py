@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import home 
+from . import views
 
 urlpatterns = [
-    path('', home),
+    path('', views.open_issue_points,name='issue_point')
 ]
