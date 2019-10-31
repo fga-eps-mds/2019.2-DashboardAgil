@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashowl.homepage',
     'dashowl.pull_requests',
+    'dashowl.index',
 ]
 
 MIDDLEWARE = [
