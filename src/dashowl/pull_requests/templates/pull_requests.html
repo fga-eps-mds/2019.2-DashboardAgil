@@ -14,10 +14,19 @@
         </div>
 
             <div>
-                {% for i in pulls %}
+                {% for i in pulls_open %}
                 <div>
                     <h4>{{ i.title }}</h4>
                     <h4>{{ i.user }}</h4>
+                </div>
+                {% endfor %}
+            </div>
+    
+            <div>
+                {% for n in pulls_closed %}
+                <div>
+                    <h4>{{ n.title }}</h4>
+                    <h4>{{ n.user }}</h4>
                 </div>
                 {% endfor %}
             </div>
