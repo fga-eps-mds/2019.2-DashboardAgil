@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashowl.homepage.urls')),
     path('pullrequests', include('dashowl.pull_requests.urls')),
+    path('issues',include('dashowl.issues.urls')),
 ]

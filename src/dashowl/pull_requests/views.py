@@ -5,7 +5,7 @@ from github import Github
 
 # Create your views here.
 
-def openPullRuequests (request):
+def get_PullRuequests (request):
     # token = Usuario.token
     # g = Github(token)
     # repos = Usuario.repos
