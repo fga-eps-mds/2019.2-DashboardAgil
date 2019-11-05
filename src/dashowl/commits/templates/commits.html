@@ -2,5 +2,17 @@
 <head></head>
 
 <body>
-    <h1>{{commit}}</h1>
+    <div>
+        <h1>{{total}}</h1>
+    </div>
+    
+    <div>{%for i in commit%}
+        <h1>{{i}}</h1>
+        {%endfor%}
+    </div>
+
+    <div>{%for i in commit%}
+        <h1>{{i.author}}</h1>
+        {%endfor%}
+    </div>
 </body>
