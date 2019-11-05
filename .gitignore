@@ -2,3 +2,6 @@ src/db.sqlite3
 .idea/
 extension.crx
 extension.pem
+.vscode/
+pycache/
+src/dashowl/__pycache__

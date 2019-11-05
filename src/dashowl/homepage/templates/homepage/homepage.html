@@ -1,3 +1,5 @@
+{% load staticfiles %}
+        
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -7,30 +9,43 @@
 <!--<![endif]-->
 
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DashOwl</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
+    <!--<link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="dashowl_colorido_80_56.png">
 
-
-    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">-->
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>-->
+    
+    
+    <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
+
+    <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    
+   
 
 
 </head>
 
 <body>
-    <!-- Left Panel -->
+    <!--klb Left Panel -->
 
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
@@ -39,15 +54,20 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src=" " alt="DashOwl"></a>
-                <a class="navbar-brand hidden" href="./"><img src=" " alt=" "></a>
+                <a class="navbar-brand" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
             </div>
 
             <!<div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href=" "> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href=" "> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
+
+                    <li>
+                        <a href=" "> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>                    
+
                     <!--<h3 class="menu-title">UI elements</h3><!-- /.menu-title --
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
@@ -80,7 +100,7 @@
                         </ul>
                     </li>-->
 
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
+                    <!-- <h3 class="menu-title">Icons</h3> --> <!-- /.menu-title -->
 
                     <!--<li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
@@ -92,13 +112,22 @@
                     <li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                     </li>-->
+
+                   
                     <li class="menu-item-has-children active dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
+                            <!-- <li><i class="menu-icon fa fa-folder-open"></i><a href="charts-chartjs.html">Repositories</a></li> 
+                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Ranking</a></li> -->
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-chartsjs.html">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="charts-peity.html">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="charts-peity.html">Issues</a></li>
                         </ul>
+                    </li>
+
+                    <li>
+                        <a href=" "> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
 
                     <!--<li class="menu-item-has-children dropdown">
@@ -108,13 +137,15 @@
                             <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
                         </ul>
                     </li>-->
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
+                    <!-- <h3 class="menu-title">Extras</h3> --> <!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                            
+                            <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
+                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
+                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -134,7 +165,7 @@
             <div class="header-menu">
 
                 <div class="col-sm-7">
-                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
@@ -144,7 +175,7 @@
                             </form>
                         </div>
 
-                        <div class="dropdown for-notification">
+                <!--    <div class="dropdown for-notification">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
                                 <span class="count bg-danger">5</span>
@@ -164,9 +195,7 @@
                                 <p>Server #3 overloaded.</p>
                             </a>
                             </div>
-                        </div>
-
-                        <div class="dropdown for-message">
+                        </div> --    <div class="dropdown for-message">
                             <button class="btn btn-secondary dropdown-toggle" type="button"
                                 id="message"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -197,7 +226,7 @@
                                     <span class="name float-left">Cheryl Wheeler</span>
                                     <span class="time float-right">10 minutes ago</span>
                                         <p>Hello, this is an example msg</p>
-                                </span>
+                                </span> 
                             </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
                                 <span class="photo media-left"><img alt="avatar" src="images/avatar/4.jpg"></span>
@@ -208,16 +237,16 @@
                                 </span>
                             </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="dashowl_colorido_80_56.png" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
                         </a>
-
+                        
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
 
@@ -229,7 +258,7 @@
                         </div>
                     </div>
 
-                    <div class="language-select dropdown" id="language-select">
+            <!--    <div class="language-select dropdown" id="language-select">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
                             <i class="flag-icon flag-icon-us"></i>
                         </a>
@@ -247,7 +276,7 @@
                                 <i class="flag-icon flag-icon-it"></i>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -267,9 +296,9 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Charts</a></li>
-                            <li class="active">Chartjs</li>
+                            <li><a href="#">Graphics</a></li>
+                            <li><a href="#">Commits</a></li>
+                            <li class="active">Team commits</li>
                         </ol>
                     </div>
                 </div>
@@ -283,7 +312,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Commits Anuais</h4>
+                                <h4 class="mb-3">Team commits</h4>
                                 <canvas id="sales-chart"></canvas>
                             </div>
                         </div>
@@ -292,7 +321,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Team Commits </h4>
+                                <h4 class="mb-3">Your commits</h4>
                                 <canvas id="team-chart"></canvas>
                             </div>
                         </div>
@@ -301,37 +330,37 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Quantidade de Commits </h4>
+                                <h4 class="mb-3">Monthly commits</h4>
                                 <canvas id="barChart"></canvas>
                             </div>
                         </div>
                     </div><!-- /# column -->
 
-                    <div class="col-lg-6">
+                    <!-- <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mb-3">Issues fechadas </h4>
                                 <canvas id="radarChart"></canvas>
                             </div>
                         </div>
-                    </div><!-- /# column -->
+                    </div> --> <!-- /# column -->
 
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Line Chart </h4>
+                                <h4 class="mb-3">Commits scored</h4>
                                 <canvas id="lineChart"></canvas>
                             </div>
                         </div>
 
-                        <div class="col-lg-12">
+                        <!--<div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="mb-3">Doughut Chart </h4>
                                     <canvas id="doughutChart"></canvas>
                                 </div>
                             </div>
-                        </div><!-- /# column -->
+                        </div> --> <!-- /# column -->
 
                     </div><!-- /# column -->
 
@@ -375,14 +404,22 @@
 
     <!-- Right Panel -->
 
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'js/init-scripts/chart-js/chartjs-init.js' %}"></script>
+    
+    
+    <!--<script src="vendors/jquery/dist/jquery.min.js'"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <!--  Chart js -->
+    <!-  Chart js --
     <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/init-scripts/chart-js/chartjs-init.js"></script>
+    <script src="assets/js/init-scripts/chart-js/chartjs-init.js"></script> -->
 
 </body>
 
