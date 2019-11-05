@@ -1,10 +1,17 @@
 version: '3.7'
 
 services:
-  db:
-    image: postgres:10.1-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
+  postgres:
+    image: postgres:latest
+    container_name: db
+    hostname: postgres
+    environment:
+      - POSTGRES_PASSWORD=dashowl
+      - POSTGRES_USER=dashowl
+      - POSTGRES_DB=dashowl
+    ports:
+      - 5000:5432
+
   web:
     build: .
     command: /bin/sh ./boot.sh
@@ -12,8 +19,10 @@ services:
       - .:/code
     ports:
       - 8000:8000
+    environment:
+      - DB_NAME=dashowl
+      - DB_USER=dashowl
+      - DB_PASSWORD=dashowl
+      - DB_HOST=postgres
     depends_on:
-      - db
-
-volumes:
-  postgres_data:
+      - postgres
