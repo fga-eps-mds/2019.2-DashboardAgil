@@ -1,6 +1,15 @@
 {%load static%}
+
 <head></head>
 
 <body>
-    <h1>{{milestone}}</h1>
+    <div>
+        <h1>{{total}}</h1>
+    </div>
+
+    <div>{%for i in milestone%}
+        <h1>{{i}}</h1>
+        {%endfor%}
+    </div>
+
 </body>
