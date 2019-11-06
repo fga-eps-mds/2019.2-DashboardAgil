@@ -18,4 +18,4 @@ def get_PullRuequests (request):
     total = pulls_open.totalCount
     total+=pulls_closed.totalCount
 
-    return render(request, 'pull_requests.html', {'pulls': pulls_open, 'total': total})
+    return render(request, 'pull_requests.html', {'pulls_open': pulls_open,'pulls_closed':pulls_closed,'total': total})
