@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('pullrequests', include('dashowl.pull_requests.urls')),
+    path('milestone', include('dashowl.milestone.urls')),
 ]

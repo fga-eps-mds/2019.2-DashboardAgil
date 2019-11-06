@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dashowl.pull_requests',
+    'dashowl.milestone',
 ]
 
 MIDDLEWARE = [
