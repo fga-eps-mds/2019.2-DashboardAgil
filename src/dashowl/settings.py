@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dashowl.commits',
     'dashowl.homepage',
     'dashowl.pull_requests',
 ]
