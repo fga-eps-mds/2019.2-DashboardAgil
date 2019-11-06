@@ -1,17 +1,7 @@
 from django.shortcuts import render
-
-# Create your views here.
-def get_commits(request):
-
-    from django.shortcuts import render
 from github import Github
 
-# from .models import Usuario
-
-# Create your views here.
-
-
-def commits(request):
+def get_commits(request):
     # token = Usuario.token
     # g = Github(token)
     # repos = Usuario.repos
