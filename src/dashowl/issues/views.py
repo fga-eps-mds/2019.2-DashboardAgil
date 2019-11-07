@@ -22,7 +22,7 @@ def get_issues(request):
     creator_issues = repo.get_issues(creator='Matheus-AM')#precisasmos de uma variavel de usuario
 
 #Retorna o valor de cada issue 
-    req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=88ecf0f6ad902fa218d3eb2be63b0ff1a4b2f53b3c49aa9493279638612cf7657d22dc87e6892bc3')     
+    req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=02a009e06e4926091eadce6ef1dffc9f9b3f7b5bd417b116ea90c55bf6fb68dda7eb367ab6544c07')     
     issue_json = req.json()
     point_issue = issue_json["estimate"]["value"]
     
