@@ -21,4 +21,6 @@ urlpatterns = [
     path('index/', include('dashowl.index.urls')),
     path('homepage/', include('dashowl.homepage.urls')),
     path('pullrequests/', include('dashowl.pull_requests.urls')),
+    path('commits', include('dashowl.commits.urls')),
+
 ]

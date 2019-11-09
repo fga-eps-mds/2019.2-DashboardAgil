@@ -1,7 +1,7 @@
 src/db.sqlite3
-<<<<<<< HEAD
+.idea/
+extension.crx
+extension.pem
 .vscode/
 pycache/
-=======
 src/dashowl/__pycache__
->>>>>>> devel
