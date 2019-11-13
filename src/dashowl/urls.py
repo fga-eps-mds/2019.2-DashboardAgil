@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('milestone', include('dashowl.milestone.urls')),
     path('index/', include('dashowl.index.urls')),
     path('homepage/', include('dashowl.homepage.urls')),
     path('pullrequests/', include('dashowl.pull_requests.urls')),
