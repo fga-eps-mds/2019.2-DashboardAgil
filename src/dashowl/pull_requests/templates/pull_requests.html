@@ -1,49 +1,4 @@
-<<<<<<< HEAD
-{% load static %}
 
-<html>
-    <head>
-        <title>DashOwl - Issues abertas</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static './css/openIssues.css' %}">
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Pull Requests</a></h1>
-        </div>
-
-        <div>
-                <h1><a href="/">Pull Requests Abertos</a></h1>
-        </div>
-        
-            <div>
-                {% for i in pulls_open %}
-                <div>
-                    <h4>{{ i.title }}</h4>
-                    <h4>{{ i.user }}</h4>
-                </div>
-                {% endfor %}
-            </div>
-        <div>
-                <h1><a href="/">Pull Requests Fechados</a></h1>
-        </div>
-            <div>
-                    {% for i in pulls_closed %}
-                    <div>
-                        <h4>{{ i.title }}</h4>
-                        <h4>{{ i.user }}</h4>
-                    </div>
-                    {% endfor %}
-                </div>
-            
-            <div>
-                    <h1><a href="/">Total</a></h1>
-            </div>
-                <div>
-                <h4>{{ total }}</h4>
-=======
 {% load staticfiles %}
         
 <!doctype html>
@@ -165,7 +120,6 @@
                         </div>
                     </div>
                 </div>
->>>>>>> devel
             </div>
 
         </header><!-- /header -->

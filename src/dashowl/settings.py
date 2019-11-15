@@ -40,14 +40,9 @@ INSTALLED_APPS = [
     'dashowl.commits',
     'dashowl.homepage',
     'dashowl.pull_requests',
-<<<<<<< HEAD
-    'dashowl.issues',
-    'dashowl.commits',
-    'dashowl.sprints',
-=======
     'dashowl.milestone',
     'dashowl.index',
->>>>>>> devel
+    'dashowl.sprints'
 ]
 
 MIDDLEWARE = [
