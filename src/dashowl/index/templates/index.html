@@ -44,21 +44,21 @@
                     </li>
 
                     <li>
-                        <a href=" "> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Sprints</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-chartsjs.html">Commits</a></li>
-                            <li><i class="menu-icon fa fa-code-fork"></i><a href="">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="charts-peity.html">Issues</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href=""> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
@@ -227,7 +227,7 @@
 
                 <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                   <div class="teacher text-center">
-                    <img src="{% static 'images/damarcones.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <img src="{% static 'images/damarcone.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
                     <div class="py-2">
                       <h3 class="text-black">Damarcones</h3>
                       <p class="position">Git: damarcones</p>
