@@ -1,7 +1,8 @@
 from django.db import models
 
 class Commit(models.Model):
-    commitID = models.IntegerField()
+    # repoID = models.ForeignKey(Repository)
+    shaCommit = models.CharField(max_length = 60)
     totalCommits = models.IntegerField()
     author = models.CharField(max_length=50)
 
