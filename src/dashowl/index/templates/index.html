@@ -1,0 +1,266 @@
+{% load staticfiles %}
+        
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DashOwl</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
+
+    <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">    
+   
+</head>
+
+<body>
+    <!--klb Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
+                <a class="navbar-brand hidden" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>
+
+                    <li>
+                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li> 
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="charts-peity.html">Issues</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
+                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
+                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
+                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
+                    <div class="header-left">
+                        
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
+                        </a>
+                        
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="content mt-3">
+          <div class="intro-section" id="home-section">
+            
+            <div class="slide-1" style="background: white" data-stellar-background-ratio="">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-12">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6 mb-4">
+                        <p class="mb-4"> <br/ ></p>
+                        <h1  data-aos="fade-up" data-aos-delay="100">Administre o andamento de seus projetos! </h1>
+                        <p class="mb-4">
+                        <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">  
+                          Nossa plataforma foi criada com o intuito de acompanhar
+                          em tempo real os repositórios do GitHub tirando métricas
+                          e indicadores das atividades feitas individualmente e pelo time em forma de gráficos.
+                        </p><br/><br/><br/>
+                        <h1  data-aos="fade-up" data-aos-delay="100">É muito fácil e prático de usar…</h1>
+                        <p class="mb-4"> 
+                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
+                          Entre com seu login do GitHub, selecione o repositório que deseja analisar e pronto!
+                        </p>
+                        <!--<p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill">Admission Now</a></p>-->
+                        <p class="mb-5"> 
+                        </p><br/><br/><br/>
+                        <h1  data-aos="fade-up" data-aos-delay="100">Dashboard Ágil</h1>
+                        <p class="mb-4"> 
+                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
+                          Nossas métricas para a criação do dashboard são todas baseadas no método Ágile. Esse método vem sendo muito utilizado no desenvolvimento de software. Além disso, um projeto do GitHub traz muitas informações difusas ou sem nenhuma imediatez, com isso surge a necessidade de uma ferramenta com o toda a informação relevante sobre o projeto, em uma interface gráfica amigável para o usuário.
+                          
+                        </p>
+                      </div>
+
+                      <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
+                        <center>
+                          <a href=" ">
+                            <img src="{% static "imagens/dashowl_logo.png" %}" alt="DashOwl"><br>
+                            <h1  data-aos="fade-up" data-aos-delay="100">DashOwl</h1>
+                          </a>              
+                        </center>
+                      </div>
+                    </div>
+                  </div>            
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="site-section" id="teachers-section" style="background: white">
+            <div class="container" style="background: white">
+
+              <h1  data-aos="fade-up" data-aos-delay="100">Time</h1>
+              <div class="row mb-5 justify-content-center" style="background: white">
+                <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
+                  <h2 class="section-title"></h2>
+                  <p class="mb-5"> 
+                </div>
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/kalebe.jpeg' %}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Kalebe Lopes</h3>
+                      <p class="position">Git: KalebeLopes</p>
+                      <p>calbkalebe@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/aila.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Ailamar Alves</h3>
+                      <p class="position">Git: ailamaralves</p>
+                      <p>ailamar.alvesg@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/joao.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Joao Victor</h3>
+                      <p class="position">Git: joao15victor08</p>
+                      <p>joao15victor08@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/matheus.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Matheus</h3>
+                      <p class="position">Git: Matheus-AM</p>
+                      <p>mam.macacod@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/damarcone.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Damarcones</h3>
+                      <p class="position">Git: damarcones</p>
+                      <p>damarcones@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                  <div class="teacher text-center">
+                    <img src="{% static 'images/murilo.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                    <div class="py-2">
+                      <h3 class="text-black">Murilo</h3>
+                      <p class="position">Git: muriloschiler</p>
+                      <p>muriloschiler.ls@gmail.com</p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div><!-- .content -->
+    </div><!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'js/init-scripts/chart-js/chartjs-init.js' %}"></script>
+
+</body>
+
+</html>

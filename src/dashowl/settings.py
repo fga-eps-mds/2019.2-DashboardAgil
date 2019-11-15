@@ -37,11 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dashowl.commits',
     'dashowl.homepage',
     'dashowl.pull_requests',
+<<<<<<< HEAD
     'dashowl.issues',
     'dashowl.commits',
     'dashowl.sprints',
+=======
+    'dashowl.milestone',
+    'dashowl.index',
+>>>>>>> devel
 ]
 
 MIDDLEWARE = [
@@ -80,8 +86,12 @@ WSGI_APPLICATION = 'dashowl.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': 5432
     }
 }
 

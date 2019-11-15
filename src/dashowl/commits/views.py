@@ -1,7 +1,16 @@
 from django.shortcuts import render
 from github import Github
 
+<<<<<<< HEAD
 def get_commits(request):
+=======
+# from .models import Usuario
+
+# Create your views here.
+
+
+def commits(request):
+>>>>>>> devel
     # token = Usuario.token
     # g = Github(token)
     # repos = Usuario.repos
@@ -16,4 +25,9 @@ def get_commits(request):
     # commit = repo.get_commit(sha="7c8c4aba33040cf9865a40703900ca797bc816b4")
     # print(commit.commit.author.date)
 
+<<<<<<< HEAD
     return render(request, 'commits.html', {'commit':commits, 'total':totalCommits})
+=======
+    return render(request, 'commits.html', {'commit':commits, 'total':totalCommits})
+    
+>>>>>>> devel
