@@ -1,4 +1,3 @@
-
 {% load staticfiles %}
         
 <!doctype html>
@@ -127,23 +126,13 @@
 
         <div class="content mt-3">
                 <div>
-                        <h1><a href="/">Pull Requests</a></h1>
+                        <h1><a href="/">Sprints</a></h1>
                     </div>
             
-                        <div>
-                            {% for i in pulls %}
-                            <div>
-                                <h4>{{ i.title }}</h4>
-                                <h4>{{ i.user }}</h4>
-                            </div>
-                            {% endfor %}
-                        </div>
+                       
             
-                        <div>
-                            <h4>{{ total }}</h4>
-                        </div>
+                        
                     </div>
-                 </div>
          </div>  
      </div><!-- /#right-panel -->
 

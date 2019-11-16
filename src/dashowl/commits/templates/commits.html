@@ -1,3 +1,4 @@
+
 {% load staticfiles %}
         
 <!doctype html>
@@ -57,7 +58,7 @@
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
-                            <li><i class="menu-icon fa fa-exclamation"></i><a href="charts-peity.html">Issues</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
                     </li>
 
@@ -173,3 +174,4 @@
 </body>
 
 </html>
+

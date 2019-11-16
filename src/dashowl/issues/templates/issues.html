@@ -1,4 +1,3 @@
-
 {% load staticfiles %}
         
 <!doctype html>
@@ -10,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DashOwl - Pull Requests</title>
+    <title>DashOwl - Issues</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -126,28 +125,46 @@
         <!-- Header-->
 
         <div class="content mt-3">
-                <div>
-                        <h1><a href="/">Pull Requests</a></h1>
-                    </div>
-            
-                        <div>
-                            {% for i in pulls %}
-                            <div>
-                                <h4>{{ i.title }}</h4>
-                                <h4>{{ i.user }}</h4>
-                            </div>
-                            {% endfor %}
-                        </div>
-            
-                        <div>
-                            <h4>{{ total }}</h4>
-                        </div>
-                    </div>
-                 </div>
-         </div>  
-     </div><!-- /#right-panel -->
+            <h1>Open Issues</h1>
+            <div>{%for i in open_issues%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>
 
-    <!-- Right Panel -->
+            <br/>
+            <h1>Closed Issues</h1>
+            <div>{%for i in closed_issues%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>
+
+            <br/>
+            <h1>All Issues</h1>
+            <div>{%for i in all_issues%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>
+
+            <br/>
+            <h1>Creator Issues</h1>
+            <div>{%for i in creator_issues%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>
+
+            <br/>
+
+            <!--<h1>Point Issues</h1>
+            <div>{%for i in point_issue%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>-->
+            
+
+
+   
+        </div><!-- /#right-panel -->
+
 
     <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
