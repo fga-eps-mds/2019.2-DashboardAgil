@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'dashowl.pull_requests',
     'dashowl.milestone',
     'dashowl.index',
-    'dashowl.sprints'
+    'dashowl.sprints',
+    'dashowl.issues'
 ]
 
 MIDDLEWARE = [

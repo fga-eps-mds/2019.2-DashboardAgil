@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DashOwl - Pull Requests</title>
+    <title>DashOwl - Issues</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -125,18 +125,14 @@
         <!-- Header-->
 
         <div class="content mt-3">
-                <div>
-                        <h1><a href="/">Issues</a></h1>
-                    </div>
-            
-                       
-            
-                        
-                    </div>
-         </div>  
-     </div><!-- /#right-panel -->
+            <h1>Open Issues</h1>
+            <div>{%for i in open_issues%}
+                <h2>{{i}}</h2>
+                {%endfor%}
+            </div>
+   
+        </div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
 
     <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>

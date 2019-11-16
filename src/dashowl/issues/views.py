@@ -7,7 +7,7 @@ import json
 
 def get_issues(request):
 
-    g = Github("KalebeLopes", "")#pode ser o acess_token do github
+    g = Github("joao15victor08", "j15v08o19m99")
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil-Wiki")
     #   ISSUES ABERTAS 
     open_issues = repo.get_issues(state='open')
