@@ -2,10 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 class Milestones(models.Model):
+    # repoID = models.ForeignKey(Repository)
     title = models.CharField(max_length=200)
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+    due_on = models.DateTimeField()
 
     def publish(self):
-        self.published_date = timezone.now()
         self.save()
