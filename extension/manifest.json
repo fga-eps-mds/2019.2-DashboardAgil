@@ -2,7 +2,7 @@
     "name": "DashOwl",
     "version": "0.1",
     "description": "DashOwl extension",
-    "permissions": ["declarativeContent", "storage", "http://127.0.0.1:8000/*"],
+    "permissions": ["declarativeContent", "storage", "http://0.0.0.0:8000/*"],
     "background": 
     {
         "scripts": ["scripts/background.js"],
@@ -16,7 +16,10 @@
             "https://github.com/*",
             "http://*.github.com/*",
             "https://*.github.com/*",
-            "http://127.0.0.1:8000/*"
+            "http://0.0.0.0:8000/*",
+            "https://0.0.0.0:8000/*",
+            "http://*.0.0.0.0:8000/*",
+            "https://*.0.0.0.0:8000/*"
         ],
         "js": ["scripts/oauth.js"]
     }],
