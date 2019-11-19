@@ -1,7 +1,7 @@
 ( function ( $ ) {
     "use strict";
 
-    //Team chart
+    /*Team chart
     var ctx = document.getElementById( "team-chart" );
     ctx.height = 150;
     var myChart = new Chart( ctx, {
@@ -204,7 +204,7 @@
         }
     } );
 
-
+*/
     //bar chart
     var ctx = document.getElementById( "barChart" );
     //    ctx.height = 200;
@@ -215,14 +215,14 @@
             datasets: [
                 {
                     label: "My First dataset",
-                    data: [ 65, 59, 80, 81, 56, 55, 40 ],
+                    data: [ 1, 59, 80, 81, 56, 55, 40 ],
                     borderColor: "rgba(0, 123, 255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0, 123, 255, 0.5)"
                             },
                 {
                     label: "My Second dataset",
-                    data: [ 28, 48, 40, 19, 86, 27, 90 ],
+                    data: [ 2, 48, 40, 19, 86, 27, 90 ],
                     borderColor: "rgba(0,0,0,0.09)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0,0,0,0.07)"
@@ -240,7 +240,7 @@
         }
     } );
 
-    //radar chart
+    /*radar chart
     var ctx = document.getElementById( "radarChart" );
     ctx.height = 160;
     var myChart = new Chart( ctx, {
@@ -250,7 +250,7 @@
             datasets: [
                 {
                     label: "My First dataset",
-                    data: [ 65, 59, 66, 45, 56, 55, 40 ],
+                    data: [ 1, 59, 66, 45, 56, 55, 40 ],
                     borderColor: "rgba(0, 123, 255, 0.6)",
                     borderWidth: "1",
                     backgroundColor: "rgba(0, 123, 255, 0.4)"
@@ -402,6 +402,6 @@
     } );
 
 
-
+*/
 
 } )( jQuery );
