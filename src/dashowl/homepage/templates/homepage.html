@@ -58,7 +58,7 @@
                 <a class="navbar-brand hidden" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
             </div>
 
-            <!<div id="main-menu" class="main-menu collapse navbar-collapse">
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{% url 'index'%}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
@@ -312,6 +312,26 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
+                                <h4 class="mb-3">Your commits</h4>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->
+
+                </div>
+
+            </div><!-- .animated -->
+
+     </div><!-- .content -->
+
+        <div class="content mt-3">
+            
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-body">
                                 <h4 class="mb-3">Team commits</h4>
                                 <canvas id="sales-chart"></canvas>
                             </div>
@@ -399,8 +419,8 @@
             </div><!-- .animated -->
         </div><!-- .content -->
 
-
     </div><!-- /#right-panel -->
+   
 
     <!-- Right Panel -->
 
