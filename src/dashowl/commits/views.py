@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from github import Github
-
+from .models import Commit
+from .forms import FormularioCommits
 # from .models import Usuario
-
-# Create your views here.
 
 
 def commits(request):
@@ -23,5 +22,15 @@ def commits(request):
     # print(commit.commit.author.date)
 
 
+
     return render(request, 'commits.html', {'commit':commits, 'total':totalCommits})
     
+# def saveCommits(request):
+#     commit_form = CommitForm(request.POST)
+#     if commit_form.is_valid():
+#         commit_form.save()
+
+#     context = {
+#         'commit_form' : commit_form
+#     }
+#     return render(request, 'save_commits.html', context=context)
