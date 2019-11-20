@@ -82,12 +82,12 @@
     var myChart = new Chart( ctx, {
         type: 'line',
         data: {
-            labels: [ "2010", "2011", "2012", "2013", "2014", "2015", "2016" ],
+            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
             type: 'line',
             defaultFontFamily: 'Montserrat',
             datasets: [ {
-                label: "Foods",
-                data: [ 0, 30, 10, 120, 50, 63, 10 ],
+                label: "int1",
+                data: [ 0, 30, 10, 67, 50, 63, 10 ],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(220,53,69,0.75)',
                 borderWidth: 3,
@@ -96,8 +96,8 @@
                 pointBorderColor: 'transparent',
                 pointBackgroundColor: 'rgba(220,53,69,0.75)',
                     }, {
-                label: "Electronics",
-                data: [ 0, 50, 40, 80, 40, 79, 120 ],
+                label: "int2",
+                data: [ 0, 50, 40, 80, 40, 79, 80 ],
                 backgroundColor: 'transparent',
                 borderColor: 'rgba(40,167,69,0.75)',
                 borderWidth: 3,
@@ -105,6 +105,16 @@
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
                 pointBackgroundColor: 'rgba(40,167,69,0.75)',
+                    }, {
+                label: "int3",
+                data: [ 0, 30, 26, 18, 33, 27, 50],
+                backgroundColor: 'transparent',
+                borderColor: 'rgba(40,167,69,0.75)',
+                borderWidth: 3,
+                pointStyle: 'circle',
+                pointRadius: 5,
+                pointBorderColor: 'transparent',
+                pointBackgroundColor: 'rgba(40,167,69,0.75)',        
                     } ]
         },
         options: {
@@ -137,7 +147,7 @@
                     },
                     scaleLabel: {
                         display: false,
-                        labelString: 'Month'
+                        labelString: 'Dayli'
                     }
                         } ],
                 yAxes: [ {
@@ -158,12 +168,6 @@
             }
         }
     } );
-
-
-
-
-
-
 
     //line chart
     var ctx = document.getElementById( "lineChart" );
@@ -207,22 +211,22 @@
 
     //bar chart
     var ctx = document.getElementById( "barChart" );
-    //    ctx.height = 200;
+    //   ctx.height = 200;
     var myChart = new Chart( ctx, {
         type: 'bar',
         data: {
-            labels: [ "January", "February", "March", "April", "May", "June", "July" ],
+            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
             datasets: [
                 {
-                    label: "My First dataset",
-                    data: [ 65, 59, 80, 81, 56, 55, 40 ],
+                    label: "Opened",
+                    data: [ 15, 7, 9, 5, 13, 8, 9 ],
                     borderColor: "rgba(0, 123, 255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0, 123, 255, 0.5)"
                             },
                 {
-                    label: "My Second dataset",
-                    data: [ 28, 48, 40, 19, 86, 27, 90 ],
+                    label: "Closed",
+                    data: [ 11, 7, 8, 5, 12, 7, 8 ],
                     borderColor: "rgba(0,0,0,0.09)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0,0,0,0.07)"
@@ -279,7 +283,7 @@
 
     //pie chart
     var ctx = document.getElementById( "pieChart" );
-    ctx.height = 300;
+    ctx.height = 50;
     var myChart = new Chart( ctx, {
         type: 'pie',
         data: {
@@ -400,8 +404,5 @@
             }
         }
     } );
-
-
-
 
 } )( jQuery );
