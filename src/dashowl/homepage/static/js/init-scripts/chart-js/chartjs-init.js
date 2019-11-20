@@ -7,19 +7,19 @@
     var myChart = new Chart( ctx, {
         type: 'line',
         data: {
-            labels: [ "2010", "2011", "2012", "2013", "2014", "2015", "2016" ],
+            labels: [ "Sprint 1", "Sprint 2", "Sprint 3", "Sprint 4", "Sprint 5", "Sprint 6", "Sprint 7" ],
             type: 'line',
             defaultFontFamily: 'Montserrat',
             datasets: [ {
                 data: [ 0, 7, 3, 5, 2, 10, 7 ],
                 label: "Expense",
                 backgroundColor: 'rgba(0,103,255,.15)',
-                borderColor: 'rgba(0,103,255,0.5)',
+                borderColor: '#b7b7b7',
                 borderWidth: 3.5,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: 'rgba(0,103,255,0.5)',
+                pointBackgroundColor: '#b7b7b7',
                     }, ]
         },
         options: {
@@ -64,8 +64,7 @@
                         drawBorder: false
                     },
                     scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
+                        display: false
                     }
                         } ]
             },
@@ -87,34 +86,35 @@
             defaultFontFamily: 'Montserrat',
             datasets: [ {
                 label: "int1",
-                data: [ 0, 30, 10, 67, 50, 63, 10 ],
+                data: [ 1, 3, 2, 4, 1, 3, 3],
                 backgroundColor: 'transparent',
-                borderColor: 'rgba(220,53,69,0.75)',
+                borderColor: '#ff9900',
                 borderWidth: 3,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: 'rgba(220,53,69,0.75)',
+                pointBackgroundColor: '#ff9900',
                     }, {
                 label: "int2",
-                data: [ 0, 50, 40, 80, 40, 79, 80 ],
+                data: [ 2, 1, 3, 4, 3, 1, 4],
                 backgroundColor: 'transparent',
-                borderColor: 'rgba(40,167,69,0.75)',
+                borderColor: '#434343',
                 borderWidth: 3,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: 'rgba(40,167,69,0.75)',
+                pointBackgroundColor: '#434343',
                     }, {
+                
                 label: "int3",
-                data: [ 0, 30, 26, 18, 33, 27, 50],
+                data: [ 0, 2, 1, 5, 3, 2, 7],
                 backgroundColor: 'transparent',
-                borderColor: 'rgba(40,167,69,0.75)',
+                borderColor: '#ff0000',
                 borderWidth: 3,
                 pointStyle: 'circle',
                 pointRadius: 5,
                 pointBorderColor: 'transparent',
-                pointBackgroundColor: 'rgba(40,167,69,0.75)',        
+                pointBackgroundColor: '#ff0000',        
                     } ]
         },
         options: {
@@ -157,8 +157,7 @@
                         drawBorder: false
                     },
                     scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
+                        display: false
                     }
                         } ]
             },
@@ -169,6 +168,7 @@
         }
     } );
 
+    
     //line chart
     var ctx = document.getElementById( "lineChart" );
     ctx.height = 150;
@@ -179,17 +179,17 @@
             datasets: [
                 {
                     label: "My First dataset",
-                    borderColor: "rgba(0,0,0,.09)",
+                    borderColor: "#b7b7b7",
                     borderWidth: "1",
-                    backgroundColor: "rgba(0,0,0,.07)",
+                    backgroundColor: "rgba(0,103,255,.15)",
                     data: [ 22, 44, 67, 43, 76, 45, 12 ]
                             },
                 {
                     label: "My Second dataset",
-                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    borderColor: "#ff9900",
                     borderWidth: "1",
-                    backgroundColor: "rgba(0, 123, 255, 0.5)",
-                    pointHighlightStroke: "rgba(26,179,148,1)",
+                    backgroundColor: "#f9cb9c",
+                    pointHighlightStroke: "#ff9900",
                     data: [ 16, 32, 18, 26, 42, 33, 44 ]
                             }
                         ]
@@ -220,16 +220,16 @@
                 {
                     label: "Opened",
                     data: [ 15, 7, 9, 5, 13, 8, 9 ],
-                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    borderColor: "#ff0000",
                     borderWidth: "0",
-                    backgroundColor: "rgba(0, 123, 255, 0.5)"
+                    backgroundColor: "#ff0000"
                             },
                 {
                     label: "Closed",
                     data: [ 11, 7, 8, 5, 12, 7, 8 ],
-                    borderColor: "rgba(0,0,0,0.09)",
+                    borderColor: '#434343',
                     borderWidth: "0",
-                    backgroundColor: "rgba(0,0,0,0.07)"
+                    backgroundColor: "#434343"
                             }
                         ]
         },
@@ -240,6 +240,9 @@
                         beginAtZero: true
                     }
                                 } ]
+            },
+            legend: {
+                position: 'top'
             }
         }
     } );
@@ -314,6 +317,40 @@
         }
     } );
 
+    //Circle chart
+    var ctx = document.getElementById( "circleChart" );
+    ctx.height = 200;
+    var myChart = new Chart( ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [ {
+                data: [ 45, 25, 20, 10 ],
+                backgroundColor: [
+                                    "#ff9900",
+                                    "#434343",
+                                    "#ff0000",
+                                    "#b7b7b7"
+                                ],
+                hoverBackgroundColor: [
+                                    "#ff9900",
+                                    "#434343",
+                                    "#ff0000",
+                                    "#b7b7b7"
+                                ]
+
+                            } ],
+            labels: [
+                            "Sprint 1",
+                            "Sprint 2",
+                            "Sprint 3",
+                            "Sprint 4"
+                        ]
+        },
+        options: {
+            responsive: true
+        }
+    } );
+
     //doughut chart
     var ctx = document.getElementById( "doughutChart" );
     ctx.height = 150;
@@ -323,24 +360,24 @@
             datasets: [ {
                 data: [ 45, 25, 20, 10 ],
                 backgroundColor: [
-                                    "rgba(0, 123, 255,0.9)",
-                                    "rgba(0, 123, 255,0.7)",
-                                    "rgba(0, 123, 255,0.5)",
-                                    "rgba(0,0,0,0.07)"
+                                    "#ff9900",
+                                    "#434343",
+                                    "#ff0000",
+                                    "#b7b7b7"
                                 ],
                 hoverBackgroundColor: [
-                                    "rgba(0, 123, 255,0.9)",
-                                    "rgba(0, 123, 255,0.7)",
-                                    "rgba(0, 123, 255,0.5)",
-                                    "rgba(0,0,0,0.07)"
+                                    "#ff9900",
+                                    "#434343",
+                                    "#ff0000",
+                                    "#b7b7b7"
                                 ]
 
                             } ],
             labels: [
-                            "green",
-                            "green",
-                            "green",
-                            "green"
+                            "Sprint 1",
+                            "Sprint 2",
+                            "Sprint 3",
+                            "Sprint 4"
                         ]
         },
         options: {
@@ -378,23 +415,54 @@
     } );
 
     // single bar chart
-    var ctx = document.getElementById( "singelBarChart" );
+    var ctx = document.getElementById( "singleBarChart" );
     ctx.height = 150;
     var myChart = new Chart( ctx, {
         type: 'bar',
         data: {
-            labels: [ "Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat" ],
+            labels: [ "Int1", "Int2", "Int3", "Int4", "Int5" ],
             datasets: [
                 {
-                    label: "My First dataset",
-                    data: [ 40, 55, 75, 81, 56, 55, 40 ],
-                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    //label: false,
+                    data: [ 4, 3, 5, 6, 2 ],
+                    borderColor: "#ff9900",
                     borderWidth: "0",
-                    backgroundColor: "rgba(0, 123, 255, 0.5)"
-                            }
-                        ]
+                    backgroundColor: "#ff9900"
+                    } ]
         },
         options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [ {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                                } ]
+            }
+        }
+    } );
+
+    var ctx = document.getElementById( "singleBarChart2" );
+    ctx.height = 150;
+    var myChart = new Chart( ctx, {
+        type: 'bar',
+        data: {
+            labels: [ "Int1", "Int2", "Int3", "Int4", "Int5" ],
+            datasets: [
+                {
+                    //label: false,
+                    data: [ 4, 3, 5, 6, 2 ],
+                    borderColor: "#b7b7b7",
+                    borderWidth: "0",
+                    backgroundColor: "#b7b7b7"
+                    } ]
+        },
+        options: {
+            legend: {
+                display: false
+            },
             scales: {
                 yAxes: [ {
                     ticks: {
