@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def suport(request):
+    return render(request, 'suport.html', {})

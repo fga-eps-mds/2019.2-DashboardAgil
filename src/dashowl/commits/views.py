@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from github import Github
-
+from .models import Commit
 # from .models import Usuario
-
-# Create your views here.
 
 
 def commits(request):
@@ -19,9 +17,25 @@ def commits(request):
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
     commits = repo.get_commits()
     totalCommits = commits.totalCount
-    # commit = repo.get_commit(sha="7c8c4aba33040cf9865a40703900ca797bc816b4")
+
+    # for commit in commits:
+    #     commit_model = Commit
+    #     commit_model.shaCommit = commit.sha
+    #     commit_model.author = commit.author.name
+    #     commit_model.publish()
+
     # print(commit.commit.author.date)
+
 
 
     return render(request, 'commits.html', {'commit':commits, 'total':totalCommits})
     
+# def saveCommits(request):
+#     commit_form = CommitForm(request.POST)
+#     if commit_form.is_valid():
+#         commit_form.save()
+
+#     context = {
+#         'commit_form' : commit_form
+#     }
+#     return render(request, 'save_commits.html', context=context)
