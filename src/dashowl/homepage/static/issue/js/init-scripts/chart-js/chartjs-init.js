@@ -215,7 +215,7 @@
             datasets: [
                 {
                     label: "My First dataset",
-                    data: [ 1, 59, 80, 81, 56, 55, 40 ],
+                    data: [ 10, 59, 80, 81, 56, 55, 40 ],
                     borderColor: "rgba(0, 123, 255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0, 123, 255, 0.5)"
@@ -240,7 +240,7 @@
         }
     } );
 
-    /*radar chart
+    //radar chart
     var ctx = document.getElementById( "radarChart" );
     ctx.height = 160;
     var myChart = new Chart( ctx, {
@@ -276,7 +276,7 @@
         }
     } );
 
-
+    /*
     //pie chart
     var ctx = document.getElementById( "pieChart" );
     ctx.height = 300;
