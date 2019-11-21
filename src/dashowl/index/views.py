@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import requests
 from github import Github
+from django.contrib.sessions.backends.db import SessionStore
 
 def index (request):
 
@@ -12,10 +13,24 @@ def index (request):
     for i in range(13,53):
         token += t[i]
 
-    g = Github(token)
-    user  = g.get_user()
-    login = user.login
+    if(token[0].isdigit()):
 
+
+
+        g = Github(token)
+        user  = g.get_user()
+        login = user.login
+
+        s = SessionStore()
+        s['login'] = login
+        s.create()
+        s = SessionStore(session_key = s.session_key)
+
+
+        
+
+        return render(request, 'index.html', {"token": s['login']})
     
+    else:
 
-    return render(request, 'index.html', {"token": })
+        return render(request, 'index.html', {})
