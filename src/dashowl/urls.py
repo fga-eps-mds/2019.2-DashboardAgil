@@ -26,6 +26,11 @@ urlpatterns = [
     path('commits/', include('dashowl.commits.urls')),
     path('issues/', include('dashowl.issues.urls')),
     path('sprints/', include('dashowl.sprints.urls')),
+    path('repositories/', include('dashowl.repositories.urls')),
+    path('contact/', include('dashowl.contact.urls')),
+    path('invite/', include('dashowl.invite.urls')),
+    path('politics/', include('dashowl.politics.urls')),
+    path('suport/', include('dashowl.suport.urls'))
 
 ]
 

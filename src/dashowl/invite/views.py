@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def invite(request):
+    return render(request, 'invite.html', {})
