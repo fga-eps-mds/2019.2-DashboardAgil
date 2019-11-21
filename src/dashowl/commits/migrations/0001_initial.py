@@ -16,7 +16,6 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('shaCommit', models.CharField(max_length=60)),
-                ('totalCommits', models.IntegerField()),
                 ('author', models.CharField(max_length=50)),
             ],
         ),
