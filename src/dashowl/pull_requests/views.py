@@ -13,9 +13,15 @@ def get_PullRuequests (request):
     
     g = Github("joao15victor08", "j15v08o19m99")
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
-    pulls_open = repo.get_pulls(state = "open")
-    pulls_closed = repo.get_pulls(state = "closed")
-    total = pulls_open.totalCount
-    total+=pulls_closed.totalCount
 
-    return render(request, 'pull_requests.html', {'pulls_open': pulls_open,'pulls_closed':pulls_closed,'total': total})
+    pulls_open = repo.get_pulls(state = "open")
+    total_open = pulls_open.totalCount
+
+    pulls_closed = repo.get_pulls(state = "closed")
+    total_closed = pulls_closed.totalCount
+
+    total = total_open + total_closed
+
+    #comments = repo.comments.value(state = "comments")
+
+    return render(request, 'pull_requests.html', {'pulls_open': pulls_open, 'total_open': total_open, 'pulls_closed':pulls_closed,'total': total})

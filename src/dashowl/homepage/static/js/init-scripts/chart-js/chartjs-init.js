@@ -319,7 +319,7 @@
 
     //Circle chart
     var ctx = document.getElementById( "circleChart" );
-    ctx.height = 200;
+    ctx.height = 150;
     var myChart = new Chart( ctx, {
         type: 'doughnut',
         data: {
@@ -347,7 +347,11 @@
                         ]
         },
         options: {
-            responsive: true
+            responsive: true,
+            legend: {
+                display: true,
+                position: 'left'
+            }
         }
     } );
 

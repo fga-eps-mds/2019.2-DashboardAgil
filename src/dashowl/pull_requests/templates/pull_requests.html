@@ -164,14 +164,7 @@
                     <div class="col-lg-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR by sprint</h4>
-                                <canvas id="team-chart"></canvas>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">Total team PR</br></h4>
+                                <h4 class="mb-3">Total repository PR</br></h4>
                                 <div>
                                     {% for i in pulls %}
                                     <div>
@@ -187,6 +180,14 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR by sprint</h4>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                        
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mb-3">PR scored</h4>
@@ -198,8 +199,8 @@
                     <div class="col-lg-6">  
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR comented</h4>
-                                <canvas id="singleBarChart"></canvas>
+                                <h4 class="mb-3">PR commented</h4>
+                                <canvas id="singleBarChart"></canvas>                                
                             </div>
                         </div>
                     </div> <!-- /# column -->                         
