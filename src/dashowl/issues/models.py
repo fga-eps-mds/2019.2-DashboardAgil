@@ -1,9 +1,12 @@
 from django.db import models
 
-class Commit(models.Model):
+class Issues(models.Model):
     # repoID = models.ForeignKey(Repository)
-    issueID = models.IntegerField()
-    totalIssues = models.IntegerField()
+    issue_number = models.IntegerField()
+    state = models.IntegerField()
+    date = models.DateTimeField()
+
 
     def publish(self):
         self.save()
+
