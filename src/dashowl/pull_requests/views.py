@@ -20,8 +20,8 @@ def get_PullRuequests (request):
     total += pulls_closed.totalCount
 
     # salvar no banco
-    for pull_request in repo.get_pulls():
-        pull_requests_model = Pull_request(pull_request.number, pull_request.state, pull_request.created_at, pull_request.closed_at)
+    for pull_request in repo.get_pulls(state='all'):
+        pull_requests_model = Pull_request.objects.create(pull_request_number=pull_request.number, state=pull_request.state, open_date=pull_request.created_at)
         pull_requests_model.publish()
     # salvar no banco
 
