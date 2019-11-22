@@ -2,9 +2,9 @@ from django.db import models
 
 class Commit(models.Model):
     # repoID = models.ForeignKey(Repository)
-    shaCommit = models.CharField(max_length = 60)
-    totalCommits = models.IntegerField()
+    shaCommit = models.CharField(max_length=60)
     author = models.CharField(max_length=50)
+    date = models.DateTimeField()
 
     def publish(self):
         self.save()

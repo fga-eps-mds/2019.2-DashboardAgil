@@ -2,10 +2,9 @@ from django.db import models
 
 class Pull_request(models.Model):
     # repoID = models.ForeignKey(Repository)
-    pullRequestID = models.IntegerField()
-    openedPullRequests = models.IntegerField()
-    closedPullRequests = models.IntegerField()
-    totalPullRequests = models.IntegerField() 
+    pull_request_number = models.IntegerField()
+    state = models.CharField(max_length=20)
+    open_date = models.DateTimeField()
 
     def publish(self):
         self.save()

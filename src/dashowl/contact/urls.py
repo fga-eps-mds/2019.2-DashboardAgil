@@ -1,8 +1,6 @@
 from django.urls import path
-
 from . import views
 
 urlpatterns = [
-    path('', views.get_commits, name='commits')
-
+    path('', views.contact, name='contact'),
 ]
