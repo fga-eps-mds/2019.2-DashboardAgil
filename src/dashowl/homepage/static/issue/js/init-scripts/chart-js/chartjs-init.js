@@ -215,14 +215,14 @@
             datasets: [
                 {
                     label: "My First dataset",
-                    data: [ 10, 59, 80, 81, 56, 55, 40 ],
+                    data: [ 50, 10, 80, 81, 56, 55, 40 ],
                     borderColor: "rgba(0, 123, 255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0, 123, 255, 0.5)"
                             },
                 {
                     label: "My Second dataset",
-                    data: [ 2, 48, 40, 19, 86, 27, 90 ],
+                    data: [ 10, 48, 40, 19, 86, 27, 90 ],
                     borderColor: "rgba(0,0,0,0.09)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0,0,0,0.07)"
@@ -268,7 +268,7 @@
             legend: {
                 position: 'top'
             },
-            scale: {
+            scale: {    
                 ticks: {
                     beginAtZero: true
                 }
