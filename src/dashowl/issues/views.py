@@ -25,11 +25,10 @@ def get_issues(request):
 #   ISSUES CREATOR 
     creator_issues = repo.get_issues(creator='Matheus-AM')#precisasmos de uma variavel de usuario
 
-#salvar na model begin
-    for issue in repo.get_issues():
-        issues_model = Issues(issue.number, issue.state, issue.created_at)
-        # issues_model.publish()
-#salvar na model end
+    for issue in repo.get_issues(state='all'):
+        issues_model = Issues.objects.create(issue_number=issue.number, state=issue.state, date=issue.created_at)
+        issues_model.publish()
+
 
 #Retorna o valor de cada issue 
     req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=02a009e06e4926091eadce6ef1dffc9f9b3f7b5bd417b116ea90c55bf6fb68dda7eb367ab6544c07')     
