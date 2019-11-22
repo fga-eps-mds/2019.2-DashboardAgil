@@ -2,35 +2,50 @@ from django.shortcuts import render
 import requests
 from github import Github
 from django.contrib.sessions.backends.db import SessionStore
+from .models import Usuario
 
 def index (request):
+    if 'login' not in request.session:
+        if request.method == 'GET' and 'code' in request.GET:
 
-    code  = request.GET["code"]
-    r = requests.post("https://github.com/login/oauth/access_token?client_id=1b10677ef95a29f3fdf2&client_secret=9e57bce3d353b44c84f03af3101daa93a1fbb33a&code="+code)
+            code  = request.GET["code"]
 
-    t = r.text
-    token = ""
-    for i in range(13,53):
-        token += t[i]
+            if code:
 
-    if(token[0].isdigit()):
+                r = requests.post("https://github.com/login/oauth/access_token?client_id=1b10677ef95a29f3fdf2&client_secret=9e57bce3d353b44c84f03af3101daa93a1fbb33a&code="+code)
 
-
-
-        g = Github(token)
-        user  = g.get_user()
-        login = user.login
-
-        s = SessionStore()
-        s['login'] = login
-        s.create()
-        s = SessionStore(session_key = s.session_key)
+                t = r.text
+                token = ""
+                for i in range(13,53):
+                    token += t[i]
 
 
-        
+                if(token[0].isdigit()):
 
-        return render(request, 'index.html', {"token": s['login']})
-    
+
+
+                    g = Github(token)
+                    user  = g.get_user()
+
+                    u = Usuario.objects.create(login = user.login)
+
+                    user_login = user.login
+
+                    request.session['login'] = user_login
+                    request.session['token'] = token
+
+
+                    return render(request, 'index.html', {})
+                
+                else:
+                    token_nd = 'nao e digito'
+                    return render(request, 'index_s_token.html', {"token": token_nd})
+            else:
+                code_nd = 'code nao existe'
+                return render(request, 'index_s_token.html', {"token": code_nd})
+        else:
+            sem_code = 'sem code'
+            return render(request, 'index_s_token.html', {"token": sem_code})
     else:
-
+        # session_set = 'session seteda'
         return render(request, 'index.html', {})
