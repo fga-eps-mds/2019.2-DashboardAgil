@@ -10,12 +10,10 @@ def get_milestone(request):
     open_milestone = repo.get_milestones(state='open')
 
     # salvar no banco
-    for milestone in repo.get_milestones(state='open'):
+    for milestone in repo.get_milestones(state='all'):
         milestone_model = Milestones.objects.create(milestoneID=milestone.id, state=milestone.state, title=milestone.title, due_on=milestone.due_on)
         milestone_model.publish()
-    for milestone in repo.get_milestones(state='close'):
-        milestone_model = Milestones.objects.create(milestoneID=milestone.id, state=milestone.state, title=milestone.title, due_on=milestone.due_on)
-        milestone_model.publish()
+
     # salvar no banco
 
     return render(request, 'milestone.html', {'milestone': open_milestone})
