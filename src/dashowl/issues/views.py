@@ -2,7 +2,8 @@ from django.shortcuts import render
 from github import Github
 import requests
 import json
-from .models import Issues
+from .models import Issue
+from .. import secret
 
 
 #É nescessario passar para as todas essas funcoes o request ?
@@ -11,7 +12,7 @@ from .models import Issues
 
 def get_issues(request):
 
-    g = Github("joao15victor08", "j15v08o19m99")
+    g = Github(secret.login, secret.password)
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil-Wiki")
     #   ISSUES ABERTAS 
     open_issues = repo.get_issues(state='open')
@@ -26,7 +27,10 @@ def get_issues(request):
     creator_issues = repo.get_issues(creator='Matheus-AM')#precisasmos de uma variavel de usuario
 
     for issue in repo.get_issues(state='all'):
-        issues_model = Issues.objects.create(issue_number=issue.number, state=issue.state, date=issue.created_at)
+        issues_model = Issue.objects.create(issue_number=issue.number,
+                                            state=issue.state,
+                                            author=issue.user.login,
+                                            date=issue.created_at)
         issues_model.publish()
 
 
