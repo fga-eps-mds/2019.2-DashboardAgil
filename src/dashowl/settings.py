@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashowl.commits',
-    'dashowl.pull_requests',
-    'dashowl.milestone',
+    
+    
+    
     'dashowl.index',
-     'dashowl.issues',
-    'dashowl.sprints'
+     'dashowl.issues'
+    
    
 ]
 

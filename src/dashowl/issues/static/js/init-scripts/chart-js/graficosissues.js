@@ -214,14 +214,14 @@
             labels: [ "January", "February", "March", "April", "May", "June", "July" ],
             datasets: [
                 {
-                    label: "My First dataset",
-                    data: [ 10, 59, 80, 81, 56, 55, 40 ],
+                    label: "Abertas",
+                    data: [ 100, 59, 80, 81, 56, 55, 40 ],
                     borderColor: "rgba(0, 123, 255, 0.9)",
                     borderWidth: "0",
                     backgroundColor: "rgba(0, 123, 255, 0.5)"
                             },
                 {
-                    label: "My Second dataset",
+                    label: "Fechadas",
                     data: [ 28, 48, 40, 19, 86, 27, 90 ],
                     borderColor: "rgba(0,0,0,0.09)",
                     borderWidth: "0",

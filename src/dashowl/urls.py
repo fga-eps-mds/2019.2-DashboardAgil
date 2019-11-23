@@ -20,12 +20,11 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('milestone/', include('dashowl.milestone.urls')),
+    
     path('index/', include('dashowl.index.urls')),
-    path('pullrequests/', include('dashowl.pull_requests.urls')),
-    path('commits/', include('dashowl.commits.urls')),
+    
     path('issues/', include('dashowl.issues.urls')),
-    path('sprints/', include('dashowl.sprints.urls')),
+    
 
 ]
 
