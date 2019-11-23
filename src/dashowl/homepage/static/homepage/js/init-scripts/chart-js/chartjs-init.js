@@ -7,7 +7,7 @@
     var myChart = new Chart( ctx, {
         type: 'line',
         data: {
-            labels: [ "12", "2011", "2012", "2013", "2014", "2015", "2016" ],
+            labels: [ "2010", "2011", "2012", "2013", "2014", "2015", "2016" ],
             type: 'line',
             defaultFontFamily: 'Montserrat',
             datasets: [ {
@@ -284,7 +284,7 @@
         type: 'pie',
         data: {
             datasets: [ {
-                data: [ 45, 25, 20, 10 ],
+                data: [ 100, 25, 20, 10 ],
                 backgroundColor: [
                                     "rgba(0, 123, 255,0.9)",
                                     "rgba(0, 123, 255,0.7)",
