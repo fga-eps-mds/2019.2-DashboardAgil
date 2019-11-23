@@ -7,3 +7,4 @@ pycache/
 src/dashowl/__pycache__/
 **/__pycache__/**
 **/migrations/**
+src/dashowl/secret.py
