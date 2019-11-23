@@ -1,8 +1,10 @@
 from django.db import models
-from django.utils import timezone
+
 
 class Milestones(models.Model):
     # repoID = models.ForeignKey(Repository)
+    milestoneID = models.IntegerField()
+    state = models.CharField(max_length=20)
     title = models.CharField(max_length=200)
     due_on = models.DateTimeField()
 
