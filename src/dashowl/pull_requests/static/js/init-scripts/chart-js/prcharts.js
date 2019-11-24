@@ -168,7 +168,7 @@
         }
     } );
 
-    
+    /*
     //line chart
     var ctx = document.getElementById( "lineChart" );
     ctx.height = 150;
@@ -206,7 +206,7 @@
             }
 
         }
-    } );
+    } ); */
 
 
     //bar chart
@@ -247,6 +247,7 @@
         }
     } );
 
+    /*
     //radar chart
     var ctx = document.getElementById( "radarChart" );
     ctx.height = 160;
@@ -281,7 +282,7 @@
                 }
             }
         }
-    } );
+    } ); */
 
     //Circle chart
     var ctx = document.getElementById( "circleChart" );
@@ -321,6 +322,7 @@
         }
     } );
 
+    /*
     //doughut chart
     var ctx = document.getElementById( "doughutChart" );
     ctx.height = 150;
@@ -353,8 +355,9 @@
         options: {
             responsive: true
         }
-    } );
+    } ); */
 
+    /*
     //polar chart
     var ctx = document.getElementById( "polarChart" );
     ctx.height = 150;
@@ -382,7 +385,7 @@
         options: {
             responsive: true
         }
-    } );
+    } ); */
 
     // single bar chart
     var ctx = document.getElementById( "singleBarChart" );
