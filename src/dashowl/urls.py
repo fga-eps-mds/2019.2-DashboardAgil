@@ -16,8 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
+
+    
+    path('index/', include('dashowl.index.urls')),
+    
+    path('issues/', include('dashowl.issues.urls')),
+    
+=======
     path('milestone', include('dashowl.milestone.urls')),
     path('', include('dashowl.index.urls')),
     path('homepage/', include('dashowl.homepage.urls')),
@@ -30,6 +39,7 @@ urlpatterns = [
     path('invite/', include('dashowl.invite.urls')),
     path('politics/', include('dashowl.politics.urls')),
     path('suport/', include('dashowl.suport.urls'))
+>>>>>>> devel
 
 ]
 
