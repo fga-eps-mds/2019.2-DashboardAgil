@@ -112,7 +112,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="mb-3">Issues abertas/fechadas</h3>
+                                    <h3 class="mb-3">Issues status</h3>
                                     <canvas id="barChart"></canvas>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                         <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h3 class="mb-3">Issues por colaborador</h3>
+                                        <h3 class="mb-3">Issues by collaborator</h3>
                                         <canvas id="doughutChart"></canvas>
                                     </div>
                                 </div>
@@ -129,9 +129,47 @@
     
                     </div>
     
-                 </div>
-    
-         </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Issues</h3>
+                        <div>{%for i in open_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Issues</h3>
+                        <div>{%for i in closed_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">All Issues</h3>
+                        <div>{%for i in all_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Creator Issues</h3>
+                        <div>{%for i in creator_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>    
+            </div>
             <!----
             <div class="content mt-3">
             
@@ -229,32 +267,6 @@
                 </div>
             <!-</div><!- .content -->
 
-
-
-            <h1>Open Issues</h1>
-            <div>{%for i in open_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>Closed Issues</h1>
-            <div>{%for i in closed_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>All Issues</h1>
-            <div>{%for i in all_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>Creator Issues</h1>
-            <div>{%for i in creator_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
             <!--<h1>Point Issues</h1>
             <div>{%for i in point_issue%}
                 <h2>{{i}}</h2>
