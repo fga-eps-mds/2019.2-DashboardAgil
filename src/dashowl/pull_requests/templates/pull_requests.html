@@ -131,16 +131,17 @@
                     </div>
             
                         <div>
-                            {% for i in pulls %}
+                            {% for pull_request in pull_requests %}
                             <div>
-                                <h4>{{ i.title }}</h4>
-                                <h4>{{ i.user }}</h4>
+                                <h4>{{ pull_request.pull_request_number }}</h4>
+                                <h4>{{ pull_request.state }}</h4>
+                                <h4>{{ pull_request.author }}</h4>
                             </div>
                             {% endfor %}
                         </div>
             
                         <div>
-                            <h4>{{ total }}</h4>
+                            <h4>{{ pull_requests.count }}</h4>
                         </div>
                     </div>
                  </div>
