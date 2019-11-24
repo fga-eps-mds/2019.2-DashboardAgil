@@ -37,15 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
-    
+    'dashowl.commits',
+    'dashowl.homepage',
+    'dashowl.pull_requests',
+    'dashowl.milestone',
     'dashowl.index',
-<<<<<<< HEAD
-     'dashowl.issues'
-    
-   
-=======
     'dashowl.sprints',
     'dashowl.issues',
     'dashowl.repositories',
@@ -53,7 +49,6 @@ INSTALLED_APPS = [
     'dashowl.suport',
     'dashowl.politics',
     'dashowl.contact'
->>>>>>> devel
 ]
 
 MIDDLEWARE = [
