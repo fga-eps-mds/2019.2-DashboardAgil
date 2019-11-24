@@ -25,7 +25,7 @@ SECRET_KEY = '3!31ce=l8&h$-7g0st_r1cp14=$0c%v^989xy0u$oj-7yabz1t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,7 +43,12 @@ INSTALLED_APPS = [
     'dashowl.milestone',
     'dashowl.index',
     'dashowl.sprints',
-    'dashowl.issues'
+    'dashowl.issues',
+    'dashowl.repositories',
+    'dashowl.invite',
+    'dashowl.suport',
+    'dashowl.politics',
+    'dashowl.contact'
 ]
 
 MIDDLEWARE = [
