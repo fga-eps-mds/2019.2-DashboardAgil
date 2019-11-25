@@ -15,7 +15,20 @@ def get_commits(request):
 
     if bool(Commit.objects.filter(repository__repositoryID=repo.id)):
         commits = Commit.objects.filter(repository__repositoryID=repo.id)
+        # refresh_commit(commits[0].repository)
     else:
         raise TypeError
 
     return render(request, 'commits.html', {'commits': commits})
+
+
+def refresh_commit(repository):
+    Commit.objects.all().exclude(repository=repository)
+    g = Github(login_or_token=secret.login, password=secret.password)
+    repo = g.get_repo(full_name_or_id=repository.repositoryID)
+    for commit in repo.get_commits():
+        commit_model = Commit.objects.create(repository=repository,
+                                             sha_commit=commit.sha,
+                                             author=commit.commit.author.name,
+                                             date=commit.commit.author.date)
+        commit_model.publish()
