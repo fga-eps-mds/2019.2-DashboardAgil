@@ -1294,7 +1294,7 @@ body.open .navbar .navbar-brand.hidden {
       content: "/\00a0"; }
 
 .right-panel header.header {
-  background: #272c33;
+  background: #fff;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
   clear: both;
   display: inline-block;
@@ -1305,7 +1305,7 @@ body.open .navbar .navbar-brand.hidden {
   margin-left: -210px; }
 
 header.fixed-top {
-  background: #272c33;
+  background: #fff;
   padding: 20px; }
 
 .header-menu .col-sm-7 {

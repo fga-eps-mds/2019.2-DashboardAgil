@@ -58,8 +58,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
-                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
@@ -112,7 +110,7 @@
                         <div class="col-lg-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="mb-3">Issues abertas/fechadas</h3>
+                                    <h3 class="mb-3">Issues status</h3>
                                     <canvas id="barChart"></canvas>
                                 </div>
                             </div>
@@ -121,7 +119,7 @@
                         <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h3 class="mb-3">Issues por colaborador</h3>
+                                        <h3 class="mb-3">Issues by collaborator</h3>
                                         <canvas id="doughutChart"></canvas>
                                     </div>
                                 </div>
@@ -129,9 +127,47 @@
     
                     </div>
     
-                 </div>
-    
-         </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Issues</h3>
+                        <div>{%for i in open_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Issues</h3>
+                        <div>{%for i in closed_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">All Issues</h3>
+                        <div>{%for i in all_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Creator Issues</h3>
+                        <div>{%for i in creator_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>    
+            </div>
             <!----
             <div class="content mt-3">
             
@@ -229,32 +265,6 @@
                 </div>
             <!-</div><!- .content -->
 
-
-
-            <h1>Open Issues</h1>
-            <div>{%for i in open_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>Closed Issues</h1>
-            <div>{%for i in closed_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>All Issues</h1>
-            <div>{%for i in all_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
-            <h1>Creator Issues</h1>
-            <div>{%for i in creator_issues%}
-                <h2>{{i}}</h2>
-                {%endfor%}
-            </div>
-            <br/>
             <!--<h1>Point Issues</h1>
             <div>{%for i in point_issue%}
                 <h2>{{i}}</h2>

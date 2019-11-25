@@ -42,8 +42,6 @@
                     usePointStyle: true,
                     fontFamily: 'Montserrat',
                 },
-
-
             },
             scales: {
                 xAxes: [ {
@@ -74,8 +72,6 @@
             }
         }
     } );
-
-
     //Sales chart
     var ctx = document.getElementById( "sales-chart" );
     ctx.height = 150;
@@ -109,7 +105,6 @@
         },
         options: {
             responsive: true,
-
             tooltips: {
                 mode: 'index',
                 titleFontSize: 12,
@@ -158,13 +153,6 @@
             }
         }
     } );
-
-
-
-
-
-
-
     //line chart
     var ctx = document.getElementById( "lineChart" );
     ctx.height = 150;
@@ -200,32 +188,30 @@
                 mode: 'nearest',
                 intersect: true
             }
-
         }
     } );
-
 */
-    //bar chart
+    //bar charts
     var ctx = document.getElementById( "barChart" );
     //    ctx.height = 200;
     var myChart = new Chart( ctx, {
         type: 'bar',
         data: {
-            labels: [ "January", "February", "March", "April", "May", "June", "July" ],
+            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
             datasets: [
                 {
-                    label: "Abertas",
-                    data: [ 50, 59, 80, 81, 56, 55, 40 ],
-                    borderColor: "rgba(0, 123, 255, 0.9)",
+                    label: "Open",
+                    data: [ 100, 59, 80, 81, 56, 55, 40 ],
+                    borderColor: "#ff0000",
                     borderWidth: "0",
-                    backgroundColor: "rgba(0, 123, 255, 0.5)"
+                    backgroundColor: "#ff0000"
                             },
                 {
-                    label: "Fechadas",
+                    label: "Closed",
                     data: [ 28, 48, 40, 19, 86, 27, 90 ],
-                    borderColor: "rgba(0,0,0,0.09)",
+                    borderColor: "#434343",
                     borderWidth: "0",
-                    backgroundColor: "rgba(0,0,0,0.07)"
+                    backgroundColor: "#434343"
                             }
                         ]
         },
@@ -276,7 +262,6 @@
             }
         }
     } );
-
     
     //pie chart
     var ctx = document.getElementById( "pieChart" );
@@ -298,7 +283,6 @@
                                     "rgba(0, 123, 255,0.5)",
                                     "rgba(0,0,0,0.07)"
                                 ]
-
                             } ],
             labels: [
                             "green",
@@ -318,26 +302,26 @@
         type: 'doughnut',
         data: {
             datasets: [ {
-                data: [ 45, 25, 20, 10 ],
+                data: [ 40, 25, 20, 10 ],
                 backgroundColor: [
-                                    "rgba(0, 123, 255,0.9)",
-                                    "rgba(0, 123, 255,0.7)",
-                                    "rgba(0, 123, 255,0.5)",
-                                    "rgba(0,0,0,0.07)"
+                                    "#ff0000",
+                                    "#434343",
+                                    "#b7b7b7",
+                                    "#ff9900"
                                 ],
                 hoverBackgroundColor: [
-                                    "rgba(0, 123, 255,0.9)",
-                                    "rgba(0, 123, 255,0.7)",
-                                    "rgba(0, 123, 255,0.5)",
-                                    "rgba(0,0,0,0.07)"
+                                    "#ff0000",
+                                    "#434343",
+                                    "#b7b7b7",
+                                    "#ff9900"
                                 ]
 
                             } ],
             labels: [
-                            "green",
-                            "green",
-                            "green",
-                            "green"
+                            "Kalebe",
+                            "Aila",
+                            "Matheus",
+                            "João"
                         ]
         },
         options: {
@@ -360,7 +344,6 @@
                                     "rgba(0,0,0,0.2)",
                                     "rgba(0, 123, 255,0.5)"
                                 ]
-
                             } ],
             labels: [
                             "green",
@@ -373,7 +356,6 @@
             responsive: true
         }
     } );
-
     // single bar chart
     var ctx = document.getElementById( "singelBarChart" );
     ctx.height = 150;
@@ -401,7 +383,6 @@
             }
         }
     } );
-
 */  
 
 
