@@ -205,7 +205,7 @@
     } );
 
 */
-    //bar chart
+    //bar charts
     var ctx = document.getElementById( "barChart" );
     //    ctx.height = 200;
     var myChart = new Chart( ctx, {
