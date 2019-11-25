@@ -15,6 +15,7 @@ def get_PullRuequests (request):
     
     g = Github(secret.login, secret.password)
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
+
     pulls_open = repo.get_pulls(state="open")
     pulls_closed = repo.get_pulls(state="closed")
     total = pulls_open.totalCount
