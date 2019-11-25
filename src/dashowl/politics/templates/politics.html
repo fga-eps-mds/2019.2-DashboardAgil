@@ -64,8 +64,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
-                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
@@ -120,132 +118,121 @@
         </header><!-- /header -->
         <!-- Header-->
 
-        <div class="content mt-3">
-          <div class="intro-section" id="home-section">
-            
+        <div class="breadcrumbs">
+          <div class="col-sm-4">
+              <div class="page-header float-left">
+                  <div class="page-title">
+                      <h1>About us</h1>
+                  </div>
+              </div>
+          </div>
+          <div class="col-sm-8">
+              <div class="page-header float-right">
+                  <div class="page-title">
+                      <ol class="breadcrumb text-right">
+                          <li class="active">Politics</li>
+                      </ol>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <div class="content mt-6">
+          <div class="intro-section" id="home-section">            
             <div class="slide-1" style="background: white" data-stellar-background-ratio="">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-12">
-                    <div class="row align-items-center">
-                      <div class="col-lg-6 mb-4">
-                        <p class="mb-4"></p>
-                        <h3  data-aos="fade-up" data-aos-delay="100">Politíca de privacidade</h3>
-                        <p class="mb-4">
-                        <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">  
-                          Nossa plataforma foi criada com o intuito de acompanhar
-                        </p><br/><br/><br/>
-                        <h3  data-aos="fade-up" data-aos-delay="100">Politícas de contribuíção</h3>
+                        <p class="mb-8"></p>
+                        <h2  data-aos="fade-up" data-aos-delay="100">Políticas de privacidade</h2>
+                        <p class="mb-12">
+                        <p class="mb-8"  data-aos="fade-up" data-aos-delay="200">  
+                            Contribua conosco! Para nos ajudar a aperfeiçõar basta clonar nosso
+                            <a href="https://github.com/fga-eps-mds/2019.2-DashboardAgil"><u>repositório</u></a> e seguir as políticas 
+                            de contribuição listadas abaixo.
+                        </p><br/>
+                        <h5  data-aos="fade-up" data-aos-delay="100">1. Commits</h5>
                         <p class="mb-4"> 
                         <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                          Entre com seu login do GitHub, selecione o repositório que deseja analisar e pronto!
+                            Devem ser escritos em inglês na forma infinitiva contendo 
+                            uma breve decrição do que foi modificado.<br/><br/>                            
+                            <b>Ex:<br/><br/> $ git commit -m "this is an example". </b><br/><br/>                            
+                            Caso o commit tenha sido feito em cooperação com alguem, 
+                            deve ser feita a co-autoria. <br/><br/>
+                            <b>Ex:<br/><br/> $ git commit -m "this is an example</b><br/><br/>
+                            <b>$ Co-authored-by: name <name@example.com></b> <br/><br/>
+                            <b>$ Co-authored-by: another-name <another-name@example.com>" </b><br/>                            
                         </p>
                         <!--<p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill">Admission Now</a></p>-->
                         <p class="mb-5"> 
-                        </p><br/><br/><br/>
-                        <h1  data-aos="fade-up" data-aos-delay="100">Dashboard Ágil</h1>
+                        </p>
+                        <h5  data-aos="fade-up" data-aos-delay="100">2. Pull requests</h5>
                         <p class="mb-4"> 
                         <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                          Nossas métricas para a criação do dashboard são todas baseadas no método Ágile. Esse método vem sendo muito utilizado no desenvolvimento de software. Além disso, um projeto do GitHub traz muitas informações difusas ou sem nenhuma imediatez, com isso surge a necessidade de uma ferramenta com o toda a informação relevante sobre o projeto, em uma interface gráfica amigável para o usuário.
-                          
+                            Devem obedecer o template: <br/><br/>
+                            O nome do pull request deve ser constituído por 
+                            número da issue relacionada e seu nome<br/><br/>                            
+                            <b>Ex:<br/><br/>X nome da issue</b><br/><br/>                            
+                            O conteúdo do Pull Request deve ser constituído de uma lista 
+                            contendo as principais modificações feitas:</i><br/><br/>                            
+                            <b>Ex:<br/><br/>Nesse pull request foi feito:<br/>                            
+                            História #25; <br/>
+                            Issue #32; <br/>
+                            Correção de bugs. <br/>
+                            </b><br/>                            
+                            Critério de aceitação <br/><br/>
+                            <b>Ex:<br/><br/>
+                            [x] Testes criados.<br/>
+                            [x] testes passando.<br/>
+                            [x] build passando.<br/></b>
+                        </p><br/>                        
+                        <h5  data-aos="fade-up" data-aos-delay="100">3. Issue</h5>
+                        <p class="mb-4"> 
+                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
+                            Deve obedecer o template feature request para uma nova 
+                            funcionalidade, ou bug report caso ocorra um bug e deve 
+                            ter o máximo de indicadores do que se trata.<br/><br/>
+                            <i>Feature request:</i><br/><br/>
+                            O nome da issue deve conter uma breve descrição sobre 
+                            a funcionalidade a ser desenvolvida e deve ser escrita no infinitivo.<br/><br/>                           
+                            <b>Ex:<br/><br/> Nessa issue será realizado:<br/>
+                            - tarefa 1<br/>
+                            - tarefa 2<br/>
+                            - tarefa 3</b><br/><br/>
+                            Critérios de aceitação:<br/><br/>
+                            <b>Ex:<br/><br/> 
+                            [x] critério 1<br/>
+                            [x] critério 2<br/>
+                            [x] critério 3</b><br/><br/>
+                            <i>Bug report:</i><br/><br/>
+                            O nome da issue deve conter uma breve descrição sobre 
+                            o problema a ser resolvido e deve ser escrito no infinitivo.<br/><br/>
+                            <b>Ex:<br/><br/> Nessa issue será realizado para resolver o bug:<br/>
+                            - tarefa 1<br/>
+                            - tarefa 2<br/>
+                            - tarefa 3</b><br/><br/>
+                            Critérios de aceitação:<br/><br/>
+                            <b>Ex:<br/><br/> 
+                            [x] critério 1<br/>
+                            [x] critério 2<br/>
+                            [x] critério 3</b><br/><br/>                            
                         </p>
-                      </div>
-                      <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                        <center>
-                          <a href=" ">
-                            <img src="{% static "imagens/dashowl_logo.png" %}" alt="DashOwl"><br>
-                            <h1  data-aos="fade-up" data-aos-delay="100">DashOwl</h1>
-                          </a>              
-                        </center>
-                      </div>
+                        <h5  data-aos="fade-up" data-aos-delay="100">4. Branch</h5>
+                        <p class="mb-4"> 
+                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
+                            Deve começar com o numero da issue que ela procura 
+                            solucionar;<br/><br/>
+                            Os espaços entre palavras devem ser substituídos por hífen;<br/><br/>
+                            O nome deve remeter ao nome da issue que ela procura solucionar e em inglês.<br/><br/>                           
+                            <b>Ex:<br/><br/>30-branch-name-example<br/>
+                        </p>
+                      </div>                      
                     </div>
                   </div>            
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="site-section" id="teachers-section" style="background: white">
-            <div class="container" style="background: white">
-
-              <h1  data-aos="fade-up" data-aos-delay="100">Time</h1>
-              <div class="row mb-5 justify-content-center" style="background: white">
-                <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
-                  <h2 class="section-title"></h2>
-                  <p class="mb-5"> 
-                </div>
-              </div>
-
-              <div class="row">
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/kalebe.jpeg' %}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Kalebe Lopes</h3>
-                      <p class="position">Git: KalebeLopes</p>
-                      <p>calbkalebe@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/aila.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Ailamar Alves</h3>
-                      <p class="position">Git: ailamaralves</p>
-                      <p>ailamar.alvesg@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/joao.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Joao Victor</h3>
-                      <p class="position">Git: joao15victor08</p>
-                      <p>joao15victor08@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/matheus.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Matheus</h3>
-                      <p class="position">Git: Matheus-AM</p>
-                      <p>mam.macacod@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/damarcone.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Damarcones</h3>
-                      <p class="position">Git: damarcones</p>
-                      <p>damarcones@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/murilo.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Murilo</h3>
-                      <p class="position">Git: muriloschiler</p>
-                      <p>muriloschiler.ls@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div><!-- .content -->
+        </div>          
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
