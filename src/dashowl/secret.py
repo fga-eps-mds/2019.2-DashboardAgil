@@ -1,4 +1,4 @@
 # escreva seu login e senha do github aqui para funcionar
-login = "KalebeLopes"
-password = "Kalebe1230,1"
+login = ""
+password = ""
 # NÃO COMMITE ESSE ARQUIVO!!!
