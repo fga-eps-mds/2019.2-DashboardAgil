@@ -8,7 +8,7 @@ def get_milestone(request):
 
     g = Github(secret.login, secret.password)
     repo = g.get_repo('fga-eps-mds/2019.2-DashboardAgil-Wiki')
-    open_milestone = repo.get_milestones(state='open')
+    open_milestone = repo.get_milestones(state='all')
 
     # salvar no banco
     for milestone in repo.get_milestones(state='all'):
