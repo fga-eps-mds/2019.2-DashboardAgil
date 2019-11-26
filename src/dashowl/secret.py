@@ -1,4 +1,4 @@
 # escreva seu login e senha do github aqui para funcionar
-login = ""
-password = ""
+login = "ailamaralves"
+password = "ramalia9705"
 # NÃO COMMITE ESSE ARQUIVO!!!
