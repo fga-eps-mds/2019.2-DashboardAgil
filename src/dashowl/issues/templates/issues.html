@@ -1,38 +1,32 @@
-{% load staticfiles %}
+{% load static %}
         
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DashOwl - Issues</title>
+    
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static './css/openIssues.css' %}">
-
-
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
     <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
-    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "css/style.css" %}" rel="stylesheet">    
    
 </head>
-
 <body>
     <!--klb Left Panel -->
-
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
@@ -40,36 +34,36 @@
                 <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
                 <a class="navbar-brand hidden" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
             </div>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-
                     <li>
                         <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
-
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'sprints' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
+
+                            
+                            <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
+
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
@@ -77,18 +71,12 @@
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside><!-- /#left-panel -->
-
     <!-- Left Panel -->
-
     <!-- Right Panel -->
-
     <div id="right-panel" class="right-panel">
-
         <!-- Header-->
         <header id="header" class="header">
-
             <div class="header-menu">
-
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
                     <div class="header-left">
@@ -101,7 +89,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -110,49 +97,199 @@
                         
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
-
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
                             <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </header><!-- /header -->
         <!-- Header-->
+        
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Issues</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Graphics</a></li>
+                            <li class="active">Issues</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="content mt-3">
-            <h1>Open Issues</h1>
-            <div>{%for issue in open_issues%}
-                <h2>{{issue.issue_number}}</h2>
-                {%endfor%}
-            </div>
+                <div class="animated fadeIn">
+                    <div class="row">
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="mb-3">Issues status</h3>
+                                    <canvas id="barChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
 
-            <br/>
-            <h1>Closed Issues</h1>
-            <div>{%for issue in closed_issues%}
-                <h2>{{issue.issue_number}}</h2>
-                {%endfor%}
-            </div>
+                        <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="mb-3">Issues by collaborator</h3>
+                                        <canvas id="doughutChart"></canvas>
+                                    </div>
+                                </div>
+                        </div>  <!-- /# column -->
+    
+                    </div>
+    
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Issues</h3>
+                        <div>{%for i in open_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
 
-            <br/>
-            <h1>All Issues</h1>
-            <div>{%for issue in all_issues%}
-                <h2>{{issue.issue_number}}</h2>
-                {%endfor%}
-            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Issues</h3>
+                        <div>{%for i in closed_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
 
-            <br/>
-            <h1>Creator Issues</h1>
-            <div>{%for issue in all_issues%}
-                <h2>{{issue.author}}</h2>
-                {%endfor%}
-            </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">All Issues</h3>
+                        <div>{%for i in all_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
 
-            <br/>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Creator Issues</h3>
+                        <div>{%for i in creator_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <!----
+            <div class="content mt-3">
+            
+                <div class="animated fadeIn">
+                    <div class="row">
+                        <!-
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Team commits</h4>
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">commits</h4>
+                                    <canvas id="team-chart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Monthly commits</h4>
+                                    <canvas id="barChart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+                         <div class="col-lg-6"><!-
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Issues fechadas </h4>
+                                    <canvas id="radarChart"></canvas>
+                                </div>
+                            </div>
+                        </div>  <!- /# column --
+                        --
+                        <div class="col-lg-6">
+                            <!-
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Commits scored</h4>
+                                    <canvas id="lineChart"></canvas>
+                                </div>
+                            </div> --
+    
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mb-3">Doughut Chart </h4>
+                                        <canvas id="doughutChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>  <!- /# column --
+    
+                        </div><!- /# column --
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Pie Chart </h4>
+                                    <canvas id="pieChart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Polar Chart </h4>
+                                    <canvas id="polarChart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">Single Bar Chart </h4>
+                                    <canvas id="singelBarChart"></canvas>
+                                </div>
+                            </div>
+                        </div><!- /# column --
+    
+    
+    
+                    </div>
+                
+                </div>
+            <!-</div><!- .content -->
 
             <!--<h1>Point Issues</h1>
             <div>{%for i in point_issue%}
@@ -160,20 +297,16 @@
                 {%endfor%}
             </div>-->
             
-
-
    
-        </div><!-- /#right-panel -->
+    </div><!-- /#right-panel -->
 
-
-    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
-    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-
-    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
-    <script src="{% static 'js/init-scripts/chart-js/chartjs-init.js' %}"></script>
-
+        <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+        <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+        <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    
+        <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+        <script src="{% static 'js/init-scripts/chart-js/graficosissues.js' %}"></script>
+        
 </body>
-
 </html>
