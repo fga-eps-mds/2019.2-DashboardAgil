@@ -4,13 +4,16 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DashOwl - Issues</title>
+
+    <title>Repositories</title>
     
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
@@ -22,9 +25,8 @@
     <link href="{% static "css/style.css" %}" rel="stylesheet">    
    
 </head>
-<body>
-    <!--klb Left Panel -->
-    <aside id="left-panel" class="left-panel">
+<body>    
+    <aside id="left-panel" class="left-panel"> <!--klb Left Panel -->
         <nav class="navbar navbar-expand-sm navbar-default">
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +41,7 @@
                         <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li>
-                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
@@ -56,27 +58,22 @@
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
-                        <ul class="sub-menu children dropdown-menu">
-
-                            
+                        <ul class="sub-menu children dropdown-menu">                            
                             <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div> <!--navbar-collapse -->
         </nav>
-    </aside><!-- /#left-panel -->
-    <!-- Left Panel -->
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
+    </aside> <!-- Left Panel -->
+    
+    <div id="right-panel" class="right-panel"> <!-- Right Panel -->        
+        <header id="header" class="header"> <!-- Header-->
             <div class="header-menu">
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
-                    <div class="header-left">
-                        
+                    <div class="header-left">                        
                         <div class="form-inline">
                             <form class="search-form">
                                 <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
@@ -89,8 +86,7 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
-                        </a>
-                        
+                        </a>                        
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
                             <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
@@ -99,21 +95,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+        </header> <!-- Header-->    
 
-        </header><!-- /header -->
-        <!-- Header-->
-        
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Repositories</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
+        <div class="breadcrumbs">            
+            <div class="col-sm-12">
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
@@ -131,10 +117,10 @@
                         <div class="card-body">
                             <div class="col-lg-12">
                                 <p class="mb-4">
-                                <h3  data-aos="fade-up" data-aos-delay="100">Escolha um dos repositórios abaixo para análise:</h3>
+                                <h3  data-aos="fade-up" data-aos-delay="100">Escolha um dos repositórios abaixo para análise:</br></h3>
                                 {% for repo in repos %}
                                 <div>
-                                    <h3>{{ repo.name }}</h3>
+                                    <p class="mb-4" data-aos="fade-up" data-aos-delay="200"><h3>{{ repo.name }}</h3></p>
                                 </div>
                                 {% endfor %}                            
                             </div>                                    
@@ -142,16 +128,15 @@
                     </div>   
                 </div>
             </div>   
-        </div><!-- /# column -->       
-    </div><!-- /#right-panel -->
+        </div> <!-- /# column -->       
+    </div> <!-- /#right-panel -->
 
         <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
         <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
         <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'js/main.js' %}"></script>
-    
         <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
         <script src="{% static 'js/init-scripts/chart-js/graficosissues.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
         
 </body>
 </html>
