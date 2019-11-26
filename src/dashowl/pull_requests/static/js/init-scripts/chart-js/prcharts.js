@@ -208,14 +208,15 @@
         }
     } ); */
 
-    
+    var cod_10o = document.getElementById("10o").getAttribute("data-produto");
     var cod_11o = document.getElementById("11o").getAttribute("data-produto");
     var cod_12o = document.getElementById("12o").getAttribute("data-produto");
 
+    var cod_10c = document.getElementById("10c").getAttribute("data-produto");
     var cod_11c = document.getElementById("11c").getAttribute("data-produto");
     var cod_12c = document.getElementById("12c").getAttribute("data-produto");
     
-        alert("Produto passado: " + cod_11c + ", " + cod_12c);
+        alert("Produto passado: " + cod_10c + ", " + cod_11c + ", " + cod_12c);
 
     //bar chart
     var ctx = document.getElementById( "barChart" );
@@ -227,14 +228,14 @@
             datasets: [
                 {
                     label: "Opened",
-                    data: [1, 7, 9, 5, 13, 8, 9, 1, 2, 3, cod_11o, cod_12o],
+                    data: [1, 7, 9, 5, 13, 8, 9, 1, 2, cod_10o, cod_11o, cod_12o],
                     borderColor: "#ff0000",
                     borderWidth: "0",
                     backgroundColor: "#ff0000"
                             },
                 {
                     label: "Closed",
-                    data: [11, 7, 8, 5, 12, 2, 0, 1, 2, 3, cod_11c, cod_12c],
+                    data: [11, 7, 8, 5, 12, 2, 0, 1, 2, cod_10c, cod_11c, cod_12c],
                     borderColor: '#434343',
                     borderWidth: "0",
                     backgroundColor: "#434343"
