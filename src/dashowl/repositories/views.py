@@ -47,7 +47,7 @@ def repositories(request):
             repository_model = Repository.objects.create(user=user,
                                                          name=repository.name,
                                                          repositoryID=repository.id)
-           repository_model.publish()
+            repository_model.publish()
             repos_names.append(repository.name)
             save_commit(repository, repository_model)
             save_issue(repository, repository_model)
