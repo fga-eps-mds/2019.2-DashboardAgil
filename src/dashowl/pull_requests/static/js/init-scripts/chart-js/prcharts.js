@@ -217,18 +217,18 @@
     var myChart = new Chart( ctx, {
         type: 'bar',
         data: {
-            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
+            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
             datasets: [
                 {
                     label: "Opened",
-                    data: [ , 7, 9, 5, 13, 8, 9 ],
+                    data: [1, 7, 9, 5, 13, 8, 9, 1, 2, 3, 4, 5],
                     borderColor: "#ff0000",
                     borderWidth: "0",
                     backgroundColor: "#ff0000"
                             },
                 {
                     label: "Closed",
-                    data: [ 11, 7, 8, 5, 12, cod_11c, 0 ],
+                    data: [11, 7, 8, 5, 12, cod_11c, 0, 1, 2, 3, 4, 5],
                     borderColor: '#434343',
                     borderWidth: "0",
                     backgroundColor: "#434343"
