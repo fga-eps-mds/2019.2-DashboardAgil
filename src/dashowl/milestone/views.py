@@ -21,5 +21,16 @@ def get_milestone(request):
         milestone_model.publish()
 
     # salvar no banco
+        if bool(Milestone.objects.filter(repository__repositoryID=repo.id)):
+            all_milestone = Milestone.objects.filter(repository__repositoryID=repo.id)
+            open_milestone = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
+            closed_milestone = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
+        else:
+            raise TypeError
 
-    return render(request, 'milestone.html', {'milestone': open_milestone})
+#Retorna o valor de cada issue
+    # req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=02a009e06e4926091eadce6ef1dffc9f9b3f7b5bd417b116ea90c55bf6fb68dda7eb367ab6544c07')
+    # issue_json = req.json()
+    # point_issue = issue_json["estimate"]["value"]
+
+    return render(request, 'milestone.html', {'open_milestone': open_milestone, 'closed_milestone': closed_milestone})
