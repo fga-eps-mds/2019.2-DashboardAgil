@@ -18,6 +18,10 @@ def get_PullRuequests (request):
 
     pulls_open = repo.get_pulls(state="open")
     pulls_closed = repo.get_pulls(state="closed")
+
+    total_closed = pulls_closed.totalCount
+    total_open = pulls_open.totalCount
+
     total = pulls_open.totalCount
     total += pulls_closed.totalCount
 
@@ -30,4 +34,4 @@ def get_PullRuequests (request):
         pull_requests_model.publish()
     # salvar no banco
 
-    return render(request, 'pull_requests.html', {'pulls_open': pulls_open, 'pulls_closed': pulls_closed, 'total': total})
+    return render(request, 'pull_requests.html', {'total_open': total_open, 'total_closed': total_closed, 'total': total})
