@@ -208,6 +208,8 @@
         }
     } ); */
 
+    var cod_11c = document.getElementById("11c").getAttribute("data-produto");
+        alert("Produto passado: " + cod_11c);
 
     //bar chart
     var ctx = document.getElementById( "barChart" );
@@ -219,14 +221,14 @@
             datasets: [
                 {
                     label: "Opened",
-                    data: [ 15, 7, 9, 5, 13, 8, 9 ],
+                    data: [ , 7, 9, 5, 13, 8, 9 ],
                     borderColor: "#ff0000",
                     borderWidth: "0",
                     backgroundColor: "#ff0000"
                             },
                 {
                     label: "Closed",
-                    data: [ 11, 7, 8, 5, 12, 7, 8 ],
+                    data: [ 11, 7, 8, 5, 12, cod_11c, 0 ],
                     borderColor: '#434343',
                     borderWidth: "0",
                     backgroundColor: "#434343"
