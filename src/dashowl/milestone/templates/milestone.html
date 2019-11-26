@@ -140,8 +140,8 @@
     
     </div><!-- /#right-panel -->
         <div class="content mt-3">
-            <div>{%for i in milestone%}
-                <h1>{{i}}</h1>
+            <div>{%for milestone in milestones%}
+                <h1>{{milestone.title}}</h1>
                 {%endfor%}
             </div>
         </div>         
