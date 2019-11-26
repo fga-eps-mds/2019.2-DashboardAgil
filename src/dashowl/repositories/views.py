@@ -31,6 +31,28 @@ def repositories(request):
             save_issue(repository, repository_model)
             save_milestone(repository, repository_model)
             save_pull_request(repository, repository_model)
+        
+        for repository in g.get_user().get_repos(type='owner'):
+            repository_model = Repository.objects.create(user=user,
+                                                         name=repository.name,
+                                                         repositoryID=repository.id)
+            repository_model.publish()
+            repos_names.append(repository.name)
+            save_commit(repository, repository_model)
+            save_issue(repository, repository_model)
+            save_milestone(repository, repository_model)
+            save_pull_request(repository, repository_model)
+
+        for repository in g.get_user().get_repos(type='private'):
+            repository_model = Repository.objects.create(user=user,
+                                                         name=repository.name,
+                                                         repositoryID=repository.id)
+           repository_model.publish()
+            repos_names.append(repository.name)
+            save_commit(repository, repository_model)
+            save_issue(repository, repository_model)
+            save_milestone(repository, repository_model)
+            save_pull_request(repository, repository_model)
 
     return render(request, 'repositories.html', {'repos': repos_names})
 
