@@ -175,7 +175,7 @@
                                 </div>
                                 <div>
                                     <center>
-                                        <h1>{{ total }}</br></h1>
+                                        <h1>{{ pull_requests.count }}</br></h1>
                                     </center>
                                 </div>
                             </div>
@@ -223,7 +223,8 @@
                     <div class="card-body">
                         <h3 class="mb-3">Closed Pr</h3>
                         <div>
-                            <h4>{{total_closed}}</h4>                  
+                            <h4>{{pulls_closed.count}}</h4>             
+                                 
                         </div>
                     </div>
                 </div>
@@ -232,7 +233,7 @@
                     <div class="card-body">
                         <h3 class="mb-3">Open Pr</h3>
                         <div>
-                            <h4>{{total_open}}</h4>                  
+                            <h4>{{pulls_open.count}}</h4>                  
                         </div>
                     </div>
                 </div>
