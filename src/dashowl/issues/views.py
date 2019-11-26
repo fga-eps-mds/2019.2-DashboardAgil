@@ -23,6 +23,21 @@ def get_issues(request):
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id)
         open_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='open')
         closed_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='closed')
+
+        date1o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1)
+        date2o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2)
+        date3o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=3)
+        date4o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=4)
+        date5o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=5)
+        date6o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=6)
+        date7o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=7)
+        date8o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=8)
+        date9o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=9)
+        date10o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=10)
+        date11o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=11)
+        date12o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=12)
+
+
     else:
         raise TypeError
 
@@ -31,6 +46,7 @@ def get_issues(request):
     issue_json = req.json()
     point_issue = issue_json["estimate"]["value"]
 
-    return render(request, 'issues.html', {'open_issues': open_issues, 'closed_issues': closed_issues, 'all_issues': all_issues, 'point_issues': point_issue})
+    return render(request, 'issues.html', {'open_issues': open_issues, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
+    'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o})
 
 

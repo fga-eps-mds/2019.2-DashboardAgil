@@ -153,13 +153,27 @@
     
                     </div>
     
-                </div>
+                </div> <!--animated -->
+
+                <div id="1o" data-produto="{{ date1o.count }}"></div>
+                <div id="2o" data-produto="{{ date2o.count }}"></div>
+                <div id="3o" data-produto="{{ date3o.count }}"></div>
+                <div id="4o" data-produto="{{ date4o.count }}"></div>
+                <div id="5o" data-produto="{{ date5o.count }}"></div>
+                <div id="6o" data-produto="{{ date6o.count }}"></div>
+                <div id="7o" data-produto="{{ date7o.count }}"></div>
+                <div id="8o" data-produto="{{ date8o.count }}"></div>
+                <div id="9o" data-produto="{{ date9o.count }}"></div>
+                <div id="10o" data-produto="{{ date10o.count }}"></div>
+                <div id="11o" data-produto="{{ date11o.count }}"></div>
+                <div id="12o" data-produto="{{ date12o.count }}"></div>
+
+
                 <div class="card">
                     <div class="card-body">
                         <h3 class="mb-3">Open Issues</h3>
-                        <div>{%for i in open_issues%}
-                            <h4>{{i}}</h4>
-                            {%endfor%}
+                        <div>
+                            <h4>{{open_issues.count}}</h4>
                         </div>
                     </div>
                 </div>

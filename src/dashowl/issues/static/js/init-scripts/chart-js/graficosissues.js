@@ -191,40 +191,56 @@
         }
     } );
 */
-    //bar charts
-    var ctx = document.getElementById( "barChart" );
-    //    ctx.height = 200;
-    var myChart = new Chart( ctx, {
-        type: 'bar',
-        data: {
-            labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
-            datasets: [
-                {
-                    label: "Open",
-                    data: [ 100, 59, 80, 81, 56, 55, 40 ],
-                    borderColor: "#ff0000",
-                    borderWidth: "0",
-                    backgroundColor: "#ff0000"
-                            },
-                {
-                    label: "Closed",
-                    data: [ 28, 48, 40, 19, 86, 27, 90 ],
-                    borderColor: "#434343",
-                    borderWidth: "0",
-                    backgroundColor: "#434343"
-                            }
-                        ]
+
+    var cod_1o = document.getElementById("1o").getAttribute("data-produto");
+    var cod_2o = document.getElementById("2o").getAttribute("data-produto");
+    var cod_3o = document.getElementById("3o").getAttribute("data-produto");
+    var cod_4o = document.getElementById("4o").getAttribute("data-produto");
+    var cod_5o = document.getElementById("5o").getAttribute("data-produto");
+    var cod_6o = document.getElementById("6o").getAttribute("data-produto");
+    var cod_7o = document.getElementById("7o").getAttribute("data-produto");
+    var cod_8o = document.getElementById("8o").getAttribute("data-produto");
+    var cod_9o = document.getElementById("9o").getAttribute("data-produto");
+    var cod_10o = document.getElementById("10o").getAttribute("data-produto");
+    var cod_11o = document.getElementById("11o").getAttribute("data-produto");
+    var cod_12o = document.getElementById("12o").getAttribute("data-produto");
+
+var ctx = document.getElementById( "barChart" );
+//   ctx.height = 200;
+var myChart = new Chart( ctx, {
+    type: 'bar',
+    data: {
+        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
+        datasets: [
+            {
+                label: "Opened",
+                data: [cod_1o, cod_2o, cod_3o, cod_4o, cod_5o, cod_6o, cod_7o, cod_8o, cod_9o, cod_10o, cod_11o, cod_12o],
+                borderColor: "#ff0000",
+                borderWidth: "0",
+                backgroundColor: "#ff0000"
+                        },
+            {
+                label: "Closed",
+                data: [],
+                borderColor: '#434343',
+                borderWidth: "0",
+                backgroundColor: "#434343"
+                        }
+                    ]
+    },
+    options: {
+        scales: {
+            yAxes: [ {
+                ticks: {
+                    beginAtZero: true
+                }
+                            } ]
         },
-        options: {
-            scales: {
-                yAxes: [ {
-                    ticks: {
-                        beginAtZero: true
-                    }
-                                } ]
-            }
+        legend: {
+            position: 'top'
         }
-    } );
+    }
+} );
 
     /*
     //radar chart
