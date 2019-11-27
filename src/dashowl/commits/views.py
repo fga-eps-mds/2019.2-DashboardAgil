@@ -13,7 +13,6 @@ def get_commits(request):
     Falta se livrar dessa parte aqui e só pegar o id que o usuário escolher
     """
 
-<<<<<<< HEAD
     g = Github(secret.login, secret.password)
     repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
     commits = repo.get_commits()
@@ -24,13 +23,11 @@ def get_commits(request):
     #     commit_model.publish()
 
     # print(commit.commit.author.date)
-=======
     if bool(Commit.objects.filter(repository__repositoryID=repo.id)):
         commits = Commit.objects.filter(repository__repositoryID=repo.id)
         # refresh_commit(commits[0].repository)
     else:
         raise TypeError
->>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
 
     return render(request, 'commits.html', {'commits': commits})
 
