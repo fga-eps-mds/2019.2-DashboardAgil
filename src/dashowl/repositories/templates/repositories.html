@@ -117,10 +117,12 @@
                         <div class="card-body">
                             <div class="col-lg-12">
                                 <p class="mb-4">
-                                <h3  data-aos="fade-up" data-aos-delay="100">Escolha um dos repositórios abaixo para análise:</br></h3>
+                                <h3  data-aos="fade-up" data-aos-delay="100">Escolha um dos repositórios abaixo para análise:</br></br></h3>
                                 {% for repo in repos %}
                                 <div>
-                                    <p class="mb-4" data-aos="fade-up" data-aos-delay="200"><h3>{{ repo }}</h3></p>
+                                    <li>
+                                        <a href="sprint"><i>{{ repo }}</i></a>
+                                    </li>
                                 </div>
                                 {% endfor %}                            
                             </div>                                    

@@ -21,7 +21,7 @@ def repositories(request):
             repos_names.append(repository.name)
     else:
         user = Usuario.objects.get(login=user_login)
-        for repository in g.get_user().get_repos(type='member'):
+        for repository in g.get_user().get_repos(type='owner'):
             repository_model = Repository.objects.create(user=user,
                                                          name=repository.name,
                                                          repositoryID=repository.id)
@@ -32,7 +32,7 @@ def repositories(request):
             save_milestone(repository, repository_model)
             save_pull_request(repository, repository_model)
         
-        for repository in g.get_user().get_repos(type='owner'):
+        for repository in g.get_user().get_repos(type='member'):
             repository_model = Repository.objects.create(user=user,
                                                          name=repository.name,
                                                          repositoryID=repository.id)
@@ -47,7 +47,7 @@ def repositories(request):
             repository_model = Repository.objects.create(user=user,
                                                          name=repository.name,
                                                          repositoryID=repository.id)
-           repository_model.publish()
+            repository_model.publish()
             repos_names.append(repository.name)
             save_commit(repository, repository_model)
             save_issue(repository, repository_model)
