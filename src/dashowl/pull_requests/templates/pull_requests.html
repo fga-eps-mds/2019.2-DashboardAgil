@@ -51,10 +51,17 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
+<<<<<<< HEAD
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-chartsjs.html">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="">Issues</a></li>
+=======
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'sprints' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
+>>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
                         </ul>
                     </li>
 
@@ -179,6 +186,7 @@
                                     </center>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div>
 
                         <div class="card">
@@ -203,6 +211,32 @@
                                 <canvas id="singleBarChart"></canvas>                                
                             </div>
                         </div>
+=======
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR by sprint</h4>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR scored</h4>
+                                <canvas id="circleChart"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->  
+                    
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commented</h4>
+                                <canvas id="singleBarChart"></canvas>                                
+                            </div>
+                        </div>
+>>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
                     </div> <!-- /# column -->                         
                         
                     <div class="col-lg-6">  
@@ -212,7 +246,11 @@
                                 <canvas id="singleBarChart2"></canvas>
                             </div>
                         </div>                                 
+<<<<<<< HEAD
+                    </div> 
+=======
                     </div>
+>>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
                 </div>
             </div> <!-- .animated -->
         </div> <!-- .content -->
