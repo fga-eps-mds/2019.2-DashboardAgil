@@ -2,19 +2,36 @@ from django.shortcuts import render
 from github import Github
 from .models import Milestone
 from .. import secret
+from ..repositories.models import Repository
 
 
 def get_milestone(request):
 
-    g = Github(secret.login, secret.password)
-    repo = g.get_repo('fga-eps-mds/2019.2-DashboardAgil-Wiki')
+    repo_id = request.GET["id"]
 
-    if bool(Milestone.objects.filter(repository__repositoryID=repo.id)):
-        milestones = Milestone.objects.filter(repository__repositoryID=repo.id)
-        milestones_open = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
-        milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
+    token = request.session['token']
+
+
+    g = Github(token)
+
+    r = Repository.objects.get(repositoryID=repo_id)
+
+    repo = g.get_repo(r.name)
+
+
+    if bool(Milestone.objects.filter(repository__repositoryID=repo_id)):
+        milestones = Milestone.objects.filter(repository__repositoryID=repo_id)
+        milestones_open = Milestone.objects.filter(repository__repositoryID=repo_id, state='open')
+        milestones_closed = Milestone.objects.filter(repository__repositoryID=repo_id, state='closed')
     else:
-        raise TypeError
-
+        for milestone in repo.get_milestones(state='all'):
+            milestone_model = Milestone.objects.create(repository=repo,
+                                                   milestoneID=milestone.id,
+                                                   state=milestone.state,
+                                                   title=milestone.title,
+                                                   author=milestone.creator.login,
+                                                   created_at=milestone.created_at,
+                                                   due_on=milestone.due_on)
+    
 
     return render(request, 'milestone.html', {'milestones': milestones, 'milestones_open': milestones_open, 'milestones_closed': milestones_closed})

@@ -121,7 +121,7 @@
                                 {% for name, id in repos %}
                                 <div>
                                     <li>
-                                        <a href="{% url 'milestone' %}?value={{id}}"><i>{{ name}}</i></a>
+                                        <a href="{% url 'milestone' %}?id={{id}}"><i>{{ name}}</i></a>
                                     </li>
                                 </div>
                                 {% endfor %}                            
