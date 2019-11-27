@@ -324,6 +324,14 @@ var myChart = new Chart( ctx, {
         }
     } );
     */
+
+   var a1 = document.getElementById("author1").getAttribute("data-produto");
+   var a2 = document.getElementById("author2").getAttribute("data-produto");
+   var a3 = document.getElementById("author3").getAttribute("data-produto");
+   var a4 = document.getElementById("author4").getAttribute("data-produto");
+   var a5 = document.getElementById("author5").getAttribute("data-produto");
+   var a6 = document.getElementById("author6").getAttribute("data-produto");
+
     //doughut chart
     var ctx = document.getElementById( "doughutChart" );
     ctx.height = 150;
@@ -331,26 +339,32 @@ var myChart = new Chart( ctx, {
         type: 'doughnut',
         data: {
             datasets: [ {
-                data: [ 40, 25, 20, 10 ],
+                data: [ a1, a2, a3, a4 , a5, a6 ],
                 backgroundColor: [
                                     "#ff0000",
                                     "#434343",
                                     "#b7b7b7",
-                                    "#ff9900"
+                                    "#ff9900", 
+                                    "yellow",
+                                    "brown"
                                 ],
                 hoverBackgroundColor: [
                                     "#ff0000",
                                     "#434343",
                                     "#b7b7b7",
-                                    "#ff9900"
+                                    "#ff9900",
+                                    "yellow",
+                                    "brown"
                                 ]
 
                             } ],
             labels: [
-                            "Kalebe",
-                            "Aila",
-                            "Matheus",
-                            "João"
+                            "Matheus-AM",
+                            "KalebeLopes",
+                            "joao15victor08",
+                            "ailamaralves",
+                            "muriloschiler",
+                            "damarcones"
                         ]
         },
         options: {

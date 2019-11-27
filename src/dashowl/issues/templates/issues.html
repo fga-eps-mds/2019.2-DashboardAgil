@@ -181,46 +181,24 @@
                 <div id="11c" data-produto="{{ date11c.count }}"></div>
                 <div id="12c" data-produto="{{ date12c.count }}"></div>
 
+                <div id="author1" data-produto="{{ author1.count }}"></div>
+                <div id="author2" data-produto="{{ author2.count }}"></div>
+                <div id="author3" data-produto="{{ author3.count }}"></div>
+                <div id="author4" data-produto="{{ author4.count }}"></div>
+                <div id="author5" data-produto="{{ author5.count }}"></div>
+                <div id="author6" data-produto="{{ author6.count }}"></div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3">Open Issues</h3>
-                        <div>
-                            <h4>{{all_issues.count}}</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3">Closed Issues</h3>
-                        <div>{%for i in closed_issues%}
-                            <h4>{{i}}</h4>
-                            {%endfor%}
-                        </div>
-                    </div>
-                </div>
 
                 <div class="card">
                     <div class="card-body">
                         <h3 class="mb-3">All Issues</h3>
-                        <div>{%for i in all_issues%}
-                            <h4>{{i}}</h4>
-                            {%endfor%}
+                        <div>
+                            <h3><center>{{all_issues.count}}</center></h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3">Creator Issues</h3>
-                        <div>{%for i in creator_issues%}
-                            <h4>{{i}}</h4>
-                            {%endfor%}
-                        </div>
-                    </div>
-                </div>    
-            </div>
+                
             <!----
             <div class="content mt-3">
             
