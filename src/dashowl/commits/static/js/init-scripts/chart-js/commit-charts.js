@@ -206,6 +206,31 @@
         }
     } ); */
 
+    var cod_1o = document.getElementById("1o").getAttribute("data-produto");
+    var cod_2o = document.getElementById("2o").getAttribute("data-produto");
+    var cod_3o = document.getElementById("3o").getAttribute("data-produto");
+    var cod_4o = document.getElementById("4o").getAttribute("data-produto");
+    var cod_5o = document.getElementById("5o").getAttribute("data-produto");
+    var cod_6o = document.getElementById("6o").getAttribute("data-produto");
+    var cod_7o = document.getElementById("7o").getAttribute("data-produto");
+    var cod_8o = document.getElementById("8o").getAttribute("data-produto");
+    var cod_9o = document.getElementById("9o").getAttribute("data-produto");
+    var cod_10o = document.getElementById("10o").getAttribute("data-produto");
+    var cod_11o = document.getElementById("11o").getAttribute("data-produto");
+    var cod_12o = document.getElementById("12o").getAttribute("data-produto");
+
+    var cod_1c = document.getElementById("1c").getAttribute("data-produto");
+    var cod_2c = document.getElementById("2c").getAttribute("data-produto");
+    var cod_3c = document.getElementById("3c").getAttribute("data-produto");
+    var cod_4c = document.getElementById("4c").getAttribute("data-produto");
+    var cod_5c = document.getElementById("5c").getAttribute("data-produto");
+    var cod_6c = document.getElementById("6c").getAttribute("data-produto");
+    var cod_7c = document.getElementById("7c").getAttribute("data-produto");
+    var cod_8c = document.getElementById("8c").getAttribute("data-produto");
+    var cod_9c = document.getElementById("9c").getAttribute("data-produto");
+    var cod_10c = document.getElementById("10c").getAttribute("data-produto");
+    var cod_11c = document.getElementById("11c").getAttribute("data-produto");
+    var cod_12c = document.getElementById("12c").getAttribute("data-produto");
 
     //bar chart
     var ctx = document.getElementById( "barChart" );
@@ -319,7 +344,13 @@
             }
         }
     } );
-
+    var a1 = document.getElementById("author1").getAttribute("data-produto");
+    var a2 = document.getElementById("author2").getAttribute("data-produto");
+    var a3 = document.getElementById("author3").getAttribute("data-produto");
+    var a4 = document.getElementById("author4").getAttribute("data-produto");
+    var a5 = document.getElementById("author5").getAttribute("data-produto");
+    var a6 = document.getElementById("author6").getAttribute("data-produto");
+ 
     /*
     //doughut chart
     var ctx = document.getElementById( "doughutChart" );
