@@ -18,11 +18,11 @@ def get_issues(request):
         dar um jeito de pegar o id do repositório atual
     """
 
-
     if bool(Issue.objects.filter(repository__repositoryID=repo.id)):
-        all_issues = Issue.objects.filter(repository__repositoryID=repo.id)
+        all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')
         open_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='open')
         closed_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='closed')
+        refresh_issues(repo, list(all_issues)[-1].repository, list(all_issues)[-1].date)
     else:
         raise TypeError
 
@@ -34,3 +34,11 @@ def get_issues(request):
     return render(request, 'issues.html', {'open_issues': open_issues, 'closed_issues': closed_issues, 'all_issues': all_issues, 'point_issues': point_issue})
 
 
+def refresh_issues(repo, repository, last):
+    for issue in repo.get_issues(state='all', since=last):
+        issues_model = Issue.objects.create(repository=repository,
+                                            issue_number=issue.number,
+                                            state=issue.state,
+                                            author=issue.user.login,
+                                            date=issue.created_at)
+        issues_model.publish()
