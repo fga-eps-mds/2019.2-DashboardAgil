@@ -37,6 +37,19 @@ def get_issues(request):
         date11o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=11)
         date12o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=12)
 
+        date1c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1, state='closed')
+        date2c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2, state='closed')
+        date3c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=3, state='closed')
+        date4c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=4, state='closed')
+        date5c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=5, state='closed')
+        date6c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=6, state='closed')
+        date7c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=7, state='closed')
+        date8c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=8, state='closed')
+        date9c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=9, state='closed')
+        date10c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=10, state='closed')
+        date11c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=11, state='closed')
+        date12c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=12, state='closed')
+
 
     else:
         raise TypeError
@@ -46,7 +59,9 @@ def get_issues(request):
     issue_json = req.json()
     point_issue = issue_json["estimate"]["value"]
 
-    return render(request, 'issues.html', {'open_issues': open_issues, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
-    'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o})
+    return render(request, 'issues.html', {'all_issues': all_issues, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
+    'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o, 'date1c': date1c, 'date2c': date2c,
+    'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
+    'date11c': date11c,'date12c': date12c})
 
 

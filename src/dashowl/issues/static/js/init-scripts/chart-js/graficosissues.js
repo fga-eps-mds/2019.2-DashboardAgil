@@ -205,6 +205,19 @@
     var cod_11o = document.getElementById("11o").getAttribute("data-produto");
     var cod_12o = document.getElementById("12o").getAttribute("data-produto");
 
+    var cod_1c = document.getElementById("1c").getAttribute("data-produto");
+    var cod_2c = document.getElementById("2c").getAttribute("data-produto");
+    var cod_3c = document.getElementById("3c").getAttribute("data-produto");
+    var cod_4c = document.getElementById("4c").getAttribute("data-produto");
+    var cod_5c = document.getElementById("5c").getAttribute("data-produto");
+    var cod_6c = document.getElementById("6c").getAttribute("data-produto");
+    var cod_7c = document.getElementById("7c").getAttribute("data-produto");
+    var cod_8c = document.getElementById("8c").getAttribute("data-produto");
+    var cod_9c = document.getElementById("9c").getAttribute("data-produto");
+    var cod_10c = document.getElementById("10c").getAttribute("data-produto");
+    var cod_11c = document.getElementById("11c").getAttribute("data-produto");
+    var cod_12c = document.getElementById("12c").getAttribute("data-produto");
+
 var ctx = document.getElementById( "barChart" );
 //   ctx.height = 200;
 var myChart = new Chart( ctx, {
@@ -221,7 +234,7 @@ var myChart = new Chart( ctx, {
                         },
             {
                 label: "Closed",
-                data: [],
+                data: [cod_1c, cod_2c, cod_3c, cod_4c, cod_5c, cod_6c, cod_7c, cod_8c, cod_9c, cod_10c, cod_11c, cod_12c],
                 borderColor: '#434343',
                 borderWidth: "0",
                 backgroundColor: "#434343"
