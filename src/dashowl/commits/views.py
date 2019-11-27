@@ -4,30 +4,25 @@ from github import Github
 from .models import Commit
 from .. import secret
 from ..repositories.views import REPO_ATUAL
+from ..repositories.models import Repository
 
 def get_commits(request):
 
-    # g = Github(login_or_token=TOKEN)
-    g = Github(login_or_token=secret.login, password=secret.password)
+    user_login = request.session['login']
+    token = request.session['token']
 
+    # g = Github(login_or_token=token)
+    g = Github(login_or_token=user_login, password=secret.password)
     repo = g.get_repo(full_name_or_id=REPO_ATUAL)
     """
     Falta se livrar dessa parte aqui e só pegar o id que o usuário escolher
     """
 
-    g = Github(secret.login, secret.password)
-    repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
-    commits = repo.get_commits()
-    total_commits = commits.totalCount
-    # for commit in repo.get_commits():
-    #     commit_model = Commit.objects.create(shaCommit=commit.sha, author=commit.commit.author.name, date=commit.commit.author.date)
-    #     commit_model.publish()
-
-    # print(commit.commit.author.date)
+    repository = Repository.objects.get(repositoryID=repo.id)
     if bool(Commit.objects.filter(repository__repositoryID=repo.id)):
         commits = Commit.objects.filter(repository__repositoryID=repo.id).order_by('date')
-        refresh_commits(repo, list(commits)[-1].repository, list(commits)[-1].date)
-        commits = Commit.objects.filter(repository__repositoryID=repo.id)
+        refresh_commits(repo, repository, list(commits)[-1].date)
+        commits = Commit.objects.filter(repository__repositoryID=repo.id).order_by('date')
         author1 = Commit.objects.filter(repository__repositoryID=repo.id, author = 'Matheus-AM')
         author1 = Commit.objects.filter(repository__repositoryID=repo.id, author = 'Matheus-AM')
         author2 = Commit.objects.filter(repository__repositoryID=repo.id, author = 'KalebeLopes')
@@ -63,7 +58,8 @@ def get_commits(request):
         date12c = Commit.objects.filter(repository__repositoryID=repo.id, date__month=12)
 
     else:
-        raise TypeError
+        save_commit(repo, repository)
+        commits = Commit.objects.filter(repository__repositoryID=repo.id).order_by('date')
 
     return render(request, 'commits.html', {'commits': commits,'total_commits': total_commits,'author1': author1,'author2': author2,'author3': author3,'author4': author4,'author5': author5,'author6': author6,
      'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
@@ -83,3 +79,14 @@ def refresh_commits(repo, repository, last):
                                              author=commit.commit.author.name,
                                              date=commit.commit.author.date)
         commit_model.publish()
+
+
+def save_commit(repo, repository):
+    commits = repo.get_commits()
+    if bool(list(commits)):
+        for commit in commits:
+            commit_model = Commit.objects.create(repository=repository,
+                                                 sha_commit=commit.sha,
+                                                 author=commit.commit.author.name,
+                                                 date=commit.commit.author.date)
+            commit_model.publish()
