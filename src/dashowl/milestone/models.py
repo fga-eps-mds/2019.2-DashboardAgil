@@ -4,7 +4,7 @@ from ..repositories.models import Repository
 
 class Milestone(models.Model):
     repository = models.ForeignKey(Repository, on_delete=models.CASCADE)
-    milestoneID = models.IntegerField()
+    milestone_number = models.IntegerField()
     state = models.CharField(max_length=20)
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=60)
