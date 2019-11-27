@@ -40,12 +40,12 @@
                         <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li>
-                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'sprints' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
@@ -63,7 +63,6 @@
                             <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
-
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
