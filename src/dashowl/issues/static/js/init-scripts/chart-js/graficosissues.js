@@ -325,12 +325,20 @@ var myChart = new Chart( ctx, {
     } );
     */
 
-   var a1 = document.getElementById("author1").getAttribute("data-produto");
-   var a2 = document.getElementById("author2").getAttribute("data-produto");
-   var a3 = document.getElementById("author3").getAttribute("data-produto");
-   var a4 = document.getElementById("author4").getAttribute("data-produto");
-   var a5 = document.getElementById("author5").getAttribute("data-produto");
-   var a6 = document.getElementById("author6").getAttribute("data-produto");
+    
+
+    /*var a1 = document.getElementById("author1").getAttribute("data-produto");
+    var a2 = document.getElementById("author2").getAttribute("data-produto");
+    var a3= document.getElementById("author3").getAttribute("data-produto");
+    var a4 = document.getElementById("author4").getAttribute("data-produto");
+    var a5 = document.getElementById("author5").getAttribute("data-produto");
+    var a6 = document.getElementById("author6").getAttribute("data-produto");
+
+    alert("Produto passado: " + a1);*/
+
+    
+    
+    //console.log(a1.join(' '));
 
     //doughut chart
     var ctx = document.getElementById( "doughutChart" );
@@ -339,7 +347,7 @@ var myChart = new Chart( ctx, {
         type: 'doughnut',
         data: {
             datasets: [ {
-                data: [ a1, a2, a3, a4 , a5, a6 ],
+                data: [ 1, 2, 3, 5 , 6, 9 ],
                 backgroundColor: [
                                     "#ff0000",
                                     "#434343",

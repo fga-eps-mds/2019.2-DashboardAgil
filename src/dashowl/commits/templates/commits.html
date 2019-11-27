@@ -1,5 +1,5 @@
 
-{% load staticfiles %}
+{% load static %}
         
 <!doctype html>
 <html class="no-js" lang="en">
@@ -13,9 +13,8 @@
     <title>DashOwl - Issues abertas</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static './css/openIssues.css' %}">
-
 
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -125,25 +124,25 @@
         </header><!-- /header -->
         <!-- Header-->
 
-        <div class="content mt-3">
-                <div class="content mt-3">
-                        <div class="animated fadeIn">
-                            <div class="row">
         
-                                <div class="col-lg-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="mb-3">Your commits</h4>
-                                            <canvas id="team-chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div><!-- /# column -->
-        
-                            </div>
-            
-                        </div><!-- .animated -->
 
-                 </div><!-- .content -->
+        
+            <div class="content mt-3">
+                    <div class="animated fadeIn">
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="mb-3">Your commits</h4>
+                                        <canvas id="team-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div><!-- /# column -->
+
+                            </div>
+                        </div><!-- .animated -->
+                
                     
                  <div>
                     <h1>{{commits.count}}</h1>
@@ -158,7 +157,20 @@
                     <h1>{{commit.author}}</h1>
                     {%endfor%}
                 </div>
-         </div>      
+
+                 
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="mb-3">All Commits</h3>
+                    <div>
+                        <h3><center>{{commits.count}}</center></h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>  
+
      </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
@@ -169,7 +181,7 @@
     <script src="{% static 'js/main.js' %}"></script>
 
     <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
-    <script src="{% static 'js/init-scripts/chart-js/chartjs-init.js' %}"></script>
+    <script src="{% static 'js/init-scripts/chart-js/grafcommit.js' %}"></script>
 
 </body>
 
