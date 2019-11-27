@@ -198,8 +198,37 @@
                     </div>
                 </div>
 
-                
-            <!----
+                <!----<div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Issues</h3>
+                        <div>{%for i in ass%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">All Issues</h3>
+                        <div>{%for i in all_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Creator Issues</h3>
+                        <div>{%for i in creator_issues%}
+                            <h4>{{i}}</h4>
+                            {%endfor%}
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            
             <div class="content mt-3">
             
                 <div class="animated fadeIn">
