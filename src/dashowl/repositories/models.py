@@ -1,3 +1,11 @@
 from django.db import models
+from ..index.models import Usuario
 
-# Create your models here.
+
+class Repository(models.Model):
+    user = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    repositoryID = models.IntegerField()
+
+    def publish(self):
+        self.save()

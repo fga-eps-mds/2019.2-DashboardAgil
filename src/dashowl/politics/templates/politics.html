@@ -1,34 +1,31 @@
-{% load staticfiles %}
+{% load static %}
         
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DashOwl</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <title>About us</title>
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
-
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
     <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
-    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "css/style.css" %}" rel="stylesheet">    
    
 </head>
-
 <body>
     <!--klb Left Panel -->
-
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
-
             <div class="navbar-header">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
@@ -36,17 +33,14 @@
                 <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
                 <a class="navbar-brand hidden" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
             </div>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-
                     <li>
-                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
-
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -55,34 +49,21 @@
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
-                    </li>
-
+                    </li>                    
                     <li>
-                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Suport</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
-                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
-                        </ul>
+                    <li>
+                        <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-    </aside><!-- /#left-panel -->
-
-    <!-- Left Panel -->
-
-    <!-- Right Panel -->
-
+    </aside> <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-
         <!-- Header-->
         <header id="header" class="header">
-
             <div class="header-menu">
-
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
                     <div class="header-left">
@@ -95,47 +76,27 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
                         </a>
-                        
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
-                        </div>
                     </div>
                 </div>
             </div>
 
-        </header><!-- /header -->
-        <!-- Header-->
-
-        <div class="breadcrumbs">
-          <div class="col-sm-4">
-              <div class="page-header float-left">
-                  <div class="page-title">
-                      <h1>About us</h1>
-                  </div>
-              </div>
-          </div>
-          <div class="col-sm-8">
-              <div class="page-header float-right">
-                  <div class="page-title">
-                      <ol class="breadcrumb text-right">
-                          <li class="active">Politics</li>
-                      </ol>
-                  </div>
-              </div>
-          </div>
-      </div>
+        </header> <!-- Header-->
+        <div class="breadcrumbs">            
+            <div class="col-sm-12">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">About us</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="content mt-6">
           <div class="intro-section" id="home-section">            
@@ -144,91 +105,75 @@
                 <div class="row align-items-center">
                   <div class="col-12">
                         <p class="mb-8"></p>
-                        <h2  data-aos="fade-up" data-aos-delay="100">Políticas de privacidade</h2>
                         <p class="mb-12">
+                            <div class="site-section" id="teachers-section" style="background: white">
+                                <div class="container" style="background: white">        
+                        <h1  data-aos="fade-up" data-aos-delay="100">Time</h1><br/>   
                         <p class="mb-8"  data-aos="fade-up" data-aos-delay="200">  
-                            Contribua conosco! Para nos ajudar a aperfeiçõar basta clonar nosso
-                            <a href="https://github.com/fga-eps-mds/2019.2-DashboardAgil"><u>repositório</u></a> e seguir as políticas 
-                            de contribuição listadas abaixo.
-                        </p><br/>
-                        <h5  data-aos="fade-up" data-aos-delay="100">1. Commits</h5>
-                        <p class="mb-4"> 
-                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                            Devem ser escritos em inglês na forma infinitiva contendo 
-                            uma breve decrição do que foi modificado.<br/><br/>                            
-                            <b>Ex:<br/><br/> $ git commit -m "this is an example". </b><br/><br/>                            
-                            Caso o commit tenha sido feito em cooperação com alguem, 
-                            deve ser feita a co-autoria. <br/><br/>
-                            <b>Ex:<br/><br/> $ git commit -m "this is an example</b><br/><br/>
-                            <b>$ Co-authored-by: name <name@example.com></b> <br/><br/>
-                            <b>$ Co-authored-by: another-name <another-name@example.com>" </b><br/>                            
-                        </p>
-                        <!--<p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill">Admission Now</a></p>-->
-                        <p class="mb-5"> 
-                        </p>
-                        <h5  data-aos="fade-up" data-aos-delay="100">2. Pull requests</h5>
-                        <p class="mb-4"> 
-                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                            Devem obedecer o template: <br/><br/>
-                            O nome do pull request deve ser constituído por 
-                            número da issue relacionada e seu nome<br/><br/>                            
-                            <b>Ex:<br/><br/>X nome da issue</b><br/><br/>                            
-                            O conteúdo do Pull Request deve ser constituído de uma lista 
-                            contendo as principais modificações feitas:</i><br/><br/>                            
-                            <b>Ex:<br/><br/>Nesse pull request foi feito:<br/>                            
-                            História #25; <br/>
-                            Issue #32; <br/>
-                            Correção de bugs. <br/>
-                            </b><br/>                            
-                            Critério de aceitação <br/><br/>
-                            <b>Ex:<br/><br/>
-                            [x] Testes criados.<br/>
-                            [x] testes passando.<br/>
-                            [x] build passando.<br/></b>
-                        </p><br/>                        
-                        <h5  data-aos="fade-up" data-aos-delay="100">3. Issue</h5>
-                        <p class="mb-4"> 
-                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                            Deve obedecer o template feature request para uma nova 
-                            funcionalidade, ou bug report caso ocorra um bug e deve 
-                            ter o máximo de indicadores do que se trata.<br/><br/>
-                            <i>Feature request:</i><br/><br/>
-                            O nome da issue deve conter uma breve descrição sobre 
-                            a funcionalidade a ser desenvolvida e deve ser escrita no infinitivo.<br/><br/>                           
-                            <b>Ex:<br/><br/> Nessa issue será realizado:<br/>
-                            - tarefa 1<br/>
-                            - tarefa 2<br/>
-                            - tarefa 3</b><br/><br/>
-                            Critérios de aceitação:<br/><br/>
-                            <b>Ex:<br/><br/> 
-                            [x] critério 1<br/>
-                            [x] critério 2<br/>
-                            [x] critério 3</b><br/><br/>
-                            <i>Bug report:</i><br/><br/>
-                            O nome da issue deve conter uma breve descrição sobre 
-                            o problema a ser resolvido e deve ser escrito no infinitivo.<br/><br/>
-                            <b>Ex:<br/><br/> Nessa issue será realizado para resolver o bug:<br/>
-                            - tarefa 1<br/>
-                            - tarefa 2<br/>
-                            - tarefa 3</b><br/><br/>
-                            Critérios de aceitação:<br/><br/>
-                            <b>Ex:<br/><br/> 
-                            [x] critério 1<br/>
-                            [x] critério 2<br/>
-                            [x] critério 3</b><br/><br/>                            
-                        </p>
-                        <h5  data-aos="fade-up" data-aos-delay="100">4. Branch</h5>
-                        <p class="mb-4"> 
-                        <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
-                            Deve começar com o numero da issue que ela procura 
-                            solucionar;<br/><br/>
-                            Os espaços entre palavras devem ser substituídos por hífen;<br/><br/>
-                            O nome deve remeter ao nome da issue que ela procura solucionar e em inglês.<br/><br/>                           
-                            <b>Ex:<br/><br/>30-branch-name-example<br/>
-                        </p>
-                      </div>                      
+                                Grupo de Metódos de Desenvolvimento de Software - UnB/FGA 2019.2.
+                            </p><br/>        
+                        <div class="row">        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="teacher text-center">
+                            <img src="{% static 'images/aila.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                            <div class="py-2">
+                                <h3 class="text-black">Ailamar Alves</h3>
+                                <p class="position">Git: ailamaralves</br>ailamar.alvesg@gmail.com</p>
+                            </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="teacher text-center">
+                            <img src="{% static 'images/damarcone.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                            <div class="py-2">
+                                <h3 class="text-black">Damarcones dos Santos</h3>
+                                <p class="position">Git: damarcones</br>damarcones@gmail.com</p>
+                            </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="teacher text-center">
+                            <img src="{% static 'images/joao.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                            <div class="py-2">
+                                <h3 class="text-black">Joao Victor de Oliveira</h3>
+                                <p class="position">Git: joao15victor08</br>joao15victor08@gmail.com</p>
+                            </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="teacher text-center">
+                            <img src="{% static 'images/kalebe.jpeg' %}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                            <div class="py-2">
+                                <h3 class="text-black">Kalebe Lopes</h3>
+                                <p class="position">Git: KalebeLopes</br>calbkalebe@gmail.com</p>
+                            </div>
+                            </div>
+                        </div> 
+                        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="teacher text-center">
+                                <img src="{% static 'images/matheus.jpeg' %}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                                <div class="py-2">
+                                <h3 class="text-black">Matheus Amaral</h3>
+                                <p class="position">Git: Matheus-AM</br>mam.macacod@gmail.com</p>
+                                </div>
+                            </div>
+                            </div>               
+                        
+                        
+                        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="teacher text-center">
+                            <img src="{% static 'images/murilo.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+                            <div class="py-2">
+                                <h3 class="text-black">Murilo Schiler</h3>
+                                <p class="position">Git: muriloschiler</br>muriloschiler.ls@gmail.com</p>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>            
                 </div>
               </div>
             </div>
@@ -248,3 +193,4 @@
 </body>
 
 </html>
+
