@@ -2,6 +2,7 @@ from django.shortcuts import render
 from github import Github
 from .models import Pull_request
 from .. import secret
+import datetime
 
 
 def get_PullRuequests (request):

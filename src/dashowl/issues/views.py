@@ -31,7 +31,12 @@ def get_issues(request):
     issue_json = req.json()
     point_issue = issue_json["estimate"]["value"]
 
-    return render(request, 'issues.html', {'open_issues': open_issues, 'closed_issues': closed_issues, 'all_issues': all_issues, 'point_issues': point_issue})
+
+    return render(request, 'issues.html', {'aissues': aissues, 'all_issues': all_issues, 'all_issues': all_issues, 
+     'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
+    'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o, 'date1c': date1c, 'date2c': date2c,
+    'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
+    'date11c': date11c,'date12c': date12c})
 
 
 def refresh_issues(repo, repository, last):
