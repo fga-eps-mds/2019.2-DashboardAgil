@@ -1,7 +1,6 @@
 from django.shortcuts import render
 import requests
 from github import Github
-from django.contrib.sessions.backends.db import SessionStore
 from .models import Usuario
 
 def index (request):
