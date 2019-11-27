@@ -19,9 +19,9 @@ def get_commits(request):
     commits = repo.get_commits()
     totalCommits = commits.totalCount
 
-    for commit in repo.get_commits():
-        commit_model = Commit.objects.create(shaCommit=commit.sha, author=commit.commit.author.name, date=commit.commit.author.date)
-        commit_model.publish()
+    # for commit in repo.get_commits():
+    #     commit_model = Commit.objects.create(shaCommit=commit.sha, author=commit.commit.author.name, date=commit.commit.author.date)
+    #     commit_model.publish()
 
     # print(commit.commit.author.date)
 
