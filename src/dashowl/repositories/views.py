@@ -9,6 +9,8 @@ from ..issues.models import Issue
 from ..pull_requests.models import Pull_request
 
 
+REPO_ATUAL = "fga-eps-mds/2019.2-DashboardAgil"
+
 def repositories(request):
 
     user_login = secret.login
@@ -57,7 +59,7 @@ def save_issue(repo, repository):
 def save_milestone(repo, repository):
     for milestone in repo.get_milestones(state='all'):
         milestone_model = Milestone.objects.create(repository=repository,
-                                                   milestoneID=milestone.id,
+                                                   milestone_number=milestone.number,
                                                    state=milestone.state,
                                                    title=milestone.title,
                                                    author=milestone.creator.login,
