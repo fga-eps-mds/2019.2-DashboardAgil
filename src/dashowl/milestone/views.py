@@ -36,4 +36,4 @@ def refresh_milestones(repo, repository, last):
 #Retorna o valor de cada issue
     # req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=02a009e06e4926091eadce6ef1dffc9f9b3f7b5bd417b116ea90c55bf6fb68dda7eb367ab6544c07')
     # issue_json = req.json()
-    # point_issue = issue_json["estimate"]["value"]
+    # point_issue = issue_json["estimate"]["value"]?code=eb1a6036e5788eb01425
