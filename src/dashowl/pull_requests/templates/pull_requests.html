@@ -1,31 +1,27 @@
-
 {% load staticfiles %}
         
 <!doctype html>
+
 <html class="no-js" lang="en">
 
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DashOwl</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DashOwl - Pull Requests</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static './css/openIssues.css' %}">
-
-
+    
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
+
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
     <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
-    <link href="{% static "css/style.css" %}" rel="stylesheet">    
-   
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -38,37 +34,39 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
-                <a class="navbar-brand hidden" href="{% url 'index' %}"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
+                <a class="navbar-brand" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
             </div>
 
-            <div id="main-menu" class="main-menu collapse navbar-collapse"></div>
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'index'%}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
 
                     <li>
                         <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
-                    </li> 
+                    </li>   
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
-                            <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
-                            <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-chartsjs.html">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="">Issues</a></li>
                         </ul>
                     </li>
 
                     <li>
                         <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
+                            
+                            <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
@@ -92,8 +90,7 @@
 
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
-                    <div class="header-left">
-                        
+                    <div class="header-left">                        
                         <div class="form-inline">
                             <form class="search-form">
                                 <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
@@ -124,28 +121,102 @@
 
         </header><!-- /header -->
         <!-- Header-->
+    
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Pull Requests</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Graphics</a></li>
+                            <li class="active">Pull Requests</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="content mt-3">
-                <div>
-                        <h1><a href="/">Pull Requests</a></h1>
-                    </div>
-            
-                        <div>
-                            {% for i in pulls %}
-                            <div>
-                                <h4>{{ i.title }}</h4>
-                                <h4>{{ i.user }}</h4>
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR status</h4>
+                                <canvas id="barChart"></canvas>
                             </div>
-                            {% endfor %}
                         </div>
-            
-                        <div>
-                            <h4>{{ total }}</h4>
+                        <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">PR merged</h4>
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
+                            </div>
+                    </div><!-- /# column -->                                 
+                                                       
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Total repository PR</br></h4>
+                                <div>
+                                    {% for i in pulls %}
+                                    <div>
+                                        <h4>{{ i.title }}</h4>
+                                        <h4>{{ i.user }}</h4>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div>
+                                    <center>
+                                        <h1>{{ total }}</br></h1>
+                                    </center>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                 </div>
-         </div>  
-     </div><!-- /#right-panel -->
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR by sprint</h4>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR scored</h4>
+                                <canvas id="circleChart"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->  
+                    
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commented</h4>
+                                <canvas id="singleBarChart"></canvas>                                
+                            </div>
+                        </div>
+                    </div> <!-- /# column -->                         
+                        
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commits</h4>
+                                <canvas id="singleBarChart2"></canvas>
+                            </div>
+                        </div>                                 
+                    </div> 
+                </div>
+            </div> <!-- .animated -->
+        </div> <!-- .content -->
+    </div> <!-- /#right-panel -->
 
     <!-- Right Panel -->
 

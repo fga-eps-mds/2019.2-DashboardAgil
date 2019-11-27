@@ -139,7 +139,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Pull Requests</h1>
+                        <h1>Commits</h1>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Graphics</a></li>
-                            <li class="active">Pull Requests</li>
+                            <li class="active">Commits</li>
                         </ol>
                     </div>
                 </div>
@@ -162,22 +162,23 @@
                     <div class="col-lg-7">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR status</h4>
-                                <canvas id="barChart"></canvas>
+                                <h4 class="mb-3">Team commits</h4>
+                                <canvas id="sales-chart"></canvas>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR merged</h4>
-                                <canvas id="sales-chart"></canvas>
+                                <h4 class="mb-3">PR status</h4>
+                                <canvas id="barChart"></canvas>
                             </div>
                         </div>
+                        
                     </div><!-- /# column -->
 
                     <div class="col-lg-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">Total repository PR</br></h4>
+                                <h4 class="mb-3">Total commits</br></h4>
                                 <div>
                                     {% for i in pulls %}
                                     <div>
@@ -196,7 +197,7 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR by sprint</h4>
+                                <h4 class="mb-3">Your commits</h4>
                                 <canvas id="team-chart"></canvas>
                             </div>
                         </div>
@@ -207,25 +208,7 @@
                                 <canvas id="circleChart"></canvas>
                             </div>
                         </div>
-                    </div><!-- /# column -->
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR commented</h4>
-                                <canvas id="singleBarChart"></canvas>
-                            </div>
-                        </div>
-                    </div> <!-- /# column -->
-
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR commits</h4>
-                                <canvas id="singleBarChart2"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                    </div><!-- /# column -->                    
                 </div>
             </div> <!-- .animated -->
         </div> <!-- .content -->
@@ -233,12 +216,12 @@
 
     <!-- Right Panel -->
 
-    < src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></>
-    < src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></>
-    < src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></>
-    < src="{% static 'js/main.js' %}"></>
-    < src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></>
-    < src="{% static 'js/init-s/chart-js/commit-charts.js' %}"></>
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'js/init-scripts/chart-js/commit-charts.js' %}"></script>
 
 </body>
 
