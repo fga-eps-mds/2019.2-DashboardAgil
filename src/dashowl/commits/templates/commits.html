@@ -1,3 +1,4 @@
+
 {% load static %}
         
 <!doctype html>
@@ -10,9 +11,11 @@
     <title>DashOwl - Issues</title>
     
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
@@ -45,6 +48,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
                     </li>
@@ -55,12 +60,9 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
                         <ul class="sub-menu children dropdown-menu">
-
-                            
                             <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
-
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
@@ -133,33 +135,29 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="mb-3">Team commits</h3>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="mb-3">Team commits</h3>
                                 <canvas id="sales-chart"></canvas>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="mb-3">PR status</h3>
-                                <canvas id="barChart"></canvas>
-                            </div>
-                        </div>
+                        
                         
                     </div><!-- /# column -->
 
                     <div class="col-lg-5">
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="mb-3">Total commits</br></h3>
-                                <div>
-                                    {% for i in pulls %}
-                                    <div>
-                                        <h4>{{ i.title }}</h4>
-                                        <h4>{{ i.user }}</h4>
-                                    </div>
-                                    {% endfor %}
-                                </div>
+                                <h3 class="mb-3">Team Commits</br></h3>
                                 <div>
                                     <center>
-                                        <h1>{{ total }}</br></h1>
+                                            <div>
+                                                    <h1>{{commits.count}}</h1>
+                                            </div>
                                     </center>
                                 </div>
                             </div>
@@ -167,33 +165,23 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="mb-3">Your commits</h3>
-                                <canvas id="team-chart"></canvas>
+                                <h3 class="mb-3">Team Commits</h3>
+                                <canvas id="circleChart"></canvas>
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="mb-3">PR scored</h3>
-                                <canvas id="circleChart"></canvas>
+                                <canvas id="barChart"></canvas>
                             </div>
                         </div>
                     </div><!-- /# column -->                    
                  </div><!-- .content -->
                     
-                 <div>
-                    <h1>{{commits.count}}</h1>
-                </div>
+                 
                     
-                <div>{%for commit in commits%}
-                    <h1>{{commit.sha_commit}}</h1>
-                    {%endfor%}
-                </div>
-                
-                <div>{%for commit in commits%}
-                    <h1>{{commit.author}}</h1>
-                    {%endfor%}
-                </div>
+
             </div> <!-- .animated -->
             <div id="1o" data-produto="{{ date1o.count }}"></div>
                 <div id="2o" data-produto="{{ date2o.count }}"></div>
@@ -229,6 +217,7 @@
                 <div id="author6" data-produto="{{ author6.count }}"></div>
         </div> <!-- .content -->
     </div> <!-- /#right-panel -->
+
 
     <!-- Right Panel -->
 

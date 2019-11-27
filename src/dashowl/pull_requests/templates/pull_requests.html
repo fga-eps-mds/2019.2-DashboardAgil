@@ -11,7 +11,7 @@
     <title>DashOwl</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
 
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -45,23 +45,18 @@
                     </li>
 
                     <li>
-                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>   
 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-<<<<<<< HEAD
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Sprints</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-chartsjs.html">Commits</a></li>
-                            <li><i class="menu-icon fa fa-code-fork"></i><a href="">Pull Requests</a></li>
-                            <li><i class="menu-icon fa fa-exclamation"></i><a href="">Issues</a></li>
-=======
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'sprints' %}">Sprints</a></li>
+
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
->>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
+
                         </ul>
                     </li>
 
@@ -173,20 +168,12 @@
                             <div class="card-body">
                                 <h4 class="mb-3">Total repository PR</br></h4>
                                 <div>
-                                    {% for i in pulls %}
-                                    <div>
-                                        <h4>{{ i.title }}</h4>
-                                        <h4>{{ i.user }}</h4>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                <div>
                                     <center>
-                                        <h1>{{ total }}</br></h1>
+                                        <h1>{{ pull_requests.count }}</br></h1>
                                     </center>
                                 </div>
                             </div>
-<<<<<<< HEAD
+
                         </div>
 
                         <div class="card">
@@ -211,32 +198,7 @@
                                 <canvas id="singleBarChart"></canvas>                                
                             </div>
                         </div>
-=======
-                        </div>
 
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR by sprint</h4>
-                                <canvas id="team-chart"></canvas>
-                            </div>
-                        </div>
-                        
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR scored</h4>
-                                <canvas id="circleChart"></canvas>
-                            </div>
-                        </div>
-                    </div><!-- /# column -->  
-                    
-                    <div class="col-lg-6">  
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR commented</h4>
-                                <canvas id="singleBarChart"></canvas>                                
-                            </div>
-                        </div>
->>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
                     </div> <!-- /# column -->                         
                         
                     <div class="col-lg-6">  
@@ -246,14 +208,94 @@
                                 <canvas id="singleBarChart2"></canvas>
                             </div>
                         </div>                                 
-<<<<<<< HEAD
+
                     </div> 
-=======
-                    </div>
->>>>>>> c6bc0e2dfadccf4b2edd97efcdb7d7a15dc9be90
+
+                    
+
                 </div>
             </div> <!-- .animated -->
-        </div> <!-- .content -->
+
+            <div id="1o" data-produto="{{ date1o.count }}"></div>
+            <div id="2o" data-produto="{{ date2o.count }}"></div>
+            <div id="3o" data-produto="{{ date3o.count }}"></div>
+            <div id="4o" data-produto="{{ date4o.count }}"></div>
+            <div id="5o" data-produto="{{ date5o.count }}"></div>
+            <div id="6o" data-produto="{{ date6o.count }}"></div>
+            <div id="7o" data-produto="{{ date7o.count }}"></div>
+            <div id="8o" data-produto="{{ date8o.count }}"></div>
+            <div id="9o" data-produto="{{ date9o.count }}"></div>
+            <div id="10o" data-produto="{{ date10o.count }}"></div>
+            <div id="11o" data-produto="{{ date11o.count }}"></div>
+            <div id="12o" data-produto="{{ date12o.count }}"></div>
+
+            <div id="1c" data-produto="{{ date1c.count }}"></div>
+            <div id="2c" data-produto="{{ date2c.count }}"></div>
+            <div id="3c" data-produto="{{ date3c.count }}"></div>
+            <div id="4c" data-produto="{{ date4c.count }}"></div>
+            <div id="5c" data-produto="{{ date5c.count }}"></div>
+            <div id="6c" data-produto="{{ date6c.count }}"></div>
+            <div id="7c" data-produto="{{ date7c.count }}"></div>
+            <div id="8c" data-produto="{{ date8c.count }}"></div>
+            <div id="9c" data-produto="{{ date9c.count }}"></div>
+            <div id="10c" data-produto="{{ date10c.count }}"></div> 
+            <div id="11c" data-produto="{{ date11c.count }}"></div>
+            <div id="12c" data-produto="{{ date12c.count }}"></div>
+
+                <!--<div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Pr</h3>
+                        <div>
+                            <h4>{{date1o.count}}</h4>
+                            <h4>{{date2o.count}}</h4> 
+                            <h4>{{date3o.count}}</h4> 
+                            <h4>{{date4o.count}}</h4> 
+                            <h4>{{date5o.count}}</h4> 
+                            <h4>{{date6o.count}}</h4> 
+                            <h4>{{date7o.count}}</h4> 
+                            <h4>{{date8o.count}}</h4> 
+                            <h4>{{date9o.count}}</h4> 
+                            <h4>{{date10o.count}}</h4> 
+                            <h4>{{date11o.count}}</h4> 
+                            <h4>{{date12o.count}}</h4> 
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Pr</h3>
+                        <div>
+                            <h4>{{date1c.count}}</h4>
+                            <h4>{{date2c.count}}</h4> 
+                            <h4>{{date3c.count}}</h4> 
+                            <h4>{{date4c.count}}</h4> 
+                            <h4>{{date5c.count}}</h4> 
+                            <h4>{{date6c.count}}</h4> 
+                            <h4>{{date7c.count}}</h4> 
+                            <h4>{{date8c.count}}</h4> 
+                            <h4>{{date9c.count}}</h4> 
+                            <h4>{{date10c.count}}</h4> 
+                            <h4>{{date11c.count}}</h4> 
+                            <h4>{{date12c.count}}</h4>                     
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Pr</h3>
+                        <div>
+                            <h4>{{date11c.count}}</h4>                  
+                        </div>
+                    </div>
+                </div>
+
+        </div>  .content -->
+
+
+
     </div> <!-- /#right-panel -->
 
     <!-- Right Panel -->
