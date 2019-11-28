@@ -151,8 +151,12 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="mb-3">Sprint Commits</h3>
-                                <canvas id="circleChart"></canvas>
+                                <h3 class="mb-3">Commits authors</h3>  
+                                {% for i in autoresc %}
+                                    <div style="text-align: right;">
+                                        <p class="mb-8"  data-aos="fade-up" data-aos-delay="200">{{i.author}}</p>
+                                    </div>
+                                {% endfor %}                            
                             </div>
                         </div>
 
