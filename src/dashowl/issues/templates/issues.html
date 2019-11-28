@@ -40,12 +40,12 @@
                         <a href="{% url 'index' %}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li>
-                        <a href="repositorios"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li> 
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'sprints' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
                             <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
@@ -63,7 +63,6 @@
                             <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
                             <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
-
                             <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
                         </ul>
                     </li>
@@ -145,7 +144,7 @@
                         <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h3 class="mb-3">Issues by collaborator</h3>
+                                        <h3 class="mb-3">All Issues</h3>
                                         <canvas id="doughutChart"></canvas>
                                     </div>
                                 </div>
@@ -153,28 +152,76 @@
     
                     </div>
     
-                </div>
+                </div> <!--animated -->
+
+                <div id="1o" data-produto="{{ date1o.count }}"></div>
+                <div id="2o" data-produto="{{ date2o.count }}"></div>
+                <div id="3o" data-produto="{{ date3o.count }}"></div>
+                <div id="4o" data-produto="{{ date4o.count }}"></div>
+                <div id="5o" data-produto="{{ date5o.count }}"></div>
+                <div id="6o" data-produto="{{ date6o.count }}"></div>
+                <div id="7o" data-produto="{{ date7o.count }}"></div>
+                <div id="8o" data-produto="{{ date8o.count }}"></div>
+                <div id="9o" data-produto="{{ date9o.count }}"></div>
+                <div id="10o" data-produto="{{ date10o.count }}"></div>
+                <div id="11o" data-produto="{{ date11o.count }}"></div>
+                <div id="12o" data-produto="{{ date12o.count }}"></div>
+
+                <div id="1c" data-produto="{{ date1c.count }}"></div>
+                <div id="2c" data-produto="{{ date2c.count }}"></div>
+                <div id="3c" data-produto="{{ date3c.count }}"></div>
+                <div id="4c" data-produto="{{ date4c.count }}"></div>
+                <div id="5c" data-produto="{{ date5c.count }}"></div>
+                <div id="6c" data-produto="{{ date6c.count }}"></div>
+                <div id="7c" data-produto="{{ date7c.count }}"></div>
+                <div id="8c" data-produto="{{ date8c.count }}"></div>
+                <div id="9c" data-produto="{{ date9c.count }}"></div>
+                <div id="10c" data-produto="{{ date10c.count }}"></div>
+                <div id="11c" data-produto="{{ date11c.count }}"></div>
+                <div id="12c" data-produto="{{ date12c.count }}"></div>
+
+                <!--<div id="author1" data-produto="{{ a }}"></div>
+                <div id="author2" data-produto="{{ author2.count }}"></div>
+                <div id="author3" data-produto="{{ author3.count }}"></div>
+                <div id="author4" data-produto="{{ author4.count }}"></div>
+                <div id="author5" data-produto="{{ author5.count }}"></div>
+                <div id="author6" data-produto="{{ author6.count }}"></div>-->
+
+
+                <!--<div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">All Issues</h3>
+                        <div>
+                            <h3><center>{{a}}</center></h3>
+                        </div>
+                    </div>
+                </div>-->
+
                 <div class="card">
                     <div class="card-body">
-                        <h3 class="mb-3">Open Issues</h3>
-                        <div>{%for i in open_issues%}
+                        <h3 class="mb-3">Total Issues</h3>
+                        <div>
+                            <h2><center>{{all_issues.count}}</center></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!--<div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Author</h3>
+                        <div>{%for i in a%}
                             <h4>{{i}}</h4>
                             {%endfor%}
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="mb-3">Closed Issues</h3>
-                        <div>{%for i in closed_issues%}
-                            <h4>{{i}}</h4>
-                            {%endfor%}
-                        </div>
-                    </div>
-                </div>
+                
 
-                <div class="card">
+                --<div class="card">
                     <div class="card-body">
                         <h3 class="mb-3">All Issues</h3>
                         <div>{%for i in all_issues%}
@@ -194,7 +241,7 @@
                     </div>
                 </div>    
             </div>
-            <!----
+            
             <div class="content mt-3">
             
                 <div class="animated fadeIn">
