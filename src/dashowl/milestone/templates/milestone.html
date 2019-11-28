@@ -127,16 +127,24 @@
         <!-- Header-->
 
         <div class="content mt-3">
-            {%if milestones%}
-                <div>{%for milestone in milestones%}
-                    <h1>{{milestone.title}}</h1>
-                    {%endfor%}
-                </div>
-            {%else%}
+            {%if id%}
                 <div>
-                    <h1>Nenhuma Sprint Disponível</h1>
-                </div>
+                    <h1>{{id}}</h1>
+                    <h1>{{sem}}</h1>
+                </div>                
+            {%else%}
+                {%if milestones%}
+                    <div>{%for milestone in milestones%}
+                        <h1>{{milestone.title}}</h1>
+                        {%endfor%}
+                    </div>
+                {%else%}
+                    <div>
+                        <h1>Nenhuma Sprint Disponível</h1>
+                    </div>
+                {%endif%}
             {%endif%}
+
         </div>         
      </div><!-- /#right-panel -->
 
