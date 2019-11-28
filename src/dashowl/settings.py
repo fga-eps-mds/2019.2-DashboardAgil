@@ -41,14 +41,11 @@ INSTALLED_APPS = [
     'dashowl.homepage',
     'dashowl.pull_requests',
     'dashowl.milestone',
-    'dashowl.index',
-  
+    'dashowl.index',  
     'dashowl.issues',
     'dashowl.repositories',
-    'dashowl.invite',
     'dashowl.suport',
-    'dashowl.politics',
-    'dashowl.contact'
+    'dashowl.politics'
 ]
 
 MIDDLEWARE = [
