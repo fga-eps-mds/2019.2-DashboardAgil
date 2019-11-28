@@ -53,10 +53,15 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Support</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-                    <li>
-                        <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
+                        <ul class="sub-menu children dropdown-menu">                            
+                            <li><i class="menu-icon fa fa-university"></i><a href="page-login.html">Politics</a></li>
+                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div> <!--navbar-collapse -->
@@ -81,29 +86,28 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
-                        </a>  
+                        </a>                        
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </header> <!-- Header-->    
 
         <div class="breadcrumbs">            
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Seus repositórios</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
+            <div class="col-sm-12">
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li class="active">Repositórios</li>
+                            <li class="active">Repositories</li>
                         </ol>
                     </div>
                 </div>
-            </div>                
+            </div>
         </div>
 
         <div class="content mt-3">
@@ -117,7 +121,7 @@
                                 {% for name, id in repos %}
                                 <div>
                                     <li>
-                                        <a href="{% url 'commits' %}?id={{id}}"><i>{{ name}}</i></a>
+                                        <a href="{% url 'milestone' %}?id={{id}}"><i>{{ name}}</i></a>
                                     </li>
                                 </div>
                                 {% endfor %}                            
