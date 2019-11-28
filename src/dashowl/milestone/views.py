@@ -17,7 +17,7 @@ def get_milestone(request):
 
             request.session['id'] = repo_id
 
-            token = request.session['token']
+            
 
             g = Github(token)
             
