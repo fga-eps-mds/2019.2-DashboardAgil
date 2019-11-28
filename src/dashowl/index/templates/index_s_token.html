@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DashOwl</title>
+    <title>Home</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -55,19 +55,12 @@
                             <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
-                    </li>
-
+                    </li>    
                     <li>
-                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Support</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
-                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
-                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
-                        </ul>
+                    <li>
+                        <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -103,16 +96,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
                         </a>
-                        
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -129,7 +112,9 @@
                   <div class="col-12">
                     <div class="row align-items-center">
                       <div class="col-lg-6 mb-4">
-                        <p class="mb-4"> <br/ ></p>
+                        <p class="mb-4"></p>
+                        <h1  data-aos="fade-up" data-aos-delay="100">Ops! Algo deu errado tente logar novamente!</h1>
+                        <p class="mb-4"><br/><br/>
                         <h1  data-aos="fade-up" data-aos-delay="100">Administre o andamento de seus projetos! </h1>
                         <p class="mb-4">
                         <h2>{{token}}</h2>
@@ -150,16 +135,12 @@
                         <p class="mb-4"> 
                         <p class="mb-4" data-aos="fade-up" data-aos-delay="200">  
                           Nossas métricas para a criação do dashboard são todas baseadas no método Ágile. Esse método vem sendo muito utilizado no desenvolvimento de software. Além disso, um projeto do GitHub traz muitas informações difusas ou sem nenhuma imediatez, com isso surge a necessidade de uma ferramenta com o toda a informação relevante sobre o projeto, em uma interface gráfica amigável para o usuário.
-                          
                         </p>
                       </div>
-
                       <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                        <center>
-                            <h2>Logar pela extensão</h2>
+                        <center>                            
                           <a href=" ">
                             <img src="{% static "imagens/dashowl_logo.png" %}" alt="DashOwl"><br>
-                            <h1  data-aos="fade-up" data-aos-delay="100">DashOwl</h1>
                           </a>              
                         </center>
                       </div>
@@ -179,76 +160,7 @@
                   <h2 class="section-title"></h2>
                   <p class="mb-5"> 
                 </div>
-              </div>
-
-              <div class="row">
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/kalebe.jpeg' %}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Kalebe Lopes</h3>
-                      <p class="position">Git: KalebeLopes</p>
-                      <p>calbkalebe@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/aila.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Ailamar Alves</h3>
-                      <p class="position">Git: ailamaralves</p>
-                      <p>ailamar.alvesg@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/joao.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Joao Victor</h3>
-                      <p class="position">Git: joao15victor08</p>
-                      <p>joao15victor08@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/matheus.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Matheus</h3>
-                      <p class="position">Git: Matheus-AM</p>
-                      <p>mam.macacod@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/damarcone.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Damarcones</h3>
-                      <p class="position">Git: damarcones</p>
-                      <p>damarcones@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                  <div class="teacher text-center">
-                    <img src="{% static 'images/murilo.jpeg' %}"  alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-                    <div class="py-2">
-                      <h3 class="text-black">Murilo</h3>
-                      <p class="position">Git: muriloschiler</p>
-                      <p>muriloschiler.ls@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-            </div>
+              </div>              
           </div>
         </div><!-- .content -->
     </div><!-- /#right-panel -->
