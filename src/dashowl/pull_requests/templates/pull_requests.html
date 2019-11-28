@@ -1,0 +1,303 @@
+{% load staticfiles %}
+        
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pull Resquests</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
+
+    <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/flag-icon-css/css/flag-icon.min.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/selectFX/css/cs-skin-elastic.css" %}" rel="stylesheet">
+    <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!--klb Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="DashOwl"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt=" "></a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'index'%}"> <i class="menu-icon fa fa-home"></i>Home</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>
+
+                    <li>
+                        <a href="{% url 'repositories' %}"> <i class="menu-icon fa fa-folder-open"></i>Repositories</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>   
+
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Graphics</a>
+                        <ul class="sub-menu children dropdown-menu">
+
+                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="{% url 'milestone' %}">Sprints</a></li>
+                            <li><i class="menu-icon fa fa-area-chart"></i><a href="{% url 'commits' %}">Commits</a></li>
+                            <li><i class="menu-icon fa fa-code-fork"></i><a href="{% url 'pull_requests' %}">Pull Requests</a></li>
+                            <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Suport</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>
+                    <li>
+                        <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
+                    <div class="header-left">                        
+                        <div class="form-inline">
+                            <form class="search-form">
+                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
+                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
+                        </a>
+                        
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
+
+                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+    
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Pull Requests</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Graphics</a></li>
+                            <li class="active">Pull Requests</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-lg-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR status</h4>
+                                <canvas id="barChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="card">
+                                <div class="card-body">
+                                    <h4 class="mb-3">PR merged</h4>
+                                    <canvas id="sales-chart"></canvas>
+                                </div>
+                            </div>
+                    </div><!-- /# column -->                                 
+                                                       
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Total repository PR</br></h4>
+                                <div>
+                                    <center>
+                                        <h1>{{ pull_requests.count }}</br></h1>
+                                    </center>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR by sprint</h4>
+                                <canvas id="team-chart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR scored</h4>
+                                <canvas id="circleChart"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->  
+                    
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commented</h4>
+                                <canvas id="singleBarChart"></canvas>                                
+                            </div>
+                        </div>
+
+                    </div> <!-- /# column -->                         
+                        
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commits</h4>
+                                <canvas id="singleBarChart2"></canvas>
+                            </div>
+                        </div>                                 
+
+                    </div> 
+
+                    
+
+                </div>
+            </div> <!-- .animated -->
+
+            <div id="1o" data-produto="{{ date1o.count }}"></div>
+            <div id="2o" data-produto="{{ date2o.count }}"></div>
+            <div id="3o" data-produto="{{ date3o.count }}"></div>
+            <div id="4o" data-produto="{{ date4o.count }}"></div>
+            <div id="5o" data-produto="{{ date5o.count }}"></div>
+            <div id="6o" data-produto="{{ date6o.count }}"></div>
+            <div id="7o" data-produto="{{ date7o.count }}"></div>
+            <div id="8o" data-produto="{{ date8o.count }}"></div>
+            <div id="9o" data-produto="{{ date9o.count }}"></div>
+            <div id="10o" data-produto="{{ date10o.count }}"></div>
+            <div id="11o" data-produto="{{ date11o.count }}"></div>
+            <div id="12o" data-produto="{{ date12o.count }}"></div>
+
+            <div id="1c" data-produto="{{ date1c.count }}"></div>
+            <div id="2c" data-produto="{{ date2c.count }}"></div>
+            <div id="3c" data-produto="{{ date3c.count }}"></div>
+            <div id="4c" data-produto="{{ date4c.count }}"></div>
+            <div id="5c" data-produto="{{ date5c.count }}"></div>
+            <div id="6c" data-produto="{{ date6c.count }}"></div>
+            <div id="7c" data-produto="{{ date7c.count }}"></div>
+            <div id="8c" data-produto="{{ date8c.count }}"></div>
+            <div id="9c" data-produto="{{ date9c.count }}"></div>
+            <div id="10c" data-produto="{{ date10c.count }}"></div> 
+            <div id="11c" data-produto="{{ date11c.count }}"></div>
+            <div id="12c" data-produto="{{ date12c.count }}"></div>
+
+                <!--<div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Pr</h3>
+                        <div>
+                            <h4>{{date1o.count}}</h4>
+                            <h4>{{date2o.count}}</h4> 
+                            <h4>{{date3o.count}}</h4> 
+                            <h4>{{date4o.count}}</h4> 
+                            <h4>{{date5o.count}}</h4> 
+                            <h4>{{date6o.count}}</h4> 
+                            <h4>{{date7o.count}}</h4> 
+                            <h4>{{date8o.count}}</h4> 
+                            <h4>{{date9o.count}}</h4> 
+                            <h4>{{date10o.count}}</h4> 
+                            <h4>{{date11o.count}}</h4> 
+                            <h4>{{date12o.count}}</h4> 
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Closed Pr</h3>
+                        <div>
+                            <h4>{{date1c.count}}</h4>
+                            <h4>{{date2c.count}}</h4> 
+                            <h4>{{date3c.count}}</h4> 
+                            <h4>{{date4c.count}}</h4> 
+                            <h4>{{date5c.count}}</h4> 
+                            <h4>{{date6c.count}}</h4> 
+                            <h4>{{date7c.count}}</h4> 
+                            <h4>{{date8c.count}}</h4> 
+                            <h4>{{date9c.count}}</h4> 
+                            <h4>{{date10c.count}}</h4> 
+                            <h4>{{date11c.count}}</h4> 
+                            <h4>{{date12c.count}}</h4>                     
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="mb-3">Open Pr</h3>
+                        <div>
+                            <h4>{{date11c.count}}</h4>                  
+                        </div>
+                    </div>
+                </div>
+
+        </div>  .content -->
+
+
+
+    </div> <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+    <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'vendors/chart.js/dist/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'js/init-scripts/chart-js/prcharts.js' %}"></script>
+
+</body>
+
+</html>
