@@ -13,7 +13,6 @@ def get_commits(request):
 
     request.session['id'] = repo_id
 
-
     g = Github(token)
     repo = g.get_repo(int(repo_id))
     commits = repo.get_commits()
