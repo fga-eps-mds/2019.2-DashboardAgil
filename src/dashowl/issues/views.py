@@ -25,23 +25,6 @@ def get_issues(request):
     if bool(Issue.objects.filter(repository__repositoryID=repo.id)):
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')
         refresh_issues(repo, repository, list(all_issues)[-1].date)
-        authores = all_issues.distinct('author')
-
-        a = []
-
-        aissues = []
-
-        for author in authores:
-            aissues.append(Issue.objects.filter(repository__repositoryID=repo.id, author= author.author))
-            a.append(author.author)
-
-
-        #author1 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'Matheus-AM')
-        #author2 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'KalebeLopes')
-        #author3 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'joao15victor08')
-        #author4 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'ailamaralves')
-        #author5 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'muriloschiler')
-        #author6 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'damarcones')
 
         date1o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1)
         date2o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2)
@@ -71,27 +54,8 @@ def get_issues(request):
 
 
     else:
-        save_issue(repo, repo)
-        open_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='open')
-        closed_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='closed')
+        save_issue(repo, repository)
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id)
-        authores = all_issues.distinct('author')
-
-        a = []
-
-        aissues = []
-
-        for author in authores:
-            aissues.append(Issue.objects.filter(repository__repositoryID=repo.id, author= author.author))
-            a.append(author.author)
-
-
-        #author1 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'Matheus-AM')
-        #author2 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'KalebeLopes')
-        #author3 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'joao15victor08')
-        #author4 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'ailamaralves')
-        #author5 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'muriloschiler')
-        #author6 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'damarcones')
 
         date1o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1)
         date2o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2)
@@ -126,7 +90,7 @@ def get_issues(request):
     # point_issue = issue_json["estimate"]["value"]
 
 
-    return render(request, 'issues.html', {'aissues': aissues, 'all_issues': all_issues, 'all_issues': all_issues, 
+    return render(request, 'issues.html', { 'all_issues': all_issues,
      'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
     'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o, 'date1c': date1c, 'date2c': date2c,
     'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
