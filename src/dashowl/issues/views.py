@@ -20,7 +20,7 @@ def get_issues(request):
 
 
     if bool(Issue.objects.filter(repository__repositoryID=repo.id)):
-       all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')
+        all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')
         refresh_issues(repo, repository, list(all_issues)[-1].date)
         authores = all_issues.distinct('author')
 
