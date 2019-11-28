@@ -18,7 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('milestone/', include('dashowl.milestone.urls')),
     path('', include('dashowl.index.urls')),
     path('homepage/', include('dashowl.homepage.urls')),
@@ -27,9 +26,7 @@ urlpatterns = [
     path('issues/', include('dashowl.issues.urls')),
     path('sprints/', include('dashowl.sprints.urls')),
     path('repositories/', include('dashowl.repositories.urls')),
-    path('contact/', include('dashowl.contact.urls')),
-    path('invite/', include('dashowl.invite.urls')),
-    path('politics/', include('dashowl.politics.urls')),
+    path('aboutus/', include('dashowl.politics.urls')),
     path('suport/', include('dashowl.suport.urls'))
 
 

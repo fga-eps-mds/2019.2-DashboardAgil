@@ -68,28 +68,4 @@ def get_milestone(request):
             milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
         return render(request, 'milestone.html', {'milestones': milestones, 'milestones_open': milestones_open, 'milestones_closed': milestones_closed})
-              
-
-def refresh_milestones(repo, repository, last):
-    milestones = repo.get_milestones(state='all')
-    for i in range(last+1, milestones.totalCount):
-        milestone_model = Milestone.objects.create(repository=repository,
-                                                   milestone_number=milestones[i].number,
-                                                   state=milestones[i].state,
-                                                   title=milestones[i].title,
-                                                   author=milestones[i].creator.login,
-                                                   created_at=milestones[i].created_at,
-                                                   due_on=milestones[i].due_on)
-        milestone_model.publish()
-
-
-def save_milestone(repo, repository):
-    for milestone in repo.get_milestones(state='all'):
-        milestone_model = Milestone.objects.create(repository=repository,
-                                                   milestone_number=milestone.number,
-                                                   state=milestone.state,
-                                                   title=milestone.title,
-                                                   author=milestone.creator.login,
-                                                   created_at=milestone.created_at,
-                                                   due_on=milestone.due_on)
-        milestone_model.publish()
+       
