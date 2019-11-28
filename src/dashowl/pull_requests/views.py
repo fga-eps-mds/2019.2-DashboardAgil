@@ -2,20 +2,24 @@ from django.shortcuts import render
 from github import Github
 from .models import Pull_request
 from .. import secret
+from ..repositories.models import Repository
 import datetime
 
 
 def get_PullRuequests (request):
-    # token = Usuario.token
-    # g = Github(token)
-    # repos = Usuario.repos
-    # repo = g.get_repo(repos[])
     
-    g = Github(secret.login, secret.password)
-    repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil")
+    token = request.session['token']
+    repo_id = request.session['id']
+    
+    g = Github(token)
+    repo = g.get_repo(int(repo_id))
+
+    repository = Repository.objects.get(repositoryID=repo.id)
 
     if bool(Pull_request.objects.filter(repository__repositoryID=repo.id)):
-        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id)
+        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
+        refresh_pull_requests(repo, list(pull_requests)[-1].repository, list(pull_requests)[-1].pull_request_number)
+        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
         #pulls_open = Pull_request.objects.filter(repository__repositoryID=repo.id, state='open')
         #pulls_closed = Pull_request.objects.filter(repository__repositoryID=repo.id, state='closed')
 
@@ -47,7 +51,24 @@ def get_PullRuequests (request):
 
 
     else:
-        raise TypeError
+        save_pull_request(repo, repository)
+        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
+        pulls_open = Pull_request.objects.filter(repository__repositoryID=repo.id, state='open')
+        pulls_closed = Pull_request.objects.filter(repository__repositoryID=repo.id, state='closed')
+
+
+    return render(request, 'pull_requests.html', {'pull_requests': pull_requests, 'pulls_open': pulls_open, 'pulls_closed': pulls_closed})
+
+
+def refresh_pull_requests(repo, repository, last):
+    pull_requests = repo.get_pulls(state='all')
+    for i in range(last+1, pull_requests.totalCount):
+        pull_requests_model = Pull_request.objects.create(repository=repository,
+                                                          pull_request_number=pull_requests[i].number,
+                                                          state=pull_requests[i].state,
+                                                          author=pull_requests[i].user.login,
+                                                          open_date=pull_requests[i].created_at)
+        pull_requests_model.publish()
 
     
     return render(request, 'pull_requests.html', {'pull_requests': pull_requests, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
@@ -55,3 +76,13 @@ def get_PullRuequests (request):
     'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
     'date11c': date11c,'date12c': date12c})
 
+def save_pull_request(repo, repository):
+    pull_requests = repo.get_pulls(state='all')
+    if bool(list(pull_requests)):
+        for pull_request in pull_requests:
+            pull_requests_model = Pull_request.objects.create(repository=repository,
+                                                              pull_request_number=pull_request.number,
+                                                              state=pull_request.state,
+                                                              author=pull_request.user.login,
+                                                              open_date=pull_request.created_at)
+            pull_requests_model.publish()

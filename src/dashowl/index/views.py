@@ -1,7 +1,6 @@
 from django.shortcuts import render
 import requests
 from github import Github
-from django.contrib.sessions.backends.db import SessionStore
 from .models import Usuario
 
 def index (request):
@@ -39,13 +38,13 @@ def index (request):
                 
                 else:
                     token_nd = 'nao e digito'
-                    return render(request, 'index_s_token.html', {"token": token_nd})
+                    return render(request, 'index_s_token.html', {})
             else:
                 code_nd = 'code nao existe'
-                return render(request, 'index_s_token.html', {"token": code_nd})
+                return render(request, 'index_s_token.html', {})
         else:
             sem_code = 'sem code'
-            return render(request, 'index_s_token.html', {"token": sem_code})
+            return render(request, 'index_s_token.html', {})
     else:
         # session_set = 'session seteda'
         return render(request, 'index.html', {})

@@ -6,5 +6,5 @@ extension.pem
 pycache/
 src/dashowl/__pycache__/
 **/__pycache__/**
-#**/migrations/**
+**/migrations/**
 src/dashowl/secret.py

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from github import Github
 from .models import Repository
-#from .. import secret
+from .. import secret
 from ..index.models import Usuario
 from ..commits.models import Commit
 from ..milestone.models import Milestone
@@ -20,7 +20,7 @@ def repositories(request):
         repos = Repository.objects.filter(user__login=user_login)
         for repository in repos:
             repos_names.append(repository.name)
-            repos_id.append(repository.id)
+            repos_id.append(repository.repositoryID)
     else:
         user = Usuario.objects.get(login=user_login)
         for repository in g.get_user().get_repos(type='owner'):
