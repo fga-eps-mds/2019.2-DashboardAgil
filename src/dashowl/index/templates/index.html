@@ -10,9 +10,11 @@
     <title>DashOwl</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link href="{% static "imagens/dashowl_colorido_80_56.png" %}" rel="shortcut icon">
-
     <link href="{% static "vendors/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
     <link href="{% static "vendors/themify-icons/css/themify-icons.css" %}" rel="stylesheet">
@@ -56,18 +58,11 @@
                             <li><i class="menu-icon fa fa-exclamation"></i><a href="{% url 'issues' %}">Issues</a></li>
                         </ul>
                     </li>
-
                     <li>
-                        <a href="ranking"> <i class="menu-icon fa fa-line-chart"></i>Ranking</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Suport</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-info-circle"></i>About us</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-university "></i><a href="page-login.html">Politics</a></li>
-                            <li><i class="menu-icon fa fa-phone"></i><a href="page-contact.html">Contact</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Invite</a></li>
-                            <li><i class="menu-icon fa fa-handshake-o"></i><a href="pages-forget.html">Suport</a></li>
-                        </ul>
+                    <li>
+                        <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -103,16 +98,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
                         </a>
-                        
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -134,7 +119,7 @@
                         <p class="mb-4">
                         <h2>{{token}}</h2>
                         <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">  
-                          Nossa plataforma foi criada com o intuito de acompanhar
+                         Nossa plataforma foi criada com o intuito de acompanhar
                           em tempo real os repositórios do GitHub tirando métricas
                           e indicadores das atividades feitas individualmente e pelo time em forma de gráficos.
                         </p><br/>
