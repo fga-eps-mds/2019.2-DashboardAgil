@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DashOwl - Issues</title>
+    <title>Commits</title>
     
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -54,7 +54,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Suport</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Support</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li>
                         <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
@@ -62,12 +62,11 @@
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
-    </aside><!-- /#left-panel -->
-    <!-- Left Panel -->
-    <!-- Right Panel -->
-    <div id="right-panel" class="right-panel">
-        <!-- Header-->
-        <header id="header" class="header">
+    </aside> <!-- Left Panel -->
+    
+    <div id="right-panel" class="right-panel"><!-- Right Panel -->
+                
+        <header id="header" class="header"><!-- Header-->
             <div class="header-menu">
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-angle-double-left"></i></a>
@@ -88,7 +87,6 @@
                         </a>
                     </div>
                 </div>
-
             </div>
 
         </header><!-- /header -->
@@ -116,7 +114,6 @@
         <div class="content mt-3">
             <div class="animated fadeIn">
                 <div class="row">
-
                     <div class="col-lg-7">
                         <div class="card">
                             <div class="card-body">
@@ -131,8 +128,6 @@
                                 <canvas id="sales-chart"></canvas>
                             </div>
                         </div>
-                        
-                        
                     </div><!-- /# column -->
 
                     <div class="col-lg-5">
@@ -141,9 +136,9 @@
                                 <h3 class="mb-3">Total Commits</br></h3>
                                 <div>
                                     <center>
-                                            <div>
-                                                    <h1>{{commits.count}}</h1>
-                                            </div>
+                                        <div>
+                                            <h1>{{commits.count}}</h1>
+                                        </div>
                                     </center>
                                 </div>
                             </div>
@@ -151,61 +146,52 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h3 class="mb-3">Sprint Commits</h3>
-                                <canvas id="circleChart"></canvas>
+                                <h3 class="mb-3">Authors Commits</h3>  
+                                <center>
+                                    <div>
+                                        <h1>{{commits.count}}</h1>
+                                    </div>
+                                </center>                             
                             </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-body">
-                                <h3 class="mb-3">Commit scored</h3>
-                                <canvas id="barChart"></canvas>
-                            </div>
-                        </div>
-                    </div><!-- /# column -->                    
-                 </div><!-- .content -->
-                    
-                 
-                    
-
+                        </div>                       
+                    </div>                 
+                </div><!-- .content -->
             </div> <!-- .animated -->
+
             <div id="1o" data-produto="{{ date1o.count }}"></div>
-                <div id="2o" data-produto="{{ date2o.count }}"></div>
-                <div id="3o" data-produto="{{ date3o.count }}"></div>
-                <div id="4o" data-produto="{{ date4o.count }}"></div>
-                <div id="5o" data-produto="{{ date5o.count }}"></div>
-                <div id="6o" data-produto="{{ date6o.count }}"></div>
-                <div id="7o" data-produto="{{ date7o.count }}"></div>
-                <div id="8o" data-produto="{{ date8o.count }}"></div>
-                <div id="9o" data-produto="{{ date9o.count }}"></div>
-                <div id="10o" data-produto="{{ date10o.count }}"></div>
-                <div id="11o" data-produto="{{ date11o.count }}"></div>
-                <div id="12o" data-produto="{{ date12o.count }}"></div>
+            <div id="2o" data-produto="{{ date2o.count }}"></div>
+            <div id="3o" data-produto="{{ date3o.count }}"></div>
+            <div id="4o" data-produto="{{ date4o.count }}"></div>
+            <div id="5o" data-produto="{{ date5o.count }}"></div>
+            <div id="6o" data-produto="{{ date6o.count }}"></div>
+            <div id="7o" data-produto="{{ date7o.count }}"></div>
+            <div id="8o" data-produto="{{ date8o.count }}"></div>
+            <div id="9o" data-produto="{{ date9o.count }}"></div>
+            <div id="10o" data-produto="{{ date10o.count }}"></div>
+            <div id="11o" data-produto="{{ date11o.count }}"></div>
+            <div id="12o" data-produto="{{ date12o.count }}"></div>
 
-                <div id="1c" data-produto="{{ date1c.count }}"></div>
-                <div id="2c" data-produto="{{ date2c.count }}"></div>
-                <div id="3c" data-produto="{{ date3c.count }}"></div>
-                <div id="4c" data-produto="{{ date4c.count }}"></div>
-                <div id="5c" data-produto="{{ date5c.count }}"></div>
-                <div id="6c" data-produto="{{ date6c.count }}"></div>
-                <div id="7c" data-produto="{{ date7c.count }}"></div>
-                <div id="8c" data-produto="{{ date8c.count }}"></div>
-                <div id="9c" data-produto="{{ date9c.count }}"></div>
-                <div id="10c" data-produto="{{ date10c.count }}"></div>
-                <div id="11c" data-produto="{{ date11c.count }}"></div>
-                <div id="12c" data-produto="{{ date12c.count }}"></div>
+            <div id="1c" data-produto="{{ date1c.count }}"></div>
+            <div id="2c" data-produto="{{ date2c.count }}"></div>
+            <div id="3c" data-produto="{{ date3c.count }}"></div>
+            <div id="4c" data-produto="{{ date4c.count }}"></div>
+            <div id="5c" data-produto="{{ date5c.count }}"></div>
+            <div id="6c" data-produto="{{ date6c.count }}"></div>
+            <div id="7c" data-produto="{{ date7c.count }}"></div>
+            <div id="8c" data-produto="{{ date8c.count }}"></div>
+            <div id="9c" data-produto="{{ date9c.count }}"></div>
+            <div id="10c" data-produto="{{ date10c.count }}"></div>
+            <div id="11c" data-produto="{{ date11c.count }}"></div>
+            <div id="12c" data-produto="{{ date12c.count }}"></div>
 
-                <div id="author1" data-produto="{{ author1.count }}"></div>
-                <div id="author2" data-produto="{{ author2.count }}"></div>
-                <div id="author3" data-produto="{{ author3.count }}"></div>
-                <div id="author4" data-produto="{{ author4.count }}"></div>
-                <div id="author5" data-produto="{{ author5.count }}"></div>
-                <div id="author6" data-produto="{{ author6.count }}"></div>
+            <div id="author1" data-produto="{{ author1.count }}"></div>
+            <div id="author2" data-produto="{{ author2.count }}"></div>
+            <div id="author3" data-produto="{{ author3.count }}"></div>
+            <div id="author4" data-produto="{{ author4.count }}"></div>
+            <div id="author5" data-produto="{{ author5.count }}"></div>
+            <div id="author6" data-produto="{{ author6.count }}"></div>
         </div> <!-- .content -->
-    </div> <!-- /#right-panel -->
-
-
-    <!-- Right Panel -->
+    </div> <!-- Right Panel -->
 
     <script src="{% static 'vendors/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'vendors/popper.js/dist/umd/popper.min.js' %}"></script>

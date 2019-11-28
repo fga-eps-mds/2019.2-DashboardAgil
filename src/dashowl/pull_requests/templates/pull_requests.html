@@ -60,7 +60,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Suport</a> <!-- LINK PARA PG PRINCIPAL -->
+                        <a href="{% url 'suport' %}"> <i class="menu-icon fa fa-handshake-o"></i>Support</a> <!-- LINK PARA PG PRINCIPAL -->
                     </li>
                     <li>
                         <a href="{% url 'politics' %}"> <i class="menu-icon fa fa-info-circle"></i>About us</a> <!-- LINK PARA PG PRINCIPAL -->
@@ -98,16 +98,6 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="user-avatar rounded-circle" src="{% static "imagens/dashowl_colorido_80_56.png" %}" alt="User Avatar">
                         </a>
-                        
-                        <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> My Profile</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-user"></i> Notifications <span class="count">13</span></a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
-
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -147,11 +137,11 @@
                             </div>
                         </div>
                         <div class="card">
-                                <div class="card-body">
-                                    <h4 class="mb-3">PR merged</h4>
-                                    <canvas id="sales-chart"></canvas>
-                                </div>
+                            <div class="card-body">
+                                <h4 class="mb-3">PR merged</h4>
+                                <canvas id="sales-chart"></canvas>
                             </div>
+                        </div>
                     </div><!-- /# column -->                                 
                                                        
                     <div class="col-lg-5">
@@ -164,7 +154,16 @@
                                     </center>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR authors</br></h4>
+                                <div>
+                                    <center>
+                                        <h1>{{ pull_requests.count }}</br></h1>
+                                    </center>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="card">
@@ -172,38 +171,8 @@
                                 <h4 class="mb-3">PR by sprint</h4>
                                 <canvas id="team-chart"></canvas>
                             </div>
-                        </div>
-                        
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR scored</h4>
-                                <canvas id="circleChart"></canvas>
-                            </div>
-                        </div>
-                    </div><!-- /# column -->  
-                    
-                    <div class="col-lg-6">  
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR commented</h4>
-                                <canvas id="singleBarChart"></canvas>                                
-                            </div>
-                        </div>
-
-                    </div> <!-- /# column -->                         
-                        
-                    <div class="col-lg-6">  
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-3">PR commits</h4>
-                                <canvas id="singleBarChart2"></canvas>
-                            </div>
-                        </div>                                 
-
-                    </div> 
-
-                    
-
+                        </div>          
+                    </div><!-- /# column -->         
                 </div>
             </div> <!-- .animated -->
 
