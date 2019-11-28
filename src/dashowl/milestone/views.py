@@ -25,15 +25,15 @@ def get_milestone(request):
 
             repository = Repository.objects.get(repositoryID=repo.id)
             if bool(Milestone.objects.filter(repository__repositoryID=repo.id)):
-                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
                 refresh_milestones(repo, list(milestones)[-1].repository, list(milestones)[-1].milestone_number)
-                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
                 milestones_open = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
                 milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
             else:
                 save_milestone(repo, repository)
-                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+                milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
                 milestones_open = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
                 milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
@@ -55,15 +55,15 @@ def get_milestone(request):
 
         repository = Repository.objects.filter(repositoryID=repo.id)
         if bool(Milestone.objects.filter(repository__repositoryID=repo.id)):
-            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
             refresh_milestones(repo, list(milestones)[-1].repository, list(milestones)[-1].milestone_number)
-            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
             milestones_open = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
             milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
         else:
             save_milestone(repo, repository)
-            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestone_number')
+            milestones = Milestone.objects.filter(repository__repositoryID=repo.id).order_by('milestoneID')
             milestones_open = Milestone.objects.filter(repository__repositoryID=repo.id, state='open')
             milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
@@ -74,7 +74,7 @@ def refresh_milestones(repo, repository, last):
     milestones = repo.get_milestones(state='all')
     for i in range(last+1, milestones.totalCount):
         milestone_model = Milestone.objects.create(repository=repository,
-                                                   milestone_number=milestones[i].number,
+                                                   milestoneID=milestones[i].number,
                                                    state=milestones[i].state,
                                                    title=milestones[i].title,
                                                    author=milestones[i].creator.login,
@@ -86,7 +86,7 @@ def refresh_milestones(repo, repository, last):
 def save_milestone(repo, repository):
     for milestone in repo.get_milestones(state='all'):
         milestone_model = Milestone.objects.create(repository=repository,
-                                                   milestone_number=milestone.number,
+                                                   milestoneID=milestone.number,
                                                    state=milestone.state,
                                                    title=milestone.title,
                                                    author=milestone.creator.login,

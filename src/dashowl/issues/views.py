@@ -12,12 +12,13 @@ from .. import secret
 
 def get_issues(request):
 
-    g = Github(secret.login, secret.password)
-    repo = g.get_repo("fga-eps-mds/2019.2-DashboardAgil-Wiki")
-    """
-        dar um jeito de pegar o id do repositório atual
-    """
+    token = request.session['token']
+    repo_id = request.session['id']
 
+
+    g = Github(token)
+    repo = g.get_repo(int(repo_id))
+    
 
     if bool(Issue.objects.filter(repository__repositoryID=repo.id)):
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')
@@ -68,10 +69,54 @@ def get_issues(request):
 
 
     else:
-        save_issue(repo, repository)
+        save_issue(repo, repo)
         open_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='open')
         closed_issues = Issue.objects.filter(repository__repositoryID=repo.id, state='closed')
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id)
+        authores = all_issues.distinct('author')
+
+        a = []
+
+        aissues = []
+
+        for author in authores:
+            aissues.append(Issue.objects.filter(repository__repositoryID=repo.id, author= author.author))
+            a.append(author.author)
+
+
+        #author1 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'Matheus-AM')
+        #author2 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'KalebeLopes')
+        #author3 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'joao15victor08')
+        #author4 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'ailamaralves')
+        #author5 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'muriloschiler')
+        #author6 = Issue.objects.filter(repository__repositoryID=repo.id, author = 'damarcones')
+
+        date1o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1)
+        date2o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2)
+        date3o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=3)
+        date4o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=4)
+        date5o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=5)
+        date6o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=6)
+        date7o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=7)
+        date8o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=8)
+        date9o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=9)
+        date10o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=10)
+        date11o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=11)
+        date12o = Issue.objects.filter(repository__repositoryID=repo.id, date__month=12)
+
+        date1c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=1, state='closed')
+        date2c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=2, state='closed')
+        date3c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=3, state='closed')
+        date4c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=4, state='closed')
+        date5c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=5, state='closed')
+        date6c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=6, state='closed')
+        date7c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=7, state='closed')
+        date8c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=8, state='closed')
+        date9c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=9, state='closed')
+        date10c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=10, state='closed')
+        date11c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=11, state='closed')
+        date12c = Issue.objects.filter(repository__repositoryID=repo.id, date__month=12, state='closed')
+
 
 #Retorna o valor de cada issue
     # req= requests.get('https://api.zenhub.io/p1/repositories/206358281/issues/39?access_token=02a009e06e4926091eadce6ef1dffc9f9b3f7b5bd417b116ea90c55bf6fb68dda7eb367ab6544c07')
