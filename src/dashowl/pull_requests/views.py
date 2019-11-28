@@ -13,7 +13,6 @@ def get_PullRuequests (request):
     
     g = Github(token)
     repo = g.get_repo(int(repo_id))
-    autorespr = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('author').distinct('author')
 
     repository = Repository.objects.get(repositoryID=repo.id)
 
@@ -54,10 +53,23 @@ def get_PullRuequests (request):
     date12c = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=12, state='closed')
 
 
-    return render(request, 'pull_requests.html', {'autorespr': autorespr, 'pull_requests': pull_requests, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
-     'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o,'date1c': date1c, 'date2c': date2c,
+
+    
+    return render(request, 'pull_requests.html', {'pull_requests': pull_requests, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
+    'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o,'date1c': date1c, 'date2c': date2c,
     'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
     'date11c': date11c,'date12c': date12c})
+
+
+def refresh_pull_requests(repo, repository, last):
+    pull_requests = repo.get_pulls(state='all')
+    for i in range(last+1, pull_requests.totalCount):
+        pull_requests_model = Pull_request.objects.create(repository=repository,
+                                                          pull_request_number=pull_requests[i].number,
+                                                          state=pull_requests[i].state,
+                                                          author=pull_requests[i].user.login,
+                                                          open_date=pull_requests[i].created_at)
+        pull_requests_model.publish()
 
 
 def save_pull_request(repo, repository):
@@ -70,14 +82,3 @@ def save_pull_request(repo, repository):
                                                               author=pull_request.user.login,
                                                               open_date=pull_request.created_at)
             pull_requests_model.publish()
-
-
-def refresh_pull_requests(repo, repository, last):
-    pull_requests = repo.get_pulls(state='all')
-    for i in range(last+1, pull_requests.totalCount):
-        pull_requests_model = Pull_request.objects.create(repository=repository,
-                                                          pull_request_number=pull_requests[i].number,
-                                                          state=pull_requests[i].state,
-                                                          author=pull_requests[i].user.login,
-                                                          open_date=pull_requests[i].created_at)
-        pull_requests_model.publish()

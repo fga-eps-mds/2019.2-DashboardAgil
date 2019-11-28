@@ -169,23 +169,41 @@
 
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="mb-3">PR authors</br></h4> 
-                                    {% for i in autorespr %}
-                                        <div style="text-align: right;">
-                                            <p class="mb-8"  data-aos="fade-up" data-aos-delay="200">{{i.author}}</p>
-                                        </div>
-                                    {% endfor %}                            
-                                    </div>
-                                </div>      
-                            </div>
-                        </div> 
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="mb-6">PR by sprint</h4>
+                                <h4 class="mb-3">PR by sprint</h4>
                                 <canvas id="team-chart"></canvas>
                             </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR scored</h4>
+                                <canvas id="circleChart"></canvas>
+                            </div>
+                        </div>
+                    </div><!-- /# column -->  
+                    
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commented</h4>
+                                <canvas id="singleBarChart"></canvas>                                
+                            </div>
+                        </div>
+
+                    </div> <!-- /# column -->                         
+                        
+                    <div class="col-lg-6">  
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">PR commits</h4>
+                                <canvas id="singleBarChart2"></canvas>
+                            </div>
                         </div>                                 
-                    </div><!-- /# column -->         
+
+                    </div> 
+
+                    
+
                 </div>
             </div> <!-- .animated -->
 
