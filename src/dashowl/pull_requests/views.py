@@ -20,14 +20,12 @@ def get_PullRuequests (request):
     if bool(Pull_request.objects.filter(repository__repositoryID=repo.id)):
         pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
         refresh_pull_requests(repo, list(pull_requests)[-1].repository, list(pull_requests)[-1].pull_request_number)
-        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
-        #pulls_open = Pull_request.objects.filter(repository__repositoryID=repo.id, state='open')
-        #pulls_closed = Pull_request.objects.filter(repository__repositoryID=repo.id, state='closed')
     else:
         save_pull_request(repo, repository)
-        pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
-        pulls_open = Pull_request.objects.filter(repository__repositoryID=repo.id, state='open')
-        pulls_closed = Pull_request.objects.filter(repository__repositoryID=repo.id, state='closed')
+
+    pull_requests = Pull_request.objects.filter(repository__repositoryID=repo.id).order_by('pull_request_number')
+    #pulls_open = Pull_request.objects.filter(repository__repositoryID=repo.id, state='open')
+    #pulls_closed = Pull_request.objects.filter(repository__repositoryID=repo.id, state='closed')
 
     date1o = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=1)
     date2o = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=2)
@@ -54,7 +52,8 @@ def get_PullRuequests (request):
     date10c = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=10, state='closed')
     date11c = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=11, state='closed')
     date12c = Pull_request.objects.filter(repository__repositoryID=repo.id, open_date__month=12, state='closed')
-   
+
+
     return render(request, 'pull_requests.html', {'autorespr': autorespr, 'pull_requests': pull_requests, 'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
      'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o,'date1c': date1c, 'date2c': date2c,
     'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
