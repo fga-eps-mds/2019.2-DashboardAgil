@@ -3,7 +3,7 @@ from github import Github
 import requests
 import json
 from .models import Issue
-from .. import secret
+#from .. import secret
 from ..repositories.models import Repository
 
 

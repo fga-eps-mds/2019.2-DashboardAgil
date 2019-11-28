@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from github import Github
 from .models import Pull_request
-from .. import secret
+#from .. import secret
 from ..repositories.models import Repository
 import datetime
 
