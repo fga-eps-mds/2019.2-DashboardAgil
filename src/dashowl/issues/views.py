@@ -4,6 +4,7 @@ import requests
 import json
 from .models import Issue
 from .. import secret
+from ..repositories.models import Repository
 
 
 #É nescessario passar para as todas essas funcoes o request ?
@@ -17,8 +18,9 @@ def get_issues(request):
 
 
     g = Github(token)
-    repo = g.get_repo(int(repo_id))
-    
+    repo = g.get_repo(int(repo_id))    
+
+    repository = Repository.objects.get(repositoryID=repo.id)
 
     if bool(Issue.objects.filter(repository__repositoryID=repo.id)):
         all_issues = Issue.objects.filter(repository__repositoryID=repo.id).order_by('date')

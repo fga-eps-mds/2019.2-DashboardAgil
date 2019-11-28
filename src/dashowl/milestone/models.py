@@ -9,7 +9,7 @@ class Milestone(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=60)
     created_at = models.DateTimeField()
-    due_on = models.DateTimeField()
+    due_on = models.DateTimeField(null=True)
 
     def publish(self):
         self.save()
