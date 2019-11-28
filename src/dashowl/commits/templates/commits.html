@@ -147,11 +147,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="mb-3">Authors Commits</h3>  
+                                
                                 <center>
-                                    <div>
-                                        <h1>{{commits.count}}</h1>
-                                    </div>
-                                </center>                             
+                                        {%for i in autoresc%}
+                                        <div style="text-align: right;">  
+                                            <p class="mb-8"  data-aos="fade-up" data-aos-delay="200"> {{i.author}}</p>
+                                        </div>
+                                        {%endfor%}
+                                    </center>    
                             </div>
                         </div>                       
                     </div>                 

@@ -159,9 +159,13 @@
                             <div class="card-body">
                                 <h4 class="mb-3">PR authors</br></h4>
                                 <div>
-                                    <center>
-                                        <h1>{{ pull_requests.count }}</br></h1>
-                                    </center>
+                                        <center>
+                                                {%for i in autorespr%}
+                                                <div style="text-align: right;">  
+                                                    <p class="mb-8"  data-aos="fade-up" data-aos-delay="200"> {{i.author}}</p>
+                                                </div>
+                                                {%endfor%}
+                                            </center>    
                                 </div>
                             </div>
                         </div>

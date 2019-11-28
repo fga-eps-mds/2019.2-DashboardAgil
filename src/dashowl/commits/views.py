@@ -7,12 +7,9 @@ from ..repositories.models import Repository
 
 def get_commits(request):
 
+
+    repo_id = request.session['id']
     token = request.session['token']    
-
-    repo_id = request.GET["id"]
-
-    request.session['id'] = repo_id
-
 
     g = Github(token)
     repo = g.get_repo(int(repo_id))
