@@ -68,7 +68,6 @@ def get_milestone(request):
             milestones_closed = Milestone.objects.filter(repository__repositoryID=repo.id, state='closed')
 
         return render(request, 'milestone.html', {'milestones': milestones, 'milestones_open': milestones_open, 'milestones_closed': milestones_closed})
-<<<<<<< HEAD
               
 
 def refresh_milestones(repo, repository, last):
@@ -94,6 +93,3 @@ def save_milestone(repo, repository):
                                                    created_at=milestone.created_at,
                                                    due_on=milestone.due_on)
         milestone_model.publish()
-=======
-       
->>>>>>> 6f32ea116f18bf29a37f75c3386d1c561c0e32e1
