@@ -7,15 +7,18 @@ from ..repositories.models import Repository
 
 def get_commits(request):
 
-    token = request.session['token']
-    repo_id = request.session['id']
+    token = request.session['token']    
+
+    repo_id = request.GET["id"]
+
+    request.session['id'] = repo_id
 
 
     g = Github(token)
     repo = g.get_repo(int(repo_id))
     commits = repo.get_commits()
     total_commits = commits.totalCount
-
+    autoresc = Commit.objects.filter(repository__repositoryID=repo.id).order_by('author').distinct('author')
     repository = Repository.objects.get(repositoryID=repo.id)
 
     if bool(Commit.objects.filter(repository__repositoryID=repo.id)):
@@ -63,7 +66,7 @@ def get_commits(request):
         save_commit(repo, repository)
         commits = Commit.objects.filter(repository__repositoryID=repo.id).order_by('date')
 
-    return render(request, 'commits.html', {'commits': commits,'total_commits': total_commits,'author1': author1,'author2': author2,'author3': author3,'author4': author4,'author5': author5,'author6': author6,
+    return render(request, 'commits.html', {'commits': commits, 'autoresc': autoresc,'total_commits': total_commits, 
      'date1o': date1o, 'date2o': date2o,'date3o': date3o,'date4o': date4o,'date5o': date5o,'date6o': date6o,
     'date7o': date7o,'date8o': date8o,'date9o': date9o,'date10o': date10o,'date11o': date11o,'date12o': date12o, 'date1c': date1c, 'date2c': date2c,
     'date3c': date3c,'date4c': date4c,'date5c': date5c,'date6c': date6c, 'date7c': date7c,'date8c': date8c,'date9c': date9c,'date10c': date10c,
